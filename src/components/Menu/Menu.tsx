@@ -2,28 +2,33 @@ import { NavLink } from 'react-router-dom';
 import { FaReact } from 'react-icons/fa';
 import { ModeToggle } from '../ModeToggle';
 import styles from './Menu.module.css';
+import { Basket } from '../Basket';
+import { Favorites } from '../Favorites';
+import { useAppSelector } from '../../hook';
+import { selectMode } from '../../redux/modeSlice';
 
 export const Menu = () => {
+    const getMode = useAppSelector(selectMode);
     return (
         <div className={styles.menu}>
             <nav className={styles.navigation}>
                 <div className={styles.navigation__left}>
-                    <FaReact />
-                    <NavLink className={styles.link} to='.' end>
-                        ReactShop
+                    <FaReact className={getMode ? styles.logo__dark : styles.logo__light} />
+                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='.' end>
+                        rShop
                     </NavLink>
                 </div>
                 <div className={styles.navigation__right}>
-                    <NavLink className={styles.link} to='about'>
-                        About Page
-                    </NavLink>
-                    <NavLink className={styles.link} to='contacts'>
-                        Contacts Page
-                    </NavLink>
-                    <NavLink className={styles.link} to='counter'>
-                        Counter Page
+                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='catalog'>
+                        Catalog
                     </NavLink>
                     <ModeToggle />
+                    <NavLink className={styles.link} to='favorites'>
+                        <Favorites />
+                    </NavLink>
+                    <NavLink className={styles.link} to='basket'>
+                        <Basket />
+                    </NavLink>
                 </div>
             </nav>
         </div>

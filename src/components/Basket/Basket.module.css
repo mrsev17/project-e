@@ -1,0 +1,10 @@
+.basket__dark {
+    height: 22px;
+    width: 22px;
+    color: aliceblue;
+}
+.basket__light {
+    height: 22px;
+    width: 22px;
+    color: #e91e63;
+}

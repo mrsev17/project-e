@@ -1,0 +1,44 @@
+[
+    {
+        "productName": "MacBook Air M1 256GB 8GB Silver",
+        "company": "Apple",
+        "storage": "256gb",
+        "ram": "8gb",
+        "color": "silver",
+        "photos": {
+            "photoOne": "/images/macBookAirM1-Silver-1.jpeg",
+            "photoTwo": "/images/macBookAirM1-Silver-2.jpeg",
+            "photoThree": "/images/macBookAirM1-Silver-3.jpeg",
+            "photoFour": "/images/macBookAirM1-Silver-4.jpeg",
+            "photoFive": "/images/macBookAirM1-Silver-5.jpeg"
+        }
+    },
+    {
+        "productName": "MacBook Air M1 256GB 8GB Space Gray",
+        "company": "Apple",
+        "storage": "256gb",
+        "ram": "8gb",
+        "color": "Space Gray",
+        "photos": {
+            "photoOne": "/images/macBookAirM1-gold-1.jpeg",
+            "photoTwo": "/images/macBookAirM1-gold-2.jpeg",
+            "photoThree": "/images/macBookAirM1-gold-3.jpeg",
+            "photoFour": "/images/macBookAirM1-gold-4.jpeg",
+            "photoFive": "/images/macBookAirM1-gold-5.jpeg"
+        }
+    },
+    {
+        "productName": "MacBook Air M1 256GB 8GB Gold",
+        "company": "Apple",
+        "storage": "256gb",
+        "ram": "8gb",
+        "color": "Gold",
+        "photos": {
+            "photoOne": "/images/macBookAirM1-spaceGray-1.jpeg",
+            "photoTwo": "/images/macBookAirM1-spaceGray-2.jpeg",
+            "photoThree": "/images/macBookAirM1-spaceGray-3.jpeg",
+            "photoFour": "/images/macBookAirM1-spaceGray-4.jpeg",
+            "photoFive": "/images/macBookAirM1-spaceGray-5.jpeg"
+        }
+    }
+]

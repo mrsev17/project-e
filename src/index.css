@@ -4,7 +4,6 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background-color: #385170; */
 }
 
 code {
@@ -12,6 +11,5 @@ code {
 }
 
 h1 {
-    color: aliceblue;
     font-size: 28px;
 }

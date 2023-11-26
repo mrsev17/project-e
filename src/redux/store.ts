@@ -1,12 +1,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import counterReducer from './counterSlice';
 import modeReducer from './modeSlice';
+import productsReducer from './productsSlice';
 
 const rootReducer = combineReducers({
-    counter: counterReducer,
     mode: modeReducer,
+    products: productsReducer,
 });
 
 const persistConfig = {

@@ -1,0 +1,28 @@
+.title-catalog-page {
+    margin-bottom: 30px;
+}
+.catalog-list {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 4 columns with equal width */
+    gap: 10px;
+}
+.product-card {
+    background-color: #22313f;
+    border-radius: 8px;
+    color: whitesmoke;
+}
+.product-card > h2 {
+    margin-top: 20px;
+}
+.images-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.image-product {
+    max-width: 200px;
+    width: 100%;
+}
