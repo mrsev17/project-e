@@ -1,0 +1,26 @@
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.counter__control__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.counter__control__panel > button {
+    font-size: 22px;
+    max-width: 200px;
+    min-width: 160px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    transition: ease-in-out 0.4s;
+}
+
+.counter__control__panel > button:hover {
+    background-color: #84acd4;
+    color: aliceblue;
+}

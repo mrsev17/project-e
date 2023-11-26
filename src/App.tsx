@@ -1,32 +1,25 @@
-import { useAppDispatch, useAppSelector } from './hook';
-import { setCounterPlusOne, setCounterMinusOne, resetCounter, selectCounter } from './redux/counterSlice';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Counter, HomePage, AboutPage, ContactsPage, NotFoundPage } from './components';
+import MainLayout from './layouts/MainLayout';
 import './App.css';
 
 const App: React.FC = () => {
-    const dispatch = useAppDispatch();
-    const counter: number = useAppSelector(selectCounter).counter;
-
-    const plusOneHandle = () => {
-        dispatch(setCounterPlusOne());
-    };
-    const minusOneHandle = () => {
-        dispatch(setCounterMinusOne());
-    };
-    const resetCounterHandle = () => {
-        dispatch(resetCounter());
-    };
-
     return (
-        <div className='app'>
-            <div className='app-counter'>
-                <h1>{counter}</h1>
+        <BrowserRouter>
+            <div className='app'>
+                <header>
+                    <Routes>
+                        <Route path='/home' element={<MainLayout />}>
+                            <Route index element={<HomePage />} />
+                            <Route path='about' element={<AboutPage />} />
+                            <Route path='contacts' element={<ContactsPage />} />
+                            <Route path='counter' element={<Counter />} />
+                            <Route path='*' element={<NotFoundPage />} />
+                        </Route>
+                    </Routes>
+                </header>
             </div>
-            <div className='app-counter-plus-one'>
-                <button onClick={plusOneHandle}>Plus One</button>
-                <button onClick={minusOneHandle}>Minus One</button>
-                <button onClick={resetCounterHandle}>Reset</button>
-            </div>
-        </div>
+        </BrowserRouter>
     );
 };
 
