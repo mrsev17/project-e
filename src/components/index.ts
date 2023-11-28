@@ -7,3 +7,4 @@ export * from './Basket';
 export * from './Favorites';
 export * from './FavoritesPage';
 export * from './BasketPage';
+export * from './ProductTile';

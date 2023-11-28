@@ -14,6 +14,14 @@
     animation: fadeIn 1.1s ease-out forwards;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.menuLight {
+    margin: 10px 10px 30px 10px;
+    background-color: white;
+    border-radius: 14px;
+    transform: translateY(-100px);
+    animation: fadeIn 1.1s ease-out forwards;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 .navigation {
     display: flex;

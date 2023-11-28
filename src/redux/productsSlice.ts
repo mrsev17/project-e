@@ -3,14 +3,17 @@ import { v4 as uuidv4 } from 'uuid';
 import productsData from '../data/products.json';
 import { RootState } from './store';
 
-interface Product {
+export interface Product {
     productName: string;
+    category: string;
     company: string;
     storage: string;
     ram: string;
     color: string;
     id: string;
-    favorite: boolean;
+    price: number;
+    inStock: boolean;
+    favorite?: boolean;
     photos: {
         photoOne: string;
         photoTwo: string;
