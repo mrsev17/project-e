@@ -5,7 +5,7 @@ import Badge from '@mui/material/Badge';
 import styles from './Basket.module.css';
 
 export const Basket = () => {
-    const getMode = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector(selectMode);
     return (
         <button>
             <Badge badgeContent={3} color='primary'>

@@ -1,0 +1,30 @@
+.titleCatalogPageLight {
+    margin-bottom: 30px;
+    color: #e91e63;
+}
+.titleCatalogPageDark {
+    margin-bottom: 30px;
+    color: whitesmoke;
+}
+.catalogList {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1120px) {
+    .catalogList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 992px) {
+    .catalogList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 567px) {
+    .catalogList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

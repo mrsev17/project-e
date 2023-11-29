@@ -37,6 +37,7 @@
 }
 .link__dark,
 .link__light {
+    cursor: pointer;
     font-size: 18px;
     text-decoration: none;
     margin-bottom: 3px;

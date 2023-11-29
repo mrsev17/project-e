@@ -13,6 +13,7 @@ button {
     width: 40px;
     height: 40px;
     transition: ease-in-out 0.5s;
+    cursor: pointer;
 }
 
 button > svg {

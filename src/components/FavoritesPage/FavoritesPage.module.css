@@ -1,0 +1,30 @@
+.favoriteTitleLight {
+    margin-bottom: 30px;
+    color: #e91e63;
+}
+.favoriteTitleDark {
+    margin-bottom: 30px;
+    color: whitesmoke;
+}
+.favoriteList {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1120px) {
+    .favoriteList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 992px) {
+    .favoriteList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 567px) {
+    .favoriteList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

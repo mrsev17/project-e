@@ -7,19 +7,20 @@ export interface Product {
     productName: string;
     category: string;
     company: string;
-    storage: string;
-    ram: string;
+    storage?: string;
+    ram?: string;
+    cpu?: string;
     color: string;
     id: string;
     price: number;
     inStock: boolean;
-    favorite?: boolean;
+    isFavorite?: boolean;
     photos: {
         photoOne: string;
         photoTwo: string;
         photoThree: string;
-        photoFour: string;
-        photoFive: string;
+        photoFour?: string;
+        photoFive?: string;
     };
 }
 
@@ -36,8 +37,17 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
         setInitialData(state) {
-            const prepareData = productsData.map((product) => {
-                return { ...product, id: uuidv4(), favorite: false };
+            const prepareData: Product[] = productsData.map((product) => {
+                return { ...product, id: uuidv4() };
+            });
+            return { ...state, products: prepareData };
+        },
+        setIsFavoriteProduct(state, action: PayloadAction<string>) {
+            const prepareData: Product[] = state.products.map((product) => {
+                if (product.id === action.payload) {
+                    return { ...product, isFavorite: !product.isFavorite };
+                }
+                return product;
             });
             return { ...state, products: prepareData };
         },
@@ -46,5 +56,5 @@ const productsSlice = createSlice({
 
 export const selectProducts = (state: RootState) => state.products.products;
 
-export const { setInitialData } = productsSlice.actions;
+export const { setInitialData, setIsFavoriteProduct } = productsSlice.actions;
 export default productsSlice.reducer;

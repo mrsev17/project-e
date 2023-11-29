@@ -9,14 +9,10 @@ import { setInitialData } from './redux/productsSlice';
 const App: React.FC = () => {
     const dispatch = useAppDispatch();
     useEffect(() => {
-        // Check if data is already in localStorage
         const storedData = localStorage.getItem('e-app');
-
         if (storedData) {
-            // If data is in localStorage, set it in state
             return;
         } else {
-            // If data is not in localStorage, fetch it and store it
             dispatch(setInitialData());
         }
     }, []);

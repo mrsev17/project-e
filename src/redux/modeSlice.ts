@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { darkBodyBackGround, lightBodyBackGround } from '../utils/colorsCSS';
 import { RootState } from './store';
 

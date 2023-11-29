@@ -1,71 +1,142 @@
 [
     {
         "productName": "MacBook Air M1 256GB 8GB Silver",
-        "category": "laptops",
+        "category": "Laptops",
         "company": "Apple",
         "storage": "256gb",
         "ram": "8gb",
+        "cpu": "M1",
         "color": "silver",
         "price": 999,
         "inStock": false,
+        "isFavorite": false,
         "photos": {
-            "photoOne": "/images/macBookAirM1-Silver-1.jpeg",
-            "photoTwo": "/images/macBookAirM1-Silver-2.jpeg",
-            "photoThree": "/images/macBookAirM1-Silver-3.jpeg",
-            "photoFour": "/images/macBookAirM1-Silver-4.jpeg",
-            "photoFive": "/images/macBookAirM1-Silver-5.jpeg"
+            "photoOne": "/images/macBookAirM1-Silver-1.webp",
+            "photoTwo": "/images/macBookAirM1-Silver-2.webp",
+            "photoThree": "/images/macBookAirM1-Silver-3.webp",
+            "photoFour": "/images/macBookAirM1-Silver-4.webp",
+            "photoFive": "/images/macBookAirM1-Silver-5.webp"
         }
     },
     {
         "productName": "MacBook Air M1 512GB 16GB Silver",
-        "category": "laptops",
+        "category": "Laptops",
         "company": "Apple",
         "storage": "512gb",
         "ram": "16gb",
+        "cpu": "M1",
         "color": "silver",
         "price": 1199,
         "inStock": true,
+        "isFavorite": true,
         "photos": {
-            "photoOne": "/images/macBookAirM1-Silver-1.jpeg",
-            "photoTwo": "/images/macBookAirM1-Silver-2.jpeg",
-            "photoThree": "/images/macBookAirM1-Silver-3.jpeg",
-            "photoFour": "/images/macBookAirM1-Silver-4.jpeg",
-            "photoFive": "/images/macBookAirM1-Silver-5.jpeg"
+            "photoOne": "/images/macBookAirM1-Silver-1.webp",
+            "photoTwo": "/images/macBookAirM1-Silver-2.webp",
+            "photoThree": "/images/macBookAirM1-Silver-3.webp",
+            "photoFour": "/images/macBookAirM1-Silver-4.webp",
+            "photoFive": "/images/macBookAirM1-Silver-5.webp"
         }
     },
     {
         "productName": "MacBook Air M1 256GB 8GB Space Gray",
-        "category": "laptops",
+        "category": "Laptops",
         "company": "Apple",
         "storage": "256gb",
         "ram": "8gb",
+        "cpu": "M1",
         "color": "Space Gray",
         "price": 999,
         "inStock": true,
-
+        "isFavorite": false,
         "photos": {
-            "photoOne": "/images/macBookAirM1-spaceGray-1.jpeg",
-            "photoTwo": "/images/macBookAirM1-spaceGray-2.jpeg",
-            "photoThree": "/images/macBookAirM1-spaceGray-3.jpeg",
-            "photoFour": "/images/macBookAirM1-spaceGray-4.jpeg",
-            "photoFive": "/images/macBookAirM1-spaceGray-5.jpeg"
+            "photoOne": "/images/macBookAirM1-spaceGray-1.webp",
+            "photoTwo": "/images/macBookAirM1-spaceGray-2.webp",
+            "photoThree": "/images/macBookAirM1-spaceGray-3.webp",
+            "photoFour": "/images/macBookAirM1-spaceGray-4.webp",
+            "photoFive": "/images/macBookAirM1-spaceGray-5.webp"
         }
     },
     {
         "productName": "MacBook Air M1 256GB 8GB Gold",
-        "category": "laptops",
+        "category": "Laptops",
         "company": "Apple",
         "storage": "256gb",
         "ram": "8gb",
+        "cpu": "M1",
         "color": "Gold",
         "price": 999,
         "inStock": true,
+        "isFavorite": false,
         "photos": {
-            "photoOne": "/images/macBookAirM1-gold-1.jpeg",
-            "photoTwo": "/images/macBookAirM1-gold-2.jpeg",
-            "photoThree": "/images/macBookAirM1-gold-3.jpeg",
-            "photoFour": "/images/macBookAirM1-gold-4.jpeg",
-            "photoFive": "/images/macBookAirM1-gold-5.jpeg"
+            "photoOne": "/images/macBookAirM1-gold-1.webp",
+            "photoTwo": "/images/macBookAirM1-gold-2.webp",
+            "photoThree": "/images/macBookAirM1-gold-3.webp",
+            "photoFour": "/images/macBookAirM1-gold-4.webp",
+            "photoFive": "/images/macBookAirM1-gold-5.webp"
+        }
+    },
+    {
+        "productName": "Dell XPS 17 9720",
+        "category": "Laptops",
+        "company": "Dell",
+        "storage": "256gb",
+        "ram": "16gb",
+        "cpu": "Intel Core i7-12700H",
+        "color": "Silver",
+        "price": 3199.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/DellXPS179720-1.webp",
+            "photoTwo": "/images/DellXPS179720-2.webp",
+            "photoThree": "/images/DellXPS179720-3.webp",
+            "photoFour": "/images/DellXPS179720-4.webp",
+            "photoFive": "/images/DellXPS179720-5.webp"
+        }
+    },
+    {
+        "productName": "RavPower 20000mAh 60W PD USB-C+USB-A Black",
+        "category": "Powerbanks",
+        "company": "RavPower",
+        "color": "Black",
+        "price": 59.99,
+        "inStock": false,
+        "isFavorite": true,
+        "photos": {
+            "photoOne": "/images/mAh-60W-PD-USB-C-USB-A-Black-1.webp",
+            "photoTwo": "/images/mAh-60W-PD-USB-C-USB-A-Black-2.webp",
+            "photoThree": "/images/mAh-60W-PD-USB-C-USB-A-Black-3.webp",
+            "photoFour": "/images/mAh-60W-PD-USB-C-USB-A-Black-4.webp"
+        }
+    },
+    {
+        "productName": "Nintendo Switch OLED White",
+        "category": "Game Consoles",
+        "company": "Nintendo",
+        "color": "White",
+        "price": 349.99,
+        "inStock": false,
+        "isFavorite": true,
+        "photos": {
+            "photoOne": "/images/switchOled-1.webp",
+            "photoTwo": "/images/switchOled-2.webp",
+            "photoThree": "/images/switchOled-3.webp",
+            "photoFour": "/images/switchOled-4.webp"
+        }
+    },
+    {
+        "productName": "SonyPlaystation 5",
+        "category": "Game Consoles",
+        "company": "Sony",
+        "color": "White",
+        "price": 549.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/PlayStation5-1.webp",
+            "photoTwo": "/images/PlayStation5-2.webp",
+            "photoThree": "/images/PlayStation5-3.webp",
+            "photoFour": "/images/PlayStation5-4.webp"
         }
     }
 ]

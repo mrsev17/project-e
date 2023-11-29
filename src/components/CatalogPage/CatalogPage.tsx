@@ -1,17 +1,16 @@
 import { useAppSelector } from '../../hook';
-import { selectProducts } from '../../redux/productsSlice';
 import { selectMode } from '../../redux/modeSlice';
+import { Product, selectProducts } from '../../redux/productsSlice';
 import { ProductTile } from '../ProductTile';
-import './CatalogPage.css';
+import styles from './CatalogPage.module.css';
 
 export const CatalogPage = () => {
-    const products = useAppSelector(selectProducts);
-    const getMode = useAppSelector(selectMode);
-
+    const products: Product[] = useAppSelector(selectProducts);
+    const getMode: boolean = useAppSelector(selectMode);
     return (
         <div>
-            <h1 className={getMode ? 'title-catalog-page-dark' : 'title-catalog-page-light'}>Catalog Page</h1>
-            <div className='catalog-list'>
+            <h1 className={getMode ? styles.titleCatalogPageDark : styles.titleCatalogPageLight}>Catalog Page</h1>
+            <div className={styles.catalogList}>
                 {products.map((product, i) => {
                     return <ProductTile key={i} product={product} />;
                 })}
