@@ -10,7 +10,7 @@ import { selectMode } from '../../redux/modeSlice';
 export const Menu = () => {
     const getMode = useAppSelector(selectMode);
     return (
-        <div className={getMode ? styles.menu : styles.menuLight}>
+        <header className={getMode ? styles.menu : styles.menuLight}>
             <nav className={styles.navigation}>
                 <div className={styles.navigation__left}>
                     <FaReact className={getMode ? styles.logo__dark : styles.logo__light} />
@@ -31,6 +31,6 @@ export const Menu = () => {
                     </NavLink>
                 </div>
             </nav>
-        </div>
+        </header>
     );
 };

@@ -28,7 +28,7 @@
         "color": "silver",
         "price": 1199,
         "inStock": true,
-        "isFavorite": true,
+        "isFavorite": false,
         "photos": {
             "photoOne": "/images/macBookAirM1-Silver-1.webp",
             "photoTwo": "/images/macBookAirM1-Silver-2.webp",
@@ -101,7 +101,7 @@
         "color": "Black",
         "price": 59.99,
         "inStock": false,
-        "isFavorite": true,
+        "isFavorite": false,
         "photos": {
             "photoOne": "/images/mAh-60W-PD-USB-C-USB-A-Black-1.webp",
             "photoTwo": "/images/mAh-60W-PD-USB-C-USB-A-Black-2.webp",
@@ -116,7 +116,7 @@
         "color": "White",
         "price": 349.99,
         "inStock": false,
-        "isFavorite": true,
+        "isFavorite": false,
         "photos": {
             "photoOne": "/images/switchOled-1.webp",
             "photoTwo": "/images/switchOled-2.webp",
@@ -137,6 +137,54 @@
             "photoTwo": "/images/PlayStation5-2.webp",
             "photoThree": "/images/PlayStation5-3.webp",
             "photoFour": "/images/PlayStation5-4.webp"
+        }
+    },
+    {
+        "productName": "The Legend of Zelda: Tears of the Kingdom",
+        "category": "Games",
+        "company": "Nintendo",
+        "price": 59.99,
+        "inStock": true,
+        "genre": "Action-adventure",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/TheLegendOfZeldaTearsOfTheKingdom-1.webp",
+            "photoTwo": "/images/TheLegendOfZeldaTearsOfTheKingdom-2.webp",
+            "photoThree": "/images/TheLegendOfZeldaTearsOfTheKingdom-3.webp",
+            "photoFour": "/images/TheLegendOfZeldaTearsOfTheKingdom-4.webp"
+        }
+    },
+    {
+        "productName": "Red Dead Redemption Switch",
+        "category": "Games",
+        "company": "Rockstar Games",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "Action-adventure",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/redDeadRedemptionSwitch-1.webp",
+            "photoTwo": "/images/redDeadRedemptionSwitch-2.webp",
+            "photoThree": "/images/redDeadRedemptionSwitch-3.webp",
+            "photoFour": "/images/redDeadRedemptionSwitch-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPhone 14 Pro Max 256GB Deep Purple",
+        "category": "Samrtphones",
+        "company": "Apple",
+        "storage": "256gb",
+        "cpu": "Apple A16 Bionic",
+        "color": "Deep Purple",
+        "price": 1299,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPhone14ProMaxDeepPurple-1.webp",
+            "photoTwo": "/images/AppleiPhone14ProMaxDeepPurple-2.webp",
+            "photoThree": "/images/AppleiPhone14ProMaxDeepPurple-3.webp",
+            "photoFour": "/images/AppleiPhone14ProMaxDeepPurple-4.webp",
+            "photoFive": "/images/AppleiPhone14ProMaxDeepPurple-5.webp"
         }
     }
 ]

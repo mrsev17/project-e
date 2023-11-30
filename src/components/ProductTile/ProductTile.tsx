@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { Product, setIsFavoriteProduct } from '../../redux/productsSlice';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { selectMode } from '../../redux/modeSlice';
@@ -9,9 +10,13 @@ interface ProductTileProps {
 }
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
+    const notify = () => toast(`${product.productName} ${product.isFavorite ? 'removed from' : 'added to'} favorite list`);
     const dispatch = useAppDispatch();
     const getMode: boolean = useAppSelector(selectMode);
-    const favoriteHandle = (id: string) => dispatch(setIsFavoriteProduct(id));
+    const favoriteHandle = (id: string) => {
+        dispatch(setIsFavoriteProduct(id));
+        notify();
+    };
     return (
         <div className={getMode ? styles.productTile : styles.productTileDark}>
             <div className={styles.productTileContainer}>

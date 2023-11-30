@@ -10,7 +10,8 @@ export interface Product {
     storage?: string;
     ram?: string;
     cpu?: string;
-    color: string;
+    color?: string;
+    genre?: string;
     id: string;
     price: number;
     inStock: boolean;

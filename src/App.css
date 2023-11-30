@@ -4,3 +4,22 @@
 .MuiBadge-badge {
     background-color: black !important;
 }
+.Toastify__toast-theme--dark,
+.Toastify__toast-theme--light {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.Toastify__toast {
+    border-radius: 14px !important;
+}
+.Toastify__close-button {
+    display: none;
+}
+.Toastify__toast-theme--dark.Toastify__toast--default {
+    background-color: #385170;
+}
+.Toastify__toast-theme--dark > .Toastify__toast-body {
+    color: whitesmoke;
+}
+.Toastify__toast-theme--light > .Toastify__toast-body {
+    color: #e91e63;
+}
