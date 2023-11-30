@@ -34,13 +34,13 @@ button > svg {
 @media (max-width: 567px) {
     .sunny {
         color: whitesmoke;
-        height: 34px;
-        width: 34px;
+        height: 36px;
+        width: 36px;
     }
 
     .moon {
         color: #e91e63;
-        height: 30px;
-        width: 30px;
+        height: 28px;
+        width: 28px;
     }
 }

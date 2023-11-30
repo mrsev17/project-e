@@ -90,6 +90,10 @@
     }
 }
 @media (max-width: 567px) {
+    .menuLight,
+    .menu {
+        display: none;
+    }
     .navigation {
         flex-direction: column;
     }

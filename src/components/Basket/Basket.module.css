@@ -10,3 +10,11 @@
     width: 22px;
     cursor: pointer;
 }
+@media (max-width: 567px) {
+    .basket__dark,
+    .basket__light {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+}

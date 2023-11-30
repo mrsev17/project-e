@@ -10,7 +10,7 @@ interface ProductTileProps {
 }
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
-    const notify = () => toast(`${product.productName} ${product.isFavorite ? 'removed from' : 'added to'} favorite list`);
+    const notify = () => toast(`${product.productName} ${product.isFavorite ? 'removed from' : 'added to'} wish list`);
     const dispatch = useAppDispatch();
     const getMode: boolean = useAppSelector(selectMode);
     const favoriteHandle = (id: string) => {

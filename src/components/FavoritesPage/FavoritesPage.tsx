@@ -10,7 +10,7 @@ export const FavoritesPage = () => {
     const getMode: boolean = useAppSelector(selectMode);
     return (
         <div>
-            <h1 className={getMode ? styles.favoriteTitleDark : styles.favoriteTitleLight}>Favorites Page</h1>
+            <h1 className={getMode ? styles.favoriteTitleDark : styles.favoriteTitleLight}>Wish List</h1>
             <div className={styles.favoriteList}>
                 {getProducts
                     .filter((product) => product.isFavorite)

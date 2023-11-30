@@ -1,0 +1,92 @@
+@keyframes fadeIn {
+    from {
+        transform: translateY(120px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.adaptiveMenuLight,
+.adaptiveMenu {
+    display: none;
+    border-radius: 50px;
+    justify-content: center;
+
+    max-width: 95%;
+    margin: 0 auto;
+    position: sticky;
+    top: 92%;
+    z-index: 100;
+    gap: 10%;
+    animation: fadeIn 1.1s ease-out forwards;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.adaptiveMenu {
+    background-color: #385170;
+}
+.adaptiveMenuLight {
+    background-color: white;
+}
+.adaptiveMenuSearchLight,
+.adaptiveMenuSearch,
+.adaptiveMenuUser,
+.adaptiveMenuUserLight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.adaptiveMenuUserLight > svg,
+.adaptiveMenuUser > svg {
+    width: 30px;
+    height: 30px;
+}
+.adaptiveMenuUser > svg {
+    fill: aliceblue;
+}
+.adaptiveMenuUserLight > svg {
+    fill: #e91e63;
+}
+.adaptiveMenuSearchLight,
+.adaptiveMenuSearch {
+    transform: scale(1.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin-top: -18px;
+}
+.adaptiveMenuSearch {
+    background-color: whitesmoke;
+}
+.adaptiveMenuSearchLight {
+    background-color: #e91e63;
+}
+.adaptiveMenuSearchLight > a > svg,
+.adaptiveMenuSearch > a > svg {
+    width: 36px;
+    height: 36px;
+}
+.adaptiveMenuSearchLight > a > svg {
+    color: aliceblue;
+}
+.adaptiveMenuSearch > a > svg {
+    color: black;
+}
+
+@media (max-width: 567px) {
+    .adaptiveMenuLight,
+    .adaptiveMenu {
+        display: flex;
+    }
+}
+@media (max-width: 400px) {
+    .adaptiveMenu {
+        gap: 20px;
+    }
+    .adaptiveMenuSearchLight,
+    .adaptiveMenuSearch {
+        transform: scale(1.1);
+        margin-top: -8px;
+    }
+}

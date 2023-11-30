@@ -10,3 +10,12 @@
 .favorites__light {
     color: #e91e63;
 }
+
+@media (max-width: 567px) {
+    .favorites__dark,
+    .favorites__light {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+    }
+}

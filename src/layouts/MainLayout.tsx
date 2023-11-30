@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Menu } from '../components';
+import { Menu, StickyAdaptiveMenu } from '../components';
 
 const MainLayout = () => {
     return (
         <>
             <Menu />
+            <StickyAdaptiveMenu />
             <Outlet />
         </>
     );

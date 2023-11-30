@@ -1,5 +1,7 @@
 .app {
     text-align: center;
+    min-height: 100vh;
+    height: 100%;
 }
 .MuiBadge-badge {
     background-color: black !important;
