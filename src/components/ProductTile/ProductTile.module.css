@@ -58,17 +58,17 @@
     max-height: 160px;
     border-radius: 4px;
 }
-.productNameDark > span,
-.productName > span {
+.productNameDark > a,
+.productName > a {
     max-width: 90%;
     text-align: center;
 }
 .productPriceDark > span,
-.productNameDark > span {
+.productNameDark > a {
     color: #e91e63;
 }
 .productPrice > span,
-.productName > span {
+.productName > a {
     color: #e7eaf6;
 }
 .productPriceDark > span,

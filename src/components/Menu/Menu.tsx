@@ -14,13 +14,13 @@ export const Menu = () => {
             <nav className={styles.navigation}>
                 <div className={styles.navigation__left}>
                     <FaReact className={getMode ? styles.logo__dark : styles.logo__light} />
-                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='.' end>
+                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='/' end>
                         rShop
                     </NavLink>
                 </div>
                 <div className={styles.navigation__right}>
-                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='catalog'>
-                        Catalog
+                    <NavLink className={getMode ? styles.link__dark : styles.link__light} to='products'>
+                        Products
                     </NavLink>
                     <ModeToggle />
                     <NavLink className={styles.link} to='favorites'>

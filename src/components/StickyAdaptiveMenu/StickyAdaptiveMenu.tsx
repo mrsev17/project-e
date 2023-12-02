@@ -19,7 +19,7 @@ export const StickyAdaptiveMenu = () => {
                 </NavLink>
             </div>
             <div className={getMode ? styles.adaptiveMenuSearch : styles.adaptiveMenuSearchLight}>
-                <NavLink to='catalog'>
+                <NavLink to='products'>
                     <GrSearch />
                 </NavLink>
             </div>

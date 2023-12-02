@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage } from './components';
+import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage } from './components';
 import MainLayout from './layouts/MainLayout';
 import './App.css';
 import { useAppDispatch, useAppSelector } from './hook';
@@ -26,7 +26,8 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path='/' element={<MainLayout />}>
                         <Route index element={<HomePage />} />
-                        <Route path='catalog' element={<CatalogPage />} />
+                        <Route path='products' element={<CatalogPage />} />
+                        <Route path='products/:category/:name/:id' element={<ProductPage />} />
                         <Route path='favorites' element={<FavoritesPage />} />
                         <Route path='basket' element={<BasketPage />} />
                         <Route path='*' element={<NotFoundPage />} />

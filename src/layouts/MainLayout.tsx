@@ -6,7 +6,9 @@ const MainLayout = () => {
         <>
             <Menu />
             <StickyAdaptiveMenu />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </>
     );
 };

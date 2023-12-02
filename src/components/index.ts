@@ -9,3 +9,4 @@ export * from './FavoritesPage';
 export * from './BasketPage';
 export * from './ProductTile';
 export * from './StickyAdaptiveMenu';
+export * from './ProductPage';
