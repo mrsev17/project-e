@@ -14,7 +14,7 @@ export const StickyAdaptiveMenu = () => {
                 <FaUser />
             </div>
             <div className='sticky-menu-item'>
-                <NavLink className='' to='favorites'>
+                <NavLink to='favorites'>
                     <Favorites />
                 </NavLink>
             </div>
@@ -24,7 +24,7 @@ export const StickyAdaptiveMenu = () => {
                 </NavLink>
             </div>
             <div className='sticky-menu-item'>
-                <NavLink className='' to='basket'>
+                <NavLink to='basket'>
                     <Basket />
                 </NavLink>
             </div>
