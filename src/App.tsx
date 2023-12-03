@@ -8,6 +8,7 @@ import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectMode } from './redux/modeSlice';
+/* styles/tailwind.css */
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch();

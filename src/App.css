@@ -1,3 +1,8 @@
+/* styles/tailwind.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 .app {
     text-align: center;
     min-height: 100vh;
