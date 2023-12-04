@@ -9,7 +9,7 @@ export const CatalogPage = () => {
     const getMode: boolean = useAppSelector(selectMode);
     return (
         <div>
-            <h1 className={getMode ? styles.titleCatalogPageDark : styles.titleCatalogPageLight}>Catalog Page</h1>
+            <h1 className={getMode ? styles.titleCatalogPageDark : styles.titleCatalogPageLight}>Catalog Page {products.length}</h1>
             <div className={styles.catalogList}>
                 {products.map((product, i) => {
                     return <ProductTile key={i} product={product} />;

@@ -7,8 +7,8 @@ export interface Product {
     productName: string;
     category: string;
     company: string;
-    storage?: string;
-    ram?: string;
+    storage?: number;
+    ram?: number;
     cpu?: string;
     color?: string;
     genre?: string;
@@ -16,6 +16,7 @@ export interface Product {
     price: number;
     inStock: boolean;
     isFavorite?: boolean;
+    videoCard?: string;
     photos: {
         photoOne: string;
         photoTwo: string;

@@ -12,6 +12,7 @@ interface CarouselProps {
 export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }) => {
     const getMode = useAppSelector(selectMode);
     const color = getMode ? darkAccent : lightAccent;
+    console.log(color);
     return (
         <Carousel
             className='rounded-xl'
@@ -21,7 +22,7 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
                         <span
                             key={i}
                             className={`block h-3 cursor-pointer rounded-full transition-all content-[''] ${
-                                activeIndex === i ? `w-3 bg-[${color}]` : `w-3 bg-[${color}]/50`
+                                activeIndex === i ? `w-3 bg-[#222831]` : `w-3 bg-[#222831]/50`
                             }`}
                             onClick={() => setActiveIndex(i)}
                         />

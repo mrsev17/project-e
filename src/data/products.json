@@ -1,10 +1,124 @@
 [
     {
+        "productName": "Razer Blade 15 Advanced Model",
+        "category": "Laptops",
+        "company": "Razer",
+        "storage": 1000,
+        "ram": 32,
+        "cpu": "Intel Core i7-12800H",
+        "videoCard": "NVIDIA GeForce RTX 3080 Ti",
+        "color": "Black",
+        "price": 3399.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/RazerBlade15AdvancedModel-1.webp",
+            "photoTwo": "/images/RazerBlade15AdvancedModel-2.webp",
+            "photoThree": "/images/RazerBlade15AdvancedModel-3.webp",
+            "photoFour": "/images/RazerBlade15AdvancedModel-4.webp"
+        }
+    },
+    {
+        "productName": "Lenovo Legion 9 16IRX8",
+        "category": "Laptops",
+        "company": "Lenovo",
+        "storage": 2000,
+        "ram": 64,
+        "cpu": "Intel Core i7-12800H",
+        "videoCard": "NVIDIA GeForce RTX 3080 Ti",
+        "color": "Black",
+        "price": 3399.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/LenovoLegion9-16IRX8-1.webp",
+            "photoTwo": "/images/LenovoLegion9-16IRX8-2.webp",
+            "photoThree": "/images/LenovoLegion9-16IRX8-3.webp",
+            "photoFour": "/images/LenovoLegion9-16IRX8-4.webp"
+        }
+    },
+    {
+        "productName": "Asus ROG Strix Scar 17 G733PY-LL020X",
+        "category": "Laptops",
+        "company": "Asus",
+        "storage": 2000,
+        "ram": 32,
+        "cpu": "AMD Ryzen 9 7945HX",
+        "videoCard": "NVIDIA GeForce RTX 4090",
+        "color": "Black",
+        "price": 3999.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AsusROGStrixScar17-G733PY-LL020X-1.webp",
+            "photoTwo": "/images/AsusROGStrixScar17-G733PY-LL020X-2.webp",
+            "photoThree": "/images/AsusROGStrixScar17-G733PY-LL020X-3.webp",
+            "photoFour": "/images/AsusROGStrixScar17-G733PY-LL020X-4.webp"
+        }
+    },
+    {
+        "productName": "Acer Enduro N7 EN715-51W-7243",
+        "category": "Laptops",
+        "company": "Acer",
+        "storage": 512,
+        "ram": 16,
+        "cpu": "Intel Core i7-8550U",
+        "videoCard": "Intel UHD Graphics 620",
+        "color": "Black",
+        "price": 3999.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AcerEnduro-N7-EN715-51W-7243-1.webp",
+            "photoTwo": "/images/AcerEnduro-N7-EN715-51W-7243-1.webp",
+            "photoThree": "/images/AcerEnduro-N7-EN715-51W-7243-1.webp",
+            "photoFour": "/images/AcerEnduro-N7-EN715-51W-7243-1.webp"
+        }
+    },
+    {
+        "productName": "Asus Zenbook Pro Duo 15 OLED UX582ZW-H2037X",
+        "category": "Laptops",
+        "company": "Asus",
+        "storage": 1000,
+        "ram": 32,
+        "cpu": "Intel Core i9-12900H",
+        "videoCard": "NVIDIA GeForce RTX 3070 Ti",
+        "color": "Blue",
+        "price": 3399.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AsusZenbookProDuo15OLEDUX582ZW-H2037X-1.webp",
+            "photoTwo": "/images/AsusZenbookProDuo15OLEDUX582ZW-H2037X-2.webp",
+            "photoThree": "/images/AsusZenbookProDuo15OLEDUX582ZW-H2037X-3.webp",
+            "photoFour": "/images/AsusZenbookProDuo15OLEDUX582ZW-H2037X-4.webp"
+        }
+    },
+    {
+        "productName": "Asus ProArt Studiobook 16 OLED H7604JI-MY064",
+        "category": "Laptops",
+        "company": "Asus",
+        "storage": 2000,
+        "ram": 32,
+        "cpu": "Intel Core i9-13980HX",
+        "videoCard": "NVIDIA GeForce RTX 4070",
+        "color": "Blue",
+        "price": 2999.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AsusProArtStudiobook16OLEDH7604JI-MY064-1.webp",
+            "photoTwo": "/images/AsusProArtStudiobook16OLEDH7604JI-MY064-2.webp",
+            "photoThree": "/images/AsusProArtStudiobook16OLEDH7604JI-MY064-3.webp",
+            "photoFour": "/images/AsusProArtStudiobook16OLEDH7604JI-MY064-4.webp"
+        }
+    },
+    {
         "productName": "MacBook Air M1 256GB 8GB Silver",
         "category": "Laptops",
         "company": "Apple",
-        "storage": "256gb",
-        "ram": "8gb",
+        "storage": 256,
+        "ram": 8,
         "cpu": "M1",
         "color": "silver",
         "price": 999,
@@ -22,8 +136,8 @@
         "productName": "MacBook Air M1 512GB 16GB Silver",
         "category": "Laptops",
         "company": "Apple",
-        "storage": "512gb",
-        "ram": "16gb",
+        "storage": 512,
+        "ram": 16,
         "cpu": "M1",
         "color": "silver",
         "price": 1199,
@@ -41,8 +155,8 @@
         "productName": "MacBook Air M1 256GB 8GB Space Gray",
         "category": "Laptops",
         "company": "Apple",
-        "storage": "256gb",
-        "ram": "8gb",
+        "storage": 256,
+        "ram": 8,
         "cpu": "M1",
         "color": "Space Gray",
         "price": 999,
@@ -60,8 +174,8 @@
         "productName": "MacBook Air M1 256GB 8GB Gold",
         "category": "Laptops",
         "company": "Apple",
-        "storage": "256gb",
-        "ram": "8gb",
+        "storage": 256,
+        "ram": 8,
         "cpu": "M1",
         "color": "Gold",
         "price": 999,
@@ -79,9 +193,10 @@
         "productName": "Dell XPS 17 9720",
         "category": "Laptops",
         "company": "Dell",
-        "storage": "256gb",
-        "ram": "16gb",
+        "storage": 256,
+        "ram": 16,
         "cpu": "Intel Core i7-12700H",
+        "videoCard": "NVIDIA GeForce RTX 3050",
         "color": "Silver",
         "price": 3199.99,
         "inStock": true,
@@ -139,6 +254,20 @@
         }
     },
     {
+        "productName": "Microsoft Xbox Series Х",
+        "category": "Game Consoles",
+        "company": "Microsoft",
+        "color": "Black",
+        "price": 599.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/XboxSeriesХ-1.webp",
+            "photoTwo": "/images/XboxSeriesХ-1.webp",
+            "photoThree": "/images/XboxSeriesХ-1.webp"
+        }
+    },
+    {
         "productName": "The Legend of Zelda: Tears of the Kingdom",
         "category": "Games",
         "company": "Nintendo",
@@ -151,6 +280,20 @@
             "photoTwo": "/images/TheLegendOfZeldaTearsOfTheKingdom-2.webp",
             "photoThree": "/images/TheLegendOfZeldaTearsOfTheKingdom-3.webp",
             "photoFour": "/images/TheLegendOfZeldaTearsOfTheKingdom-4.webp"
+        }
+    },
+    {
+        "productName": "Batman: Arkham Trilogy",
+        "category": "Games",
+        "company": "Rocksteady",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "Action-adventure",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/BatmanArkhamTrilogy-1.webp",
+            "photoTwo": "/images/BatmanArkhamTrilogy-2.webp",
+            "photoThree": "/images/BatmanArkhamTrilogy-3.webp"
         }
     },
     {
@@ -172,7 +315,7 @@
         "productName": "Apple iPhone 14 Pro Max 256GB Deep Purple",
         "category": "Samrtphones",
         "company": "Apple",
-        "storage": "256gb",
+        "storage": 256,
         "cpu": "Apple A16 Bionic",
         "color": "Deep Purple",
         "price": 1299,
@@ -184,6 +327,26 @@
             "photoThree": "/images/AppleiPhone14ProMaxDeepPurple-3.webp",
             "photoFour": "/images/AppleiPhone14ProMaxDeepPurple-4.webp",
             "photoFive": "/images/AppleiPhone14ProMaxDeepPurple-5.webp"
+        }
+    },
+    {
+        "productName": "MSI GE77 Raider HX12UHS",
+        "category": "Laptops",
+        "company": "MSI",
+        "storage": 2000,
+        "ram": 64,
+        "cpu": "Intel Core i9-12900HX",
+        "videoCard": "NVIDIA GeForce RTX 4080",
+        "color": "Dark Gray",
+        "price": 4799.99,
+        "inStock": true,
+        "isFavorite": false,
+
+        "photos": {
+            "photoOne": "/images/MSIGE77RaiderHX12UHS-1.webp",
+            "photoTwo": "/images/MSIGE77RaiderHX12UHS-2.webp",
+            "photoThree": "/images/MSIGE77RaiderHX12UHS-3.webp",
+            "photoFour": "/images/MSIGE77RaiderHX12UHS-4.webp"
         }
     }
 ]
