@@ -11,3 +11,4 @@ export * from './ProductTile';
 export * from './StickyAdaptiveMenu';
 export * from './ProductPage';
 export * from './CarouselProduct';
+export * from './FavoriteBtn';

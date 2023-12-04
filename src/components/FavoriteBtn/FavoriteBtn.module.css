@@ -1,0 +1,17 @@
+.favoriteLight,
+.favoriteDark {
+    width: 12%;
+}
+.favoriteDark > svg {
+    cursor: pointer;
+    height: 34px;
+    width: 34px;
+    fill: #e7eaf6;
+}
+
+.favoriteLight > svg {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    fill: #e91e63;
+}

@@ -22,7 +22,17 @@ export const ProductPage: React.FC = () => {
                         </div>
                     </div>
                     <div className={styles.productPageInfo}>
-                        <h1 className={getMode ? styles.productPageTitleDark : styles.productPageTitleLight}>{getTargetProduct.productName}</h1>
+                        <div className={styles.upperInfo}>
+                            <h1 className={getMode ? styles.productPageTitleDark : styles.productPageTitleLight}>{getTargetProduct.productName}</h1>
+                            <div className={getMode ? styles.accentLineDark : styles.accentLineLight}></div>
+                            <div className={getMode ? styles.priceInfoDark : styles.priceInfoLight}>
+                                <span>{getTargetProduct.price}$</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.bottomInfo}>
+                            <span className={getMode ? styles.idInfoDark : styles.idInfoLight}> ID: {getTargetProduct.id}</span>
+                        </div>
                     </div>
                 </div>
             </div>

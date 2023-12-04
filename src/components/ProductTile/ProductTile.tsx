@@ -1,24 +1,16 @@
-import { toast } from 'react-toastify';
-import { Product, setIsFavoriteProduct } from '../../redux/productsSlice';
-import { useAppDispatch, useAppSelector } from '../../hook';
+import { Product } from '../../redux/productsSlice';
+import { useAppSelector } from '../../hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './ProductTile.module.css';
-import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { Link } from 'react-router-dom';
+import { FavoriteBtn } from '../FavoriteBtn';
 
 interface ProductTileProps {
     product: Product;
 }
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
-    const notify = () => toast(`${product.productName} ${product.isFavorite ? 'removed from' : 'added to'} wish list`);
-    const dispatch = useAppDispatch();
     const getMode: boolean = useAppSelector(selectMode);
-    const favoriteHandle = (id: string) => {
-        dispatch(setIsFavoriteProduct(id));
-        notify();
-    };
-
     return (
         <div className={getMode ? styles.productTile : styles.productTileDark}>
             <div className={styles.productTileContainer}>
@@ -42,9 +34,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
                             </button>
                         )}
                     </div>
-                    <span onClick={() => favoriteHandle(product.id)}>
-                        <div className={getMode ? styles.favoriteDark : styles.favoriteLight}>{product.isFavorite ? <GoHeartFill /> : <GoHeart />}</div>
-                    </span>
+                    <FavoriteBtn productName={product.productName} productIsFavorite={product.isFavorite} productId={product.id} />
                 </div>
             </div>
         </div>
