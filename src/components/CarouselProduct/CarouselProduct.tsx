@@ -1,8 +1,5 @@
 import { Carousel, IconButton } from '@material-tailwind/react';
-import { useAppSelector } from '../../hook';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './CarouselProduct.module.css';
-import { darkAccent, lightAccent } from '../../utils/colorsCSS';
 
 interface CarouselProps {
     photos: string[];
@@ -10,9 +7,6 @@ interface CarouselProps {
 }
 
 export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }) => {
-    const getMode = useAppSelector(selectMode);
-    const color = getMode ? darkAccent : lightAccent;
-    console.log(color);
     return (
         <Carousel
             className='rounded-xl'

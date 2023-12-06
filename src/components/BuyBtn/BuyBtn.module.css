@@ -1,0 +1,64 @@
+.buyButtonLight,
+.buyButtonDark {
+    width: 75%;
+    height: 40px;
+}
+.buyButtonLight > button,
+.buyButtonDark > button {
+    cursor: pointer;
+    max-width: 220px;
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+}
+.buyButtonLight > button {
+    background-color: white;
+    border: 1px solid #e91e63;
+}
+.buyButtonDark > button {
+    background-color: #e7eaf6;
+    border: 1px solid transparent;
+}
+.buyButtonLight > button:hover {
+    background-color: #e91e63;
+    color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.buyButtonDark > button:hover {
+    background-color: #385170;
+    color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.buyButtonLight > .outOfStock:hover,
+.buyButtonDark > .outOfStock:hover {
+    cursor: default !important;
+    color: gray !important;
+    box-shadow: none !important;
+}
+.buyButtonDark > .outOfStock:hover {
+    background-color: #e7eaf6 !important;
+}
+.buyButtonLight > .outOfStock:hover {
+    background-color: transparent !important;
+}
+.buyLight {
+    color: #e91e63;
+}
+.buyDark {
+    color: #22313f;
+}
+.buyDark:hover {
+    background-color: #e7eaf6;
+}
+.outOfStock {
+    color: gray;
+}
+@media (max-width: 767px) {
+    .buyButtonLight > button,
+    .buyButtonDark > button {
+        margin: 0 auto;
+    }
+}

@@ -29,7 +29,7 @@
 }
 .priceInfoLight,
 .priceInfoDark {
-    font-size: 26px;
+    font-size: 28px;
 }
 .priceInfoDark {
     color: aliceblue;
@@ -87,4 +87,36 @@
 }
 .idInfoDark {
     color: aliceblue;
+}
+.productMidInfo {
+    display: flex;
+    justify-content: center;
+}
+.productMidInfo > div {
+    width: 20%;
+}
+
+@media (max-width: 992px) {
+    .productPageMainDark {
+        flex-direction: column;
+    }
+    .productPageImagesLight,
+    .productPageImages {
+        width: 100%;
+    }
+    .productPageInfo {
+        width: 100%;
+    }
+    .upperInfo {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .productMidInfo {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .productMidInfo > div {
+        width: 100%;
+    }
 }

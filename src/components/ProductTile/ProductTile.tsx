@@ -4,6 +4,7 @@ import { selectMode } from '../../redux/modeSlice';
 import styles from './ProductTile.module.css';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
+import { BuyBtn } from '../BuyBtn';
 
 interface ProductTileProps {
     product: Product;
@@ -25,15 +26,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
                 </div>
                 <div className={styles.productActionLine}></div>
                 <div className={styles.actionsWrapper}>
-                    <div className={getMode ? styles.buyButtonDark : styles.buyButtonLight}>
-                        {product.inStock ? (
-                            <button className={getMode ? styles.buyDark : styles.buyLight}>Buy</button>
-                        ) : (
-                            <button className={styles.outOfStock} disabled>
-                                Out of order
-                            </button>
-                        )}
-                    </div>
+                    <BuyBtn inStock={product.inStock} />
                     <FavoriteBtn productName={product.productName} productIsFavorite={product.isFavorite} productId={product.id} />
                 </div>
             </div>

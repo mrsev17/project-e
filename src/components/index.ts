@@ -12,3 +12,4 @@ export * from './StickyAdaptiveMenu';
 export * from './ProductPage';
 export * from './CarouselProduct';
 export * from './FavoriteBtn';
+export * from './BuyBtn';

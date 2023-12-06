@@ -348,5 +348,80 @@
             "photoThree": "/images/MSIGE77RaiderHX12UHS-3.webp",
             "photoFour": "/images/MSIGE77RaiderHX12UHS-4.webp"
         }
+    },
+    {
+        "productName": "Xiaomi PB3 30 000 mAh (White) PB3018ZM",
+        "category": "Powerbanks",
+        "company": "Xiaomi",
+        "color": "White",
+        "price": 42.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/XiaomiPB330000mAh(White)PB3018ZM-1.webp",
+            "photoTwo": "/images/XiaomiPB330000mAh(White)PB3018ZM-2.webp",
+            "photoThree": "/images/XiaomiPB330000mAh(White)PB3018ZM-3.webp",
+            "photoFour": "/images/XiaomiPB330000mAh(White)PB3018ZM-4.webp"
+        }
+    },
+    {
+        "productName": "Lenovo Go USB-C Laptop Power Bank 20000",
+        "category": "Powerbanks",
+        "company": "Lenovo",
+        "color": "Grey",
+        "price": 139.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/LenovoGoUSB-CLaptopPowerBank20000-1.webp",
+            "photoTwo": "/images/LenovoGoUSB-CLaptopPowerBank20000-2.webp",
+            "photoThree": "/images/LenovoGoUSB-CLaptopPowerBank20000-3.webp",
+            "photoFour": "/images/LenovoGoUSB-CLaptopPowerBank20000-4.webp"
+        }
+    },
+    {
+        "productName": "Valve Steam Deck 512GB",
+        "category": "Game Consoles",
+        "company": "Valve",
+        "storage": 512,
+        "price": 899.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/ValveSteamDeck512GB-1.webp",
+            "photoTwo": "/images/ValveSteamDeck512GB-2.webp",
+            "photoThree": "/images/ValveSteamDeck512GB-3.webp",
+            "photoFour": "/images/ValveSteamDeck512GB-4.webp"
+        }
+    },
+    {
+        "productName": "ASUS ROG Ally",
+        "category": "Game Consoles",
+        "company": "Asus",
+        "storage": 512,
+        "price": 799.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/ASUSROGAlly-1.webp",
+            "photoTwo": "/images/ASUSROGAlly-2.webp",
+            "photoThree": "/images/ASUSROGAlly-3.webp",
+            "photoFour": "/images/ASUSROGAlly-4.webp"
+        }
+    },
+    {
+        "productName": "The Elder Scrolls V: Skyrim Nintendo",
+        "category": "Games",
+        "company": "Bethesda",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "RPG",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/TheElderScrollsVSkyrimNintendo-1.webp",
+            "photoTwo": "/images/TheElderScrollsVSkyrimNintendo-2.webp",
+            "photoThree": "/images/TheElderScrollsVSkyrimNintendo-3.webp",
+            "photoFour": "/images/TheElderScrollsVSkyrimNintendo-4.webp"
+        }
     }
 ]

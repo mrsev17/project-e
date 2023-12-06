@@ -21,6 +21,7 @@ const App: React.FC = () => {
             dispatch(setInitialData());
         }
     }, [dispatch]);
+
     return (
         <BrowserRouter>
             <div className='app'>
