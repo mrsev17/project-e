@@ -313,7 +313,7 @@
     },
     {
         "productName": "Apple iPhone 14 Pro Max 256GB Deep Purple",
-        "category": "Samrtphones",
+        "category": "Smartphones",
         "company": "Apple",
         "storage": 256,
         "cpu": "Apple A16 Bionic",
@@ -422,6 +422,84 @@
             "photoTwo": "/images/TheElderScrollsVSkyrimNintendo-2.webp",
             "photoThree": "/images/TheElderScrollsVSkyrimNintendo-3.webp",
             "photoFour": "/images/TheElderScrollsVSkyrimNintendo-4.webp"
+        }
+    },
+    {
+        "productName": "Apple Watch ULTRA 2 49mm",
+        "category": "Smartwatches",
+        "company": "Apple",
+        "price": 799.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleWatchULTRA249mm-1.webp",
+            "photoTwo": "/images/AppleWatchULTRA249mm-2.webp",
+            "photoThree": "/images/AppleWatchULTRA249mm-3.webp"
+        }
+    },
+    {
+        "productName": "Apple Watch Series 9 45mm",
+        "category": "Smartwatches",
+        "company": "Apple",
+        "price": 549.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleWatchSeries945mm-1.webp",
+            "photoTwo": "/images/AppleWatchSeries945mm-2.webp",
+            "photoThree": "/images/AppleWatchSeries945mm-3.webp",
+            "photoFour": "/images/AppleWatchSeries945mm-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
+        "category": "Smartphones",
+        "company": "Apple",
+        "storage": 256,
+        "cpu": "Apple A17 Bionic",
+        "color": "Natural Titanium",
+        "price": 1399,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPhone15ProMax256GB-1.webp",
+            "photoTwo": "/images/AppleiPhone15ProMax256GB-2.webp",
+            "photoThree": "/images/AppleiPhone15ProMax256GB-3.webp",
+            "photoFour": "/images/AppleiPhone15ProMax256GB-4.webp",
+            "photoFive": "/images/AppleiPhone15ProMax256GB-5.webp"
+        }
+    },
+    {
+        "productName": "Apple iPhone 15 Plus 512GB Black",
+        "category": "Smartphones",
+        "company": "Apple",
+        "storage": 512,
+        "cpu": "Apple A16 Bionic",
+        "color": "Natural Titanium",
+        "price": 1399,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPhone15Plus512GBBlack-1.webp",
+            "photoTwo": "/images/AppleiPhone15Plus512GBBlack-2.webp",
+            "photoThree": "/images/AppleiPhone15Plus512GBBlack-3.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Pro 12.9 512GB M2 Wi-Fi Silver 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "storage": 512,
+        "cpu": "Apple M2",
+        "color": "Natural Titanium",
+        "price": 1499,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadPro12.9512GBM2WiFiSilver-1.webp",
+            "photoTwo": "/images/AppleiPadPro12.9512GBM2WiFiSilver-2.webp",
+            "photoThree": "/images/AppleiPadPro12.9512GBM2WiFiSilver-3.webp",
+            "photoFour": "/images/AppleiPadPro12.9512GBM2WiFiSilver-4.webp"
         }
     }
 ]

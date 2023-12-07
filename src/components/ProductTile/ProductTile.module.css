@@ -17,7 +17,7 @@
 }
 .productTileDark:hover,
 .productTile:hover {
-    transform: scale(1.025);
+    transform: scale(1.01);
 }
 .productTileDark {
     animation: fadeIn 1.5s ease-in-out;

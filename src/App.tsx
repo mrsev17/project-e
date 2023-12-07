@@ -8,11 +8,13 @@ import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectMode } from './redux/modeSlice';
+import { CategoryPage } from './components';
 /* styles/tailwind.css */
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch();
     const getMode = useAppSelector(selectMode);
+
     useEffect(() => {
         const storedData = localStorage.getItem('persist:e-app');
         if (storedData) {
@@ -30,6 +32,7 @@ const App: React.FC = () => {
                         <Route index element={<HomePage />} />
                         <Route path='products' element={<CatalogPage />} />
                         <Route path='products/:category/:name/:id' element={<ProductPage />} />
+                        <Route path=':category' element={<CategoryPage />} />
                         <Route path='favorites' element={<FavoritesPage />} />
                         <Route path='basket' element={<BasketPage />} />
                         <Route path='*' element={<NotFoundPage />} />

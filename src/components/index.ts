@@ -13,3 +13,4 @@ export * from './ProductPage';
 export * from './CarouselProduct';
 export * from './FavoriteBtn';
 export * from './BuyBtn';
+export * from './CategoryPage';

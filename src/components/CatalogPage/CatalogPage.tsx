@@ -2,8 +2,9 @@ import { useAppSelector } from '../../hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
 import { ProductTile } from '../ProductTile';
-import styles from './CatalogPage.module.css';
+
 import { useEffect } from 'react';
+import styles from './CatalogPage.module.css';
 
 export const CatalogPage = () => {
     const products: Product[] = useAppSelector(selectProducts);

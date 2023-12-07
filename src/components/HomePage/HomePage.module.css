@@ -1,0 +1,36 @@
+.title {
+    margin-bottom: 30px;
+}
+.categoriesContainer {
+    padding: 0 15px;
+}
+.productName,
+.productNameDark {
+    font-size: 24px;
+    border-radius: 12px;
+}
+.productName > a,
+.productNameDark > a {
+    padding: 12px;
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    transition: ease-in-out 0.5s;
+}
+.productNameDark {
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+.productNameDark > a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+.productName {
+    color: black;
+    border: 1px solid black;
+}
+.listCategory {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
