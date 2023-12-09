@@ -14,3 +14,6 @@ export * from './CarouselProduct';
 export * from './FavoriteBtn';
 export * from './BuyBtn';
 export * from './CategoryPage';
+export * from './CatalogList';
+export * from './Pagination';
+export * from './CategoryList';

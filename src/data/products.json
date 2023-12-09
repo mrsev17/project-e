@@ -212,6 +212,7 @@
     {
         "productName": "RavPower 20000mAh 60W PD USB-C+USB-A Black",
         "category": "Powerbanks",
+        "capacity": 20000,
         "company": "RavPower",
         "color": "Black",
         "price": 59.99,
@@ -271,6 +272,7 @@
         "productName": "The Legend of Zelda: Tears of the Kingdom",
         "category": "Games",
         "company": "Nintendo",
+        "platform": "Nintendo Switch",
         "price": 59.99,
         "inStock": true,
         "genre": "Action-adventure",
@@ -286,6 +288,7 @@
         "productName": "Batman: Arkham Trilogy",
         "category": "Games",
         "company": "Rocksteady",
+        "platform": "Nintendo Switch",
         "price": 49.99,
         "inStock": true,
         "genre": "Action-adventure",
@@ -299,6 +302,7 @@
     {
         "productName": "Red Dead Redemption Switch",
         "category": "Games",
+        "platform": "Nintendo Switch",
         "company": "Rockstar Games",
         "price": 49.99,
         "inStock": true,
@@ -341,7 +345,6 @@
         "price": 4799.99,
         "inStock": true,
         "isFavorite": false,
-
         "photos": {
             "photoOne": "/images/MSIGE77RaiderHX12UHS-1.webp",
             "photoTwo": "/images/MSIGE77RaiderHX12UHS-2.webp",
@@ -352,6 +355,7 @@
     {
         "productName": "Xiaomi PB3 30 000 mAh (White) PB3018ZM",
         "category": "Powerbanks",
+        "capacity": 30000,
         "company": "Xiaomi",
         "color": "White",
         "price": 42.99,
@@ -367,6 +371,7 @@
     {
         "productName": "Lenovo Go USB-C Laptop Power Bank 20000",
         "category": "Powerbanks",
+        "capacity": 20000,
         "company": "Lenovo",
         "color": "Grey",
         "price": 139.99,
@@ -413,6 +418,7 @@
         "productName": "The Elder Scrolls V: Skyrim Nintendo",
         "category": "Games",
         "company": "Bethesda",
+        "platform": "Nintendo Switch",
         "price": 49.99,
         "inStock": true,
         "genre": "RPG",
@@ -500,6 +506,22 @@
             "photoTwo": "/images/AppleiPadPro12.9512GBM2WiFiSilver-2.webp",
             "photoThree": "/images/AppleiPadPro12.9512GBM2WiFiSilver-3.webp",
             "photoFour": "/images/AppleiPadPro12.9512GBM2WiFiSilver-4.webp"
+        }
+    },
+    {
+        "productName": "Xiaomi 20 000mAh 50W",
+        "capacity": 20000,
+        "category": "Powerbanks",
+        "company": "Xiaomi",
+        "color": "Black",
+        "price": 49.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/Xiaomi20000mAh50W-1.webp",
+            "photoTwo": "/images/Xiaomi20000mAh50W-2.webp",
+            "photoThree": "/images/Xiaomi20000mAh50W-3.webp",
+            "photoFour": "/images/Xiaomi20000mAh50W-4.webp"
         }
     }
 ]

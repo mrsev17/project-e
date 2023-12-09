@@ -1,7 +1,7 @@
 .photoContainer {
     overflow: hidden;
-    width: 400px;
-    height: 820px;
+    width: 260px;
+    height: 520px;
     margin: 30px auto;
     display: flex;
     justify-content: center;

@@ -1,0 +1,30 @@
+.paginationDark,
+.paginationLight {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.paginationDark > button,
+.paginationLight > button {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paginationDark > button {
+    background-color: #22313f;
+    color: aliceblue;
+    border: 1px solid #22313f;
+}
+.paginationLight > button {
+    background-color: #e91e63;
+    color: white;
+    border: 1px solid #e91e63;
+}
+.active {
+    color: black !important;
+}
