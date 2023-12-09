@@ -1,12 +1,13 @@
 .catalogListCategory {
     margin: 10px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    width: 75%;
 }
 @media (min-width: 1680px) {
     .catalogListCategory {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -18,6 +19,7 @@
 @media (max-width: 992px) {
     .catalogListCategory {
         grid-template-columns: repeat(2, 1fr);
+        width: auto;
     }
 }
 @media (max-width: 567px) {

@@ -32,7 +32,24 @@
     border: 1px solid black;
 }
 .listCategory {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 992px) {
+    .listCategory {
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .listCategory {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 567px) {
+    .listCategory {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

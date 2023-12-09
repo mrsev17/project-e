@@ -3,10 +3,12 @@ import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 import storage from 'redux-persist/lib/storage';
 import modeReducer from './modeSlice';
 import productsReducer from './productsSlice';
+import filterReducer from './filterSlice';
 
 const rootReducer = combineReducers({
     mode: modeReducer,
     products: productsReducer,
+    filter: filterReducer,
 });
 
 const persistConfig = {
