@@ -8,7 +8,7 @@ import { useAppSelector } from '../../hook';
 import { selectMode } from '../../redux/modeSlice';
 
 export const Menu = () => {
-    const getMode = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector(selectMode);
     return (
         <header className={getMode ? styles.menu : styles.menuLight}>
             <nav className={styles.navigation}>

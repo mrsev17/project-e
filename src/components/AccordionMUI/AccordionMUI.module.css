@@ -1,0 +1,19 @@
+.accordionWrapper {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.accordionWrapper:last-child {
+    padding-bottom: 12px;
+}
+.categoryList {
+    text-align: start;
+}
+.categoryList > li > label {
+    display: flex;
+    gap: 8px;
+}
+.categoryList > li > label > span {
+    font-size: 16px;
+}

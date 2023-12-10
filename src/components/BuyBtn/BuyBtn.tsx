@@ -13,8 +13,7 @@ export const BuyBtn: React.FC<BuyBtnProps> = ({ inStock }) => {
         <div className={getMode ? styles.buyButtonDark : styles.buyButtonLight}>
             {inStock ? (
                 <button className={getMode ? styles.buyDark : styles.buyLight}>
-                    {' '}
-                    <span>Buy</span>{' '}
+                    <span>Buy</span>
                     <span>
                         <SlBasket />
                     </span>

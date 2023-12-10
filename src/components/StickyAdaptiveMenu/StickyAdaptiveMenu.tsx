@@ -7,7 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import styles from './StickyAdaptiveMenu.module.css';
 
 export const StickyAdaptiveMenu = () => {
-    const getMode = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector(selectMode);
     return (
         <div className={getMode ? styles.adaptiveMenu : styles.adaptiveMenuLight}>
             <div className={getMode ? styles.adaptiveMenuUser : styles.adaptiveMenuUserLight}>

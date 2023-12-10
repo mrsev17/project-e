@@ -6,7 +6,7 @@
         "storage": 1000,
         "ram": 32,
         "cpu": "Intel Core i7-12800H",
-        "videoCard": "NVIDIA GeForce RTX 3080 Ti",
+        "gpu": "NVIDIA GeForce RTX 3080 Ti",
         "color": "Black",
         "price": 3399.99,
         "inStock": true,
@@ -25,7 +25,7 @@
         "storage": 2000,
         "ram": 64,
         "cpu": "Intel Core i7-12800H",
-        "videoCard": "NVIDIA GeForce RTX 3080 Ti",
+        "gpu": "NVIDIA GeForce RTX 3080 Ti",
         "color": "Black",
         "price": 3399.99,
         "inStock": true,
@@ -44,7 +44,7 @@
         "storage": 2000,
         "ram": 32,
         "cpu": "AMD Ryzen 9 7945HX",
-        "videoCard": "NVIDIA GeForce RTX 4090",
+        "gpu": "NVIDIA GeForce RTX 4090",
         "color": "Black",
         "price": 3999.99,
         "inStock": true,
@@ -63,7 +63,7 @@
         "storage": 512,
         "ram": 16,
         "cpu": "Intel Core i7-8550U",
-        "videoCard": "Intel UHD Graphics 620",
+        "gpu": "Intel UHD Graphics 620",
         "color": "Black",
         "price": 3999.99,
         "inStock": false,
@@ -82,7 +82,7 @@
         "storage": 1000,
         "ram": 32,
         "cpu": "Intel Core i9-12900H",
-        "videoCard": "NVIDIA GeForce RTX 3070 Ti",
+        "gpu": "NVIDIA GeForce RTX 3070 Ti",
         "color": "Blue",
         "price": 3399.99,
         "inStock": false,
@@ -101,7 +101,7 @@
         "storage": 2000,
         "ram": 32,
         "cpu": "Intel Core i9-13980HX",
-        "videoCard": "NVIDIA GeForce RTX 4070",
+        "gpu": "NVIDIA GeForce RTX 4070",
         "color": "Blue",
         "price": 2999.99,
         "inStock": false,
@@ -196,7 +196,7 @@
         "storage": 256,
         "ram": 16,
         "cpu": "Intel Core i7-12700H",
-        "videoCard": "NVIDIA GeForce RTX 3050",
+        "gpu": "NVIDIA GeForce RTX 3050",
         "color": "Silver",
         "price": 3199.99,
         "inStock": true,
@@ -300,7 +300,7 @@
         }
     },
     {
-        "productName": "Red Dead Redemption Switch",
+        "productName": "Red Dead Redemption Nintendo Switch Version",
         "category": "Games",
         "platform": "Nintendo Switch",
         "company": "Rockstar Games",
@@ -340,7 +340,7 @@
         "storage": 2000,
         "ram": 64,
         "cpu": "Intel Core i9-12900HX",
-        "videoCard": "NVIDIA GeForce RTX 4080",
+        "gpu": "NVIDIA GeForce RTX 4080",
         "color": "Dark Gray",
         "price": 4799.99,
         "inStock": true,
@@ -353,7 +353,7 @@
         }
     },
     {
-        "productName": "Xiaomi PB3 30 000 mAh (White) PB3018ZM",
+        "productName": "Xiaomi PB3 30 000 mAh",
         "category": "Powerbanks",
         "capacity": 30000,
         "company": "Xiaomi",
@@ -400,6 +400,36 @@
         }
     },
     {
+        "productName": "Valve Steam Deck 256GB",
+        "category": "Game Consoles",
+        "company": "Valve",
+        "storage": 256,
+        "price": 799.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/ValveSteamDeck512GB-1.webp",
+            "photoTwo": "/images/ValveSteamDeck512GB-2.webp",
+            "photoThree": "/images/ValveSteamDeck512GB-3.webp",
+            "photoFour": "/images/ValveSteamDeck512GB-4.webp"
+        }
+    },
+    {
+        "productName": "Valve Steam Deck 128GB",
+        "category": "Game Consoles",
+        "company": "Valve",
+        "storage": 128,
+        "price": 699.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/ValveSteamDeck512GB-1.webp",
+            "photoTwo": "/images/ValveSteamDeck512GB-2.webp",
+            "photoThree": "/images/ValveSteamDeck512GB-3.webp",
+            "photoFour": "/images/ValveSteamDeck512GB-4.webp"
+        }
+    },
+    {
         "productName": "ASUS ROG Ally",
         "category": "Game Consoles",
         "company": "Asus",
@@ -415,7 +445,7 @@
         }
     },
     {
-        "productName": "The Elder Scrolls V: Skyrim Nintendo",
+        "productName": "The Elder Scrolls V: Skyrim Nintendo Switch Version",
         "category": "Games",
         "company": "Bethesda",
         "platform": "Nintendo Switch",
@@ -522,6 +552,125 @@
             "photoTwo": "/images/Xiaomi20000mAh50W-2.webp",
             "photoThree": "/images/Xiaomi20000mAh50W-3.webp",
             "photoFour": "/images/Xiaomi20000mAh50W-4.webp"
+        }
+    },
+    {
+        "productName": "Horizon Forbidden West PS4",
+        "category": "Games",
+        "company": "Sony Interactive Entertainment",
+        "platform": "PlayStation 4",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "RPG/Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/HORIZONZERODAWNFORBIDDENWESTps4-1.webp",
+            "photoTwo": "/images/HORIZONZERODAWNFORBIDDENWESTps4-2.webp",
+            "photoThree": "/images/HORIZONZERODAWNFORBIDDENWESTps4-3.webp"
+        }
+    },
+    {
+        "productName": "Horizon Forbidden West PS5",
+        "category": "Games",
+        "company": "Sony Interactive Entertainment",
+        "platform": "PlayStation 5",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "RPG/Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/HORIZONZERODAWNFORBIDDENWESTps5-1.webp",
+            "photoTwo": "/images/HORIZONZERODAWNFORBIDDENWESTps5-2.webp",
+            "photoThree": "/images/HORIZONZERODAWNFORBIDDENWESTps5-3.webp"
+        }
+    },
+    {
+        "productName": "Uncharted: Legacy of Thieves Collection",
+        "category": "Games",
+        "company": "Sony Interactive Entertainment",
+        "platform": "PlayStation 5",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/UnchartedLegacyofThievesCollectionps5-1.webp",
+            "photoTwo": "/images/UnchartedLegacyofThievesCollectionps5-2.webp",
+            "photoThree": "/images/UnchartedLegacyofThievesCollectionps5-3.webp"
+        }
+    },
+    {
+        "productName": "Hogwarts Legacy Deluxe Edition",
+        "category": "Games",
+        "company": "Avalanche",
+        "platform": "Xbox Series X",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/HogwartsLegacyDeluxeEditionXboxX-1.webp",
+            "photoTwo": "/images/HogwartsLegacyDeluxeEditionXboxX-2.webp"
+        }
+    },
+    {
+        "productName": "Dead Space",
+        "category": "Games",
+        "company": "Electronic Arts",
+        "platform": "Xbox Series X",
+        "price": 59.99,
+        "inStock": true,
+        "genre": "Horror",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/DeadSpace2023XboxX-1.webp",
+            "photoTwo": "/images/DeadSpace2023XboxX-2.webp",
+            "photoThree": "/images/DeadSpace2023XboxX-3.webp"
+        }
+    },
+    {
+        "productName": "Ghostrunner",
+        "category": "Games",
+        "company": "505 Games",
+        "platform": "Xbox Series X",
+        "price": 39.99,
+        "inStock": true,
+        "genre": "Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/GhostrunnerXboxSeriesX-1.webp",
+            "photoTwo": "/images/GhostrunnerXboxSeriesX-2.webp",
+            "photoThree": "/images/GhostrunnerXboxSeriesX-3.webp"
+        }
+    },
+    {
+        "productName": "Demons Souls Remake",
+        "category": "Games",
+        "company": "Sony Interactive Entertainment",
+        "platform": "PlayStation 5",
+        "price": 49.99,
+        "inStock": true,
+        "genre": "RPG",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/DemonsSoulsRemake-1.webp",
+            "photoTwo": "/images/DemonsSoulsRemake-2.webp",
+            "photoThree": "/images/DemonsSoulsRemake-3.webp"
+        }
+    },
+    {
+        "productName": "The Last Of Us Part I",
+        "category": "Games",
+        "company": "Sony Interactive Entertainment",
+        "platform": "PlayStation 5",
+        "price": 59.99,
+        "inStock": true,
+        "genre": "Action",
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/TheLastOfUsPartI-1.webp",
+            "photoTwo": "/images/TheLastOfUsPartI-2.webp",
+            "photoThree": "/images/TheLastOfUsPartI-3.webp"
         }
     }
 ]

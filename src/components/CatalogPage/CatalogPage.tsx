@@ -1,15 +1,14 @@
+import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
 import { selectTitleFilter } from '../../redux/filterSlice';
-import { Pagination } from '../Pagination';
-import { CatalogList } from '../CatalogList';
-import { useEffect, useState } from 'react';
+import { Pagination, CatalogList } from '../../components';
 import styles from './CatalogPage.module.css';
 
 export const CatalogPage = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [productsPerPage, setProductsPerPage] = useState<number>(8);
+    const [productsPerPage] = useState<number>(8);
 
     const products: Product[] = useAppSelector(selectProducts);
     const getMode: boolean = useAppSelector(selectMode);

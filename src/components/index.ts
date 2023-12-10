@@ -17,3 +17,4 @@ export * from './CategoryPage';
 export * from './CatalogList';
 export * from './Pagination';
 export * from './CategoryList';
+export * from './AccordionMUI';

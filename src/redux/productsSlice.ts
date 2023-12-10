@@ -20,7 +20,7 @@ export interface Product {
     photos: {
         photoOne: string;
         photoTwo: string;
-        photoThree: string;
+        photoThree?: string;
         photoFour?: string;
         photoFive?: string;
     };

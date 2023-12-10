@@ -11,7 +11,7 @@ interface PaginationProps {
 
 export const Pagination: React.FC<PaginationProps> = ({ totalItems, productsPerPage, setCurrentPage, currentPage }) => {
     const getMode: boolean = useAppSelector(selectMode);
-    let pages = [];
+    let pages: number[] = [];
     for (let i = 1; i <= Math.ceil(totalItems / productsPerPage); i += 1) {
         pages.push(i);
     }
