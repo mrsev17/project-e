@@ -5,11 +5,15 @@ import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { setDependencies } from '../../redux/filterSlice';
+import { useAppDispatch, useAppSelector } from '../../hook';
+import { selectDependncies } from '../../redux/filterSlice';
 import styles from './AccordionMUI.module.css';
 
 interface AccordionMUIProps {
     category: string;
     options: any;
+    setCurrentPage: (page: number) => void;
 }
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
@@ -43,11 +47,19 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options }) => {
+export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, setCurrentPage }) => {
+    const dependencies: (string | number)[] = useAppSelector(selectDependncies);
+    console.log(dependencies);
+    const dispatch = useAppDispatch();
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
     const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
         setExpanded(newExpanded ? panel : false);
+    };
+
+    const checkBoxHandle = (option: number | string) => {
+        setCurrentPage(1);
+        dispatch(setDependencies(option));
     };
 
     return (
@@ -61,7 +73,7 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options })
                         {(options as any).map((option: string | number, index: number) => (
                             <li key={index}>
                                 <label>
-                                    <input type='checkbox' />
+                                    <input type='checkbox' onChange={() => checkBoxHandle(option)} checked={dependencies.includes(option)} />
                                     <span>{option}</span>
                                 </label>
                             </li>
