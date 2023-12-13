@@ -1,13 +1,14 @@
 import * as React from 'react';
+import { setDependencies, selectDependncies } from '../../redux/filterSlice';
+import { useAppDispatch, useAppSelector } from '../../hook';
+import { selectMode } from '../../redux/modeSlice';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { setDependencies } from '../../redux/filterSlice';
-import { useAppDispatch, useAppSelector } from '../../hook';
-import { selectDependncies } from '../../redux/filterSlice';
+import Checkbox from '@mui/material/Checkbox';
 import styles from './AccordionMUI.module.css';
 
 interface AccordionMUIProps {
@@ -15,7 +16,7 @@ interface AccordionMUIProps {
     options: any;
     setCurrentPage: (page: number) => void;
 }
-
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
     border: `1px solid ${theme.palette.divider}`,
     '&:not(:last-child)': {
@@ -48,16 +49,20 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, setCurrentPage }) => {
+    const getMode: boolean = useAppSelector(selectMode);
+
     const dependencies: (string | number)[] = useAppSelector(selectDependncies);
-    console.log(dependencies);
+
     const dispatch = useAppDispatch();
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
-    const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-        setExpanded(newExpanded ? panel : false);
-    };
+    const handleChange =
+        (panel: string) =>
+        (event: React.SyntheticEvent, newExpanded: boolean): void => {
+            setExpanded(newExpanded ? panel : false);
+        };
 
-    const checkBoxHandle = (option: number | string) => {
+    const checkBoxHandle = (option: number | string): void => {
         setCurrentPage(1);
         dispatch(setDependencies(option));
     };
@@ -66,15 +71,29 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
         <div className={styles.accordionWrapper}>
             <Accordion expanded={expanded === category} onChange={handleChange(category)}>
                 <AccordionSummary aria-controls={`${category}d-content`} id={`${category}d-header`}>
-                    <Typography fontSize={20}>{category}</Typography>
+                    <Typography fontSize={18} sx={{ textTransform: 'uppercase', color: `${getMode ? '#385170' : '#e91e63'}` }}>
+                        {category}
+                    </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <ul className={styles.categoryList}>
                         {(options as any).map((option: string | number, index: number) => (
                             <li key={index}>
                                 <label>
-                                    <input type='checkbox' onChange={() => checkBoxHandle(option)} checked={dependencies.includes(option)} />
-                                    <span>{option}</span>
+                                    <Checkbox
+                                        {...label}
+                                        sx={{
+                                            fontSize: '20px',
+                                            padding: '4px 0 4px 4p',
+                                            color: `${getMode ? '#385170' : '#e91e63'}`,
+                                            '&.Mui-checked': {
+                                                color: `${getMode ? '#385170' : '#e91e63'}`,
+                                            },
+                                        }}
+                                        onChange={() => checkBoxHandle(option)}
+                                        checked={dependencies.includes(option)}
+                                    />
+                                    <span className={getMode ? styles.nameOfTarget : styles.nameOfTargetLight}>{option}</span>
                                 </label>
                             </li>
                         ))}

@@ -12,8 +12,15 @@
 }
 .categoryList > li > label {
     display: flex;
-    gap: 8px;
+    gap: 4px;
 }
-.categoryList > li > label > span {
+
+.nameOfTarget {
+    padding-top: 8px;
+    font-size: 16px;
+}
+.nameOfTargetLight {
+    color: #e91e63;
+    padding-top: 8px;
     font-size: 16px;
 }

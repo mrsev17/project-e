@@ -20,7 +20,7 @@
     transform: scale(1.01);
 }
 .productTileDark {
-    animation: fadeIn 1.5s ease-in-out;
+    /* animation: fadeIn 1.5s ease-in-out; */
     height: 450px;
     border: 1px solid transparent;
     background-color: white;

@@ -1,12 +1,15 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector, useAppDispatch } from '../../hook';
 import { selectProducts, Product } from '../../redux/productsSlice';
-import { selectDependncies } from '../../redux/filterSlice';
+import { resetFilters, selectDependncies } from '../../redux/filterSlice';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CategoryList, Pagination, AccordionMUI } from '../../components';
+import { selectMode } from '../../redux/modeSlice';
 import styles from './CategoryPage.module.css';
+import { clear } from 'console';
 
 export const CategoryPage = () => {
+    const getMode: boolean = useAppSelector(selectMode);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(9);
     const location = useLocation();
@@ -17,7 +20,7 @@ export const CategoryPage = () => {
         return data.filter((product) => product.category === name);
     };
     const targetData: Product[] = getTargetCategoryItems(pathname.substring(1), products);
-    console.log(targetData);
+
     const filterDataByDepends = (dependencies: (string | number)[], targetProducts: Product[]) => {
         const copyOfData = [...targetProducts];
         const indexesOfDepies = targetProducts.reduce((acc: number[], product: Product, index: number) => {
@@ -37,13 +40,14 @@ export const CategoryPage = () => {
     const firstProductIndex: number = lastProductIndex - productsPerPage;
     const chooseOption = () => {
         if (dependencies.length === 0) {
-            const result = targetData;
-            return result;
+            // const result = targetData;
+            return targetData;
         } else {
             return updateAfterFilters;
         }
     };
     const actualData = chooseOption();
+    console.log(actualData);
     const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
 
     //
@@ -65,9 +69,22 @@ export const CategoryPage = () => {
         return result;
     };
 
+    interface UniqieValues {
+        company: string[];
+        storage?: number[];
+        ram?: number[];
+        cpu?: string[];
+        color?: string[];
+        genre?: string[];
+        // price: number;
+        // inStock: boolean;
+        // isFavorite?: boolean;
+        videoCard?: string[];
+    }
+
     const removeDuplicatesFromObject = (obj: any) => {
         const uniqueValues = {};
-        const filterUnique = (value: string | number, index: number, self: any) => {
+        const filterUnique = (value: string | number, index: number, self: (string | number)[]): boolean => {
             return self.indexOf(value) === index;
         };
         for (const key in obj) {
@@ -82,8 +99,12 @@ export const CategoryPage = () => {
 
     const entriesForFilters = filtersData(targetData, ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price']);
     const entriesRemoveDuplicates = removeDuplicatesFromObject(entriesForFilters);
-    // console.log(testRemoveDuplicates);
     //
+    const dispatch = useAppDispatch();
+    const clearFiltersHandle = () => {
+        dispatch(resetFilters());
+    };
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -92,7 +113,10 @@ export const CategoryPage = () => {
             <div className={styles.categoryPageContent}>
                 <h2 className={styles.categoryTitle}>{pathname.substring(1)}</h2>
                 <div className={styles.categoryWrapperContent}>
-                    <div className={styles.filter}>
+                    <div className={getMode ? styles.filter : styles.filterLight}>
+                        <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>
+                            Remove all filters
+                        </button>
                         {Object.entries(entriesRemoveDuplicates).map(([category, options]) => (
                             <AccordionMUI key={category} category={category} options={options} setCurrentPage={setCurrentPage} />
                         ))}
