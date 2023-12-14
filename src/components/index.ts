@@ -18,3 +18,6 @@ export * from './CatalogList';
 export * from './Pagination';
 export * from './CategoryList';
 export * from './AccordionMUI';
+export * from './Footer';
+export * from './Logo';
+export * from './SubscribeDiscounts';

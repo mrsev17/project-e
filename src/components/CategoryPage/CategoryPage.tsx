@@ -5,9 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CategoryList, Pagination, AccordionMUI } from '../../components';
 import { selectMode } from '../../redux/modeSlice';
-import { TextField } from '@mui/material';
 import styles from './CategoryPage.module.css';
-import { clear } from 'console';
 
 export const CategoryPage = () => {
     const getMode: boolean = useAppSelector(selectMode);
@@ -70,18 +68,18 @@ export const CategoryPage = () => {
         return result;
     };
 
-    interface UniqieValues {
-        company: string[];
-        storage?: number[];
-        ram?: number[];
-        cpu?: string[];
-        color?: string[];
-        genre?: string[];
-        // price: number;
-        // inStock: boolean;
-        // isFavorite?: boolean;
-        videoCard?: string[];
-    }
+    // interface UniqieValues {
+    //     company: string[];
+    //     storage?: number[];
+    //     ram?: number[];
+    //     cpu?: string[];
+    //     color?: string[];
+    //     genre?: string[];
+    //     // price: number;
+    //     // inStock: boolean;
+    //     // isFavorite?: boolean;
+    //     videoCard?: string[];
+    // }
 
     const removeDuplicatesFromObject = (obj: any) => {
         const uniqueValues = {};

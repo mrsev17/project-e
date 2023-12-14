@@ -1,0 +1,43 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.logo__dark {
+    margin-bottom: 5px;
+    width: 34px;
+    height: 34px;
+    fill: #5dacbd;
+    animation: rotate 20s linear infinite;
+}
+.logo__light {
+    margin-bottom: 5px;
+    width: 34px;
+    height: 34px;
+    fill: #e91e63;
+    animation: rotate 20s linear infinite;
+}
+.link__dark,
+.link__light {
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+.link__dark {
+    color: aliceblue;
+}
+.link__light {
+    color: #e91e63;
+}
+.link:hover {
+    color: #5dacbd;
+}
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

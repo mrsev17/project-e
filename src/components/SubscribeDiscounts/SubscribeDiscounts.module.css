@@ -1,0 +1,80 @@
+.subscribeDiscounts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #5dacbd;
+    border-radius: 12px;
+    padding: 4px 8px;
+    justify-content: center;
+}
+.subscribeDiscountsLight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e91e63;
+    border-radius: 12px;
+    padding: 4px 8px;
+    justify-content: center;
+}
+.wrapperSubs {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-bottom: 12px;
+}
+.wrapperSubsLight {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-bottom: 12px;
+}
+.wrapperSubs > span {
+    font-size: 20px;
+    color: #5dacbd;
+}
+.wrapperSubsLight > span {
+    font-size: 20px;
+    color: #e91e63;
+}
+.subscribeDiscounts > input {
+    border-radius: 8px;
+    padding: 4px 0 4px 8px;
+    outline: none;
+    margin-bottom: 12px;
+}
+.subscribeDiscountsLight > input {
+    border: 1px solid #f48db4;
+    color: #e91e63;
+    border-radius: 8px;
+    padding: 4px 0 4px 8px;
+    outline: none;
+    margin-bottom: 12px;
+}
+.subscribeDiscounts > button {
+    background-color: #5dacbd;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.subscribeDiscountsLight > button {
+    background-color: #e91e63;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.subscribeDiscounts > button:hover {
+    background-color: #79c2d0;
+    color: white;
+}
+.subscribeDiscountsLight > button:hover {
+    background-color: #c3195d;
+    color: white;
+}
+@media (max-width: 992px) {
+    .subscribeDiscounts {
+        width: 100%;
+        padding: 16px;
+    }
+}
