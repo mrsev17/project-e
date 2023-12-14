@@ -462,6 +462,8 @@
     },
     {
         "productName": "Apple Watch ULTRA 2 49mm",
+        "size": "49mm",
+        "resolution": "502 x 410",
         "category": "Smartwatches",
         "company": "Apple",
         "price": 799.99,
@@ -475,6 +477,8 @@
     },
     {
         "productName": "Apple Watch Series 9 45mm",
+        "size": "45mm",
+        "resolution": "396 x 484",
         "category": "Smartwatches",
         "company": "Apple",
         "price": 549.99,
@@ -671,6 +675,118 @@
             "photoOne": "/images/TheLastOfUsPartI-1.webp",
             "photoTwo": "/images/TheLastOfUsPartI-2.webp",
             "photoThree": "/images/TheLastOfUsPartI-3.webp"
+        }
+    },
+    {
+        "productName": "HUAWEI WATCH GT 4 41mm",
+        "size": "41mm",
+        "resolution": "466 × 466",
+        "category": "Smartwatches",
+        "company": "HUAWEI",
+        "price": 219.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/HUAWEIWATCHGT441mm-1.webp",
+            "photoTwo": "/images/HUAWEIWATCHGT441mm-2.webp",
+            "photoThree": "/images/HUAWEIWATCHGT441mm-3.webp",
+            "photoFour": "/images/HUAWEIWATCHGT441mm-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Watch6 40mm",
+        "size": "40mm",
+        "resolution": "432 x 432",
+        "category": "Smartwatches",
+        "company": "Samsung",
+        "price": 239.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/SamsungGalaxyWatch640mm-1.webp",
+            "photoTwo": "/images/SamsungGalaxyWatch640mm-2.webp",
+            "photoThree": "/images/SamsungGalaxyWatch640mm-3.webp",
+            "photoFour": "/images/SamsungGalaxyWatch640mm-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Watch5 Pro 45 mm",
+        "size": "45mm",
+        "resolution": "450 х 450",
+        "category": "Smartwatches",
+        "company": "Samsung",
+        "price": 339.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/SamsungGalaxyWatch5Pro45mm-1.webp",
+            "photoTwo": "/images/SamsungGalaxyWatch5Pro45mm-2.webp",
+            "photoThree": "/images/SamsungGalaxyWatch5Pro45mm-3.webp",
+            "photoFour": "/images/SamsungGalaxyWatch5Pro45mm-4.webp"
+        }
+    },
+    {
+        "productName": "Amazfit GTS 4 Mini 20mm",
+        "size": "20mm",
+        "resolution": "336 x 384",
+        "category": "Smartwatches",
+        "company": "Amazfit",
+        "price": 99.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AmazfitGTS4Mini-1.webp",
+            "photoTwo": "/images/AmazfitGTS4Mini-2.webp",
+            "photoThree": "/images/AmazfitGTS4Mini-3.webp",
+            "photoFour": "/images/AmazfitGTS4Mini-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Watch4 44 mm",
+        "size": "36mm",
+        "resolution": "450 х 450",
+        "category": "Smartwatches",
+        "company": "Samsung",
+        "price": 219.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/SamsungGalaxyWatch444mm-1.webp",
+            "photoTwo": "/images/SamsungGalaxyWatch444mm-2.webp",
+            "photoThree": "/images/SamsungGalaxyWatch444mm-3.webp",
+            "photoFour": "/images/SamsungGalaxyWatch444mm-4.webp"
+        }
+    },
+    {
+        "productName": "Amazfit GTS 4",
+        "size": "38mm",
+        "resolution": "390 x 450",
+        "category": "Smartwatches",
+        "company": "Samsung",
+        "price": 149.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AmazfitGTS4-1.webp",
+            "photoTwo": "/images/AmazfitGTS4-2.webp",
+            "photoThree": "/images/AmazfitGTS4-3.webp",
+            "photoFour": "/images/AmazfitGTS4-4.webp"
+        }
+    },
+    {
+        "productName": "Michael Kors Gen 6 44 mm",
+        "size": "44mm",
+        "resolution": "416 x 416",
+        "category": "Smartwatches",
+        "company": "Michael Cors",
+        "price": 279.99,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/MichaelKorsGen644mm-1.webp",
+            "photoTwo": "/images/MichaelKorsGen644mm-2.webp",
+            "photoThree": "/images/MichaelKorsGen644mm-3.webp",
+            "photoFour": "/images/MichaelKorsGen644mm-4.webp"
         }
     }
 ]

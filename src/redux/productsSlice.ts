@@ -12,6 +12,8 @@ export interface Product {
     cpu?: string;
     color?: string;
     genre?: string;
+    size?: string;
+    resolution?: string;
     id: string;
     price: number;
     inStock: boolean;

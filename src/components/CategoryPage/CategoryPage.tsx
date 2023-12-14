@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CategoryList, Pagination, AccordionMUI } from '../../components';
 import { selectMode } from '../../redux/modeSlice';
+import { TextField } from '@mui/material';
 import styles from './CategoryPage.module.css';
 import { clear } from 'console';
 
@@ -117,6 +118,10 @@ export const CategoryPage = () => {
                         <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>
                             Remove all filters
                         </button>
+                        <div className={styles.priceSelector}>
+                            <span>Price:</span>
+                            <div className={styles.priceInputs}></div>
+                        </div>
                         {Object.entries(entriesRemoveDuplicates).map(([category, options]) => (
                             <AccordionMUI key={category} category={category} options={options} setCurrentPage={setCurrentPage} />
                         ))}
