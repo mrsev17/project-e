@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
 import { selectTitleFilter } from '../../redux/filterSlice';

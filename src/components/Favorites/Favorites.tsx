@@ -1,5 +1,5 @@
 import { FaHeart } from 'react-icons/fa';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectProducts, Product } from '../../redux/productsSlice';
 import Badge from '@mui/material/Badge';
 import styles from './Favorites.module.css';

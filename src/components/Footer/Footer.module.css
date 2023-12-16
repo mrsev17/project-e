@@ -72,6 +72,10 @@
     align-items: center;
     gap: 12px;
 }
+.footerWrapperRight > ul > li > a > svg,
+.footerWrapperRightLight > ul > li > a > svg {
+    margin: 0 auto;
+}
 .footerWrapperRight > ul > li > a > span {
     color: aliceblue;
     font-size: 18px;
@@ -129,6 +133,16 @@
 }
 .footerWrapperMidLight > ul > li {
     text-align: start;
+}
+.footerWrapperMid > ul > li > a,
+.footerWrapperMidLight > ul > li > a {
+    transition: ease-in-out 0.5s;
+}
+.footerWrapperMid > ul > li > a:hover {
+    color: #5dacbd;
+}
+.footerWrapperMidLight > ul > li > a:hover {
+    color: #5dacbd;
 }
 .footerWrapperMid > ul > li > a {
     color: aliceblue;

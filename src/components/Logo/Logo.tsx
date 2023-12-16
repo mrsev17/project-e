@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { FaReact } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';

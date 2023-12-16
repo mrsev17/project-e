@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { setDependencies, selectDependncies } from '../../redux/filterSlice';
-import { useAppDispatch, useAppSelector } from '../../hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';

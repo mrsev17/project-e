@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './Pagination.module.css';
 

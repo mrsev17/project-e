@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Favorites, Basket, ModeToggle } from '../../components';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { GrSearch } from 'react-icons/gr';
 import { FaUser } from 'react-icons/fa';

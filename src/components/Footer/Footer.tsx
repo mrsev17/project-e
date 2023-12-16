@@ -3,7 +3,7 @@ import { IoLogoGithub } from 'react-icons/io';
 import { FaLinkedin } from 'react-icons/fa6';
 import { SiTelegram } from 'react-icons/si';
 import { SubscribeDiscounts } from '../SubscribeDiscounts';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './Footer.module.css';
 
@@ -72,19 +72,19 @@ export const Footer = () => {
                             <li>
                                 <a href='https://github.com/mrsev17'>
                                     <IoLogoGithub />
-                                    <span>Git Hub</span>
+                                    {/* <span>Git Hub</span> */}
                                 </a>
                             </li>
                             <li>
                                 <a href='https://www.codewars.com/users/mrsev17'>
                                     <FaLinkedin />
-                                    <span>Linked In</span>
+                                    {/* <span>Linked In</span> */}
                                 </a>
                             </li>
                             <li>
                                 <a href='https://t.me/mrsev7'>
                                     <SiTelegram />
-                                    <span>Telegram</span>
+                                    {/* <span>Telegram</span> */}
                                 </a>
                             </li>
                         </ul>

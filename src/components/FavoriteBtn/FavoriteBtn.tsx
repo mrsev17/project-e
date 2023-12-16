@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { setIsFavoriteProduct } from '../../redux/productsSlice';
-import { useAppDispatch, useAppSelector } from '../../hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './FavoriteBtn.module.css';
 import { GoHeart, GoHeartFill } from 'react-icons/go';

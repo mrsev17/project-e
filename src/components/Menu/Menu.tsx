@@ -4,7 +4,7 @@ import styles from './Menu.module.css';
 import { Basket } from '../Basket';
 import { Favorites } from '../Favorites';
 import { Logo } from '../Logo';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 
 export const Menu = () => {

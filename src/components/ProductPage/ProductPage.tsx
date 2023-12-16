@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product } from '../../redux/productsSlice';
 import { useParams } from 'react-router-dom';

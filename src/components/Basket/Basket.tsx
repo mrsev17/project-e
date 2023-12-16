@@ -1,5 +1,5 @@
 import { SlBasket } from 'react-icons/sl';
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import Badge from '@mui/material/Badge';
 import styles from './Basket.module.css';

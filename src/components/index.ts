@@ -21,3 +21,8 @@ export * from './AccordionMUI';
 export * from './Footer';
 export * from './Logo';
 export * from './SubscribeDiscounts';
+export * from './LoginPage';
+export * from './RegisterPage';
+export * from './FormAuth';
+export * from './Login';
+export * from './SignUp';

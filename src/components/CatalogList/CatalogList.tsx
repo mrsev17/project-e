@@ -1,7 +1,7 @@
 import { Product } from '../../redux/productsSlice';
 import { ProductTile } from '../ProductTile';
 import { selectTitleFilter, setTitleFilter } from '../../redux/filterSlice';
-import { useAppSelector, useAppDispatch } from '../../hook';
+import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import styles from './CatalogList.module.css';
 
 interface CatalogListProps {

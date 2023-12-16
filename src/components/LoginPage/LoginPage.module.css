@@ -1,0 +1,14 @@
+.loginPageDark {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #22313f;
+    margin: 10px;
+    border-radius: 12px;
+    min-height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.loginPageDark > h2,
+.loginPageDark > p {
+    color: aliceblue;
+}

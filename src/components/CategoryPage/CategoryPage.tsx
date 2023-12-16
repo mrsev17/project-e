@@ -1,4 +1,4 @@
-import { useAppSelector, useAppDispatch } from '../../hook';
+import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { selectProducts, Product } from '../../redux/productsSlice';
 import { resetFilters, selectDependncies } from '../../redux/filterSlice';
 import { useLocation } from 'react-router-dom';

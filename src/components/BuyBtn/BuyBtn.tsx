@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { SlBasket } from 'react-icons/sl';
 import styles from './BuyBtn.module.css';

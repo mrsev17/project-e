@@ -4,11 +4,13 @@ import storage from 'redux-persist/lib/storage';
 import modeReducer from './modeSlice';
 import productsReducer from './productsSlice';
 import filterReducer from './filterSlice';
+import userReducer from './userSlice';
 
 const rootReducer = combineReducers({
     mode: modeReducer,
     products: productsReducer,
     filter: filterReducer,
+    user: userReducer,
 });
 
 const persistConfig = {

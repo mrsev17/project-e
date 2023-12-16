@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage } from './components';
+import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, LoginPage, RegisterPage } from './components';
 import MainLayout from './layouts/MainLayout';
 import './App.css';
-import { useAppDispatch, useAppSelector } from './hook';
+import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,6 +30,8 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path='/' element={<MainLayout />}>
                         <Route index element={<HomePage />} />
+                        <Route path='login' element={<LoginPage />} />
+                        <Route path='register' element={<RegisterPage />} />
                         <Route path='products' element={<CatalogPage />} />
                         <Route path='products/:category/:name/:id' element={<ProductPage />} />
                         <Route path=':category' element={<CategoryPage />} />
@@ -39,7 +41,7 @@ const App: React.FC = () => {
                     </Route>
                 </Routes>
                 <ToastContainer
-                    position='top-right'
+                    position='bottom-left'
                     autoClose={2000}
                     hideProgressBar={true}
                     newestOnTop={false}

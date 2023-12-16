@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hook';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
 import { ProductTile } from '../ProductTile';

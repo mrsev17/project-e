@@ -4,6 +4,9 @@
 @import 'tailwindcss/utilities';
 
 .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     min-height: 100vh;
     height: 100%;
@@ -27,10 +30,12 @@ a {
     display: none;
 }
 .Toastify__toast-theme--dark.Toastify__toast--default {
-    background-color: #385170;
+    /* background-color: #385170; */
+    background-color: aliceblue;
+    border: 1px solid black;
 }
 .Toastify__toast-theme--dark > .Toastify__toast-body {
-    color: whitesmoke;
+    color: black;
 }
 .Toastify__toast-theme--light > .Toastify__toast-body {
     color: #e91e63;
