@@ -1,0 +1,61 @@
+.formAuth,
+.formAuthLight {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.formAuth > input,
+.formAuthLight > input {
+    outline: none;
+    padding: 8px;
+    max-width: 520px;
+    width: 100%;
+    border-radius: 8px;
+    transition: ease-in-out 0.5s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.formAuth > input {
+    border: 1px solid transparent;
+}
+.formAuthLight > input {
+    border: 1px solid #e91e63;
+}
+.formAuth > input:focus,
+.formAuthLight > input:focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.formAuth > button,
+.formAuthLight > button {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.formAuth > button {
+    color: white;
+    border: 1px solid white;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: ease-in-out 0.5s;
+}
+.formAuth > button:hover {
+    border: 1px solid #5dacbd;
+    background-color: #5dacbd;
+    transform: scale(1.05);
+}
+.formAuthLight > button {
+    color: #e91e63;
+    border: 1px solid #e91e63;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: ease-in-out 0.5s;
+}
+.formAuthLight > button:hover {
+    color: white;
+    background-color: #e91e63;
+    transform: scale(1.025);
+}

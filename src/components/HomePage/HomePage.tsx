@@ -26,15 +26,21 @@ export const HomePage = () => {
     }, []);
     return (
         <div>
-            <h1 className={styles.title}>Home Page</h1>
-            {isAuth ? <h3>Welcome {email}</h3> : 'You need register or login'}
-            {isAuth ? <button onClick={() => dispatch(removeUser())}>Log out from {email}</button> : ''}
-            <button className={styles.redirect} onClick={handleRedirect}>
-                TEST PATH
-            </button>
+            <h1 className={getMode ? styles.title : styles.titleLight}>Home Page</h1>
+            <div className={getMode ? styles.authActions : styles.authActionsLight}>
+                {isAuth ? <h3 className={styles.welcome}>Welcome {email}</h3> : <h3 className={styles.registerOrLogin}>You need register or login</h3>}
+                {isAuth ? <button onClick={() => dispatch(removeUser())}>Log out from {email}</button> : ''}
+                {isAuth ? (
+                    ''
+                ) : (
+                    <button className={getMode ? styles.redirect : styles.redirectLight} onClick={handleRedirect}>
+                        Login or register
+                    </button>
+                )}
+            </div>
 
             <div className={styles.categoriesContainer}>
-                <ul className={styles.listCategory}>
+                <ul className={getMode ? styles.listCategory : styles.listCategoryLight}>
                     {categories.map((category, i) => (
                         <li className={getMode ? styles.productNameDark : styles.productName} key={i}>
                             <Link to={`/${category}`}>{`${category}`}</Link>

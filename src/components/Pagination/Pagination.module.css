@@ -15,14 +15,16 @@
     align-items: center;
     justify-content: center;
 }
+.paginationDark > button,
+.paginationLight > button {
+    color: white;
+}
 .paginationDark > button {
     background-color: #22313f;
-    color: aliceblue;
     border: 1px solid #22313f;
 }
 .paginationLight > button {
     background-color: #e91e63;
-    color: white;
     border: 1px solid #e91e63;
 }
 .active {

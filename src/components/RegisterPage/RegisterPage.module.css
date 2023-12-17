@@ -1,14 +1,57 @@
-.registerPageDark {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.registerPageDark,
+.registerPageLight {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #22313f;
     margin: 10px;
     border-radius: 12px;
-    min-height: 600px;
+    min-height: 630px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.registerPageDark {
+    background-color: #22313f;
+}
+.registerPageLight {
+    background-color: white;
+}
+.registerPageLight > h2,
+.registerPageLight > p {
+    color: black;
 }
 .registerPageDark > h2,
 .registerPageDark > p {
     color: aliceblue;
+}
+
+.registerPageLight > h2,
+.registerPageDark > p,
+.registerPageLight > h2,
+.registerPageDark > h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.registerPageDark > p > a {
+    color: #5dacbd;
+    transition: ease-in-out 0.5s;
+}
+.registerPageDark > p > a:hover {
+    color: #79c2d0;
+}
+
+.registerPageLight > h2,
+.registerPageLight > p > a,
+.registerPageLight > p > a:hover {
+    color: #e91e63;
+}
+.registerPageLight > p > a {
+    transition: ease-in-out 0.5s;
 }

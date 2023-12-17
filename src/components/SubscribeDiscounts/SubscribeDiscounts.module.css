@@ -1,76 +1,75 @@
-.subscribeDiscounts {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #5dacbd;
-    border-radius: 12px;
-    padding: 4px 8px;
-    justify-content: center;
-}
+.subscribeDiscounts,
 .subscribeDiscountsLight {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid #e91e63;
     border-radius: 12px;
     padding: 4px 8px;
     justify-content: center;
 }
-.wrapperSubs {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    margin-bottom: 12px;
+
+.subscribeDiscounts {
+    border: 1px solid #5dacbd;
 }
+.subscribeDiscountsLight {
+    border: 1px solid #e91e63;
+}
+.wrapperSubs,
 .wrapperSubsLight {
     display: flex;
     flex-direction: column;
     text-align: start;
     margin-bottom: 12px;
 }
-.wrapperSubs > span {
+
+.wrapperSubs > span,
+.wrapperSubsLight > span {
     font-size: 20px;
+}
+.wrapperSubs > span {
     color: #5dacbd;
 }
 .wrapperSubsLight > span {
-    font-size: 20px;
     color: #e91e63;
 }
-.subscribeDiscounts > input {
+.subscribeDiscounts > input,
+.subscribeDiscountsLight > input {
     border-radius: 8px;
     padding: 4px 0 4px 8px;
     outline: none;
     margin-bottom: 12px;
+}
+.subscribeDiscounts > input {
+    border: 1px solid transparent;
 }
 .subscribeDiscountsLight > input {
     border: 1px solid #f48db4;
     color: #e91e63;
-    border-radius: 8px;
-    padding: 4px 0 4px 8px;
-    outline: none;
-    margin-bottom: 12px;
 }
-.subscribeDiscounts > button {
-    background-color: #5dacbd;
+.subscribeDiscounts > button,
+.subscribeDiscountsLight > button {
     color: white;
     width: 100%;
     border-radius: 8px;
     margin-bottom: 12px;
+}
+
+.subscribeDiscounts > button {
+    background-color: #5dacbd;
 }
 .subscribeDiscountsLight > button {
     background-color: #e91e63;
-    color: white;
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 12px;
 }
+.subscribeDiscounts > button:hover,
+.subscribeDiscountsLight > button:hover {
+    color: white;
+}
+
 .subscribeDiscounts > button:hover {
     background-color: #79c2d0;
-    color: white;
 }
 .subscribeDiscountsLight > button:hover {
     background-color: #c3195d;
-    color: white;
 }
 @media (max-width: 992px) {
     .subscribeDiscounts {

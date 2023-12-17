@@ -11,7 +11,7 @@
     display: none;
     border-radius: 50px;
     justify-content: center;
-
+    width: 100%;
     max-width: 95%;
     margin: 0 auto;
     position: sticky;

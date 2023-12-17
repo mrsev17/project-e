@@ -6,21 +6,28 @@
         transform: translateY(0);
     }
 }
-.menu {
-    margin: 10px 10px 10px 10px;
-    background-color: #22313f;
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.menu,
+.menuLight {
+    margin: 10px;
     border-radius: 14px;
     transform: translateY(-100px);
     animation: fadeIn 1.1s ease-out forwards;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.menu {
+    background-color: #22313f;
+}
 .menuLight {
-    margin: 10px 10px 10px 10px;
     background-color: white;
-    border-radius: 14px;
-    transform: translateY(-100px);
-    animation: fadeIn 1.1s ease-out forwards;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .navigation {
@@ -51,28 +58,19 @@
 .link:hover {
     color: #5dacbd;
 }
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-.logo__dark {
-    margin-bottom: 5px;
-    width: 34px;
-    height: 34px;
-    fill: #5dacbd;
-    animation: rotate 20s linear infinite;
-}
+.logo__dark,
 .logo__light {
     margin-bottom: 5px;
     width: 34px;
     height: 34px;
-    fill: #e91e63;
     animation: rotate 20s linear infinite;
+}
+.logo__dark {
+    fill: #5dacbd;
+}
+.logo__light {
+    fill: #e91e63;
 }
 .navigation__right {
     margin-right: 18px;

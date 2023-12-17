@@ -1,14 +1,64 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .loginPageDark {
+    background-color: #22313f;
+}
+.loginPageLight {
+    background-color: white;
+}
+.loginPageDark,
+.loginPageLight {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #22313f;
     margin: 10px;
     border-radius: 12px;
-    min-height: 600px;
+    min-height: 630px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.loginPageLight > h2,
+.loginPageLight > p {
+    color: black;
 }
 .loginPageDark > h2,
 .loginPageDark > p {
     color: aliceblue;
+}
+.loginPageLight > p,
+.loginPageDark > p,
+.loginPageLight > h2,
+.loginPageDark > h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.loginPageDark > p > a {
+    color: #5dacbd;
+    text-transform: capitalize;
+    transition: ease-in-out 0.5s;
+}
+.loginPageDark > p > a:hover {
+    color: #79c2d0;
+    text-transform: capitalize;
+}
+
+.loginPageLight > h2,
+.loginPageLight > p > a,
+.loginPageLight > p > a:hover {
+    color: #e91e63;
+}
+
+.loginPageLight > p > a {
+    text-transform: capitalize;
+    transition: ease-in-out 0.5s;
+}
+.loginPageLight > p > a:hover {
+    text-transform: capitalize;
 }

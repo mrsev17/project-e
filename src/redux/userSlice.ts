@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserInitialState {
-    token?: string;
+    token: string;
     email: string;
     id: string;
 }
 
 interface SetUser {
-    token?: string;
+    token: string;
     email: string;
     id: string;
 }

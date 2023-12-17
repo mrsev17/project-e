@@ -1,50 +1,34 @@
+.footerContainerLight,
 .footerContainer {
-    margin: 10px;
-    background-color: #22313f;
     border-radius: 12px;
     min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+}
+
+.footerContainer {
+    background-color: #22313f;
 }
 .footerContainerLight {
-    margin: 10px;
     background-color: white;
-    border-radius: 12px;
-    min-height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.footerWrapper {
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-}
+.footerWrapper,
 .footerWrapperLight {
     padding: 18px;
     display: flex;
     justify-content: space-between;
 }
-.footerWrapperLeft {
-    max-width: 480px;
-    width: 100%;
-    display: flex;
-    gap: 12px;
-}
+.footerWrapperLeft,
 .footerWrapperLeftLight {
     max-width: 480px;
     width: 100%;
     display: flex;
     gap: 12px;
 }
-.footerWrapperRight {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+
 .footerWrapperRightLight {
     display: flex;
     flex-direction: column;
@@ -52,19 +36,22 @@
 }
 .footerWrapperRight > p {
     color: aliceblue;
-    font-size: 24px;
 }
 .footerWrapperRightLight > p {
     color: #e91e63;
+}
+
+.footerWrapperRight > p,
+.footerWrapperRightLight > p {
     font-size: 24px;
 }
-.footerWrapperRight > ul {
+.footerWrapperRight,
+.footerWrapperRightLight {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+    gap: 20px;
 }
+.footerWrapperRight > ul,
 .footerWrapperRightLight > ul {
     display: flex;
     flex-direction: column;
@@ -78,10 +65,12 @@
 }
 .footerWrapperRight > ul > li > a > span {
     color: aliceblue;
-    font-size: 18px;
 }
 .footerWrapperRightLight > ul > li > a > span {
     color: #e91e63;
+}
+.footerWrapperRight > ul > li > a > span,
+.footerWrapperRightLight > ul > li > a > span {
     font-size: 18px;
 }
 .footerWrapperRight > ul > li > a {
@@ -99,14 +88,15 @@
     width: 120px;
 }
 .footerWrapperRight > ul > li > a > svg {
-    width: 32px;
-    height: 32px;
     fill: aliceblue;
 }
 .footerWrapperRightLight > ul > li > a > svg {
+    fill: #e91e63;
+}
+.footerWrapperRight > ul > li > a > svg,
+.footerWrapperRightLight > ul > li > a > svg {
     width: 32px;
     height: 32px;
-    fill: #e91e63;
 }
 .footerWrapperMid > p {
     text-align: start;
@@ -118,19 +108,13 @@
     color: #e91e63;
     font-size: 24px;
 }
-.footerWrapperMid > ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
+.footerWrapperMid > ul,
 .footerWrapperMidLight > ul {
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
-.footerWrapperMid > ul > li {
-    text-align: start;
-}
+.footerWrapperMid > ul > li,
 .footerWrapperMidLight > ul > li {
     text-align: start;
 }
@@ -142,102 +126,69 @@
     color: #5dacbd;
 }
 .footerWrapperMidLight > ul > li > a:hover {
-    color: #5dacbd;
+    color: black;
 }
 .footerWrapperMid > ul > li > a {
     color: aliceblue;
-    font-size: 18px;
 }
 
 .footerWrapperMidLight > ul > li > a {
     color: #e91e63;
+}
+.footerWrapperMid > ul > li > a,
+.footerWrapperMidLight > ul > li > a {
     font-size: 18px;
 }
-.footerMidWrapper {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-}
+.footerMidWrapper,
 .footerMidWrapperLight {
     width: 50%;
     display: flex;
     justify-content: space-around;
 }
 @media (max-width: 992px) {
+    .footerWrapperLight,
     .footerWrapper {
         flex-direction: column;
         align-items: center;
         gap: 20px;
         max-width: none;
     }
+    .footerWrapperLeftLight,
     .footerWrapperLeft {
         align-items: center;
         flex-direction: column;
         width: 100%;
     }
+    .footerWrapperRightLight,
     .footerWrapperRight {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
+    .footerMidWrapperLight,
     .footerMidWrapper {
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .footerWrapperLight {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        max-width: none;
-    }
-    .footerWrapperLeftLight {
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-    }
-    .footerWrapperRightLight {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .footerMidWrapperLight {
         align-items: center;
         justify-content: space-between;
         width: 100%;
     }
 }
 @media (max-width: 576px) {
-    .footerContainer {
-        padding-bottom: 120px;
-    }
+    .footerContainer,
     .footerContainerLight {
         padding-bottom: 120px;
     }
-    .footerMidWrapper {
+    .footerMidWrapper,
+    .footerMidWrapperLight {
         flex-direction: column;
-        /* align-items: center; */
         justify-content: start;
         gap: 20px;
     }
+    .footerWrapperMidLight,
     .footerWrapperMid {
         width: 100%;
     }
+    .footerWrapperRightLight > ul > li > a > svg,
     .footerWrapperRight > ul > li > a > svg {
-        width: 40px;
-        height: 40px;
-    }
-    .footerMidWrapperLight {
-        flex-direction: column;
-        /* align-items: center; */
-        justify-content: start;
-        gap: 20px;
-    }
-    .footerWrapperMidLight {
-        width: 100%;
-    }
-    .footerWrapperRightLight > ul > li > a > svg {
         width: 40px;
         height: 40px;
     }

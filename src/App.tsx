@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, LoginPage, RegisterPage } from './components';
 import MainLayout from './layouts/MainLayout';
-import './App.css';
 import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { selectMode } from './redux/modeSlice';
 import { CategoryPage } from './components';
-/* styles/tailwind.css */
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch();

@@ -1,10 +1,74 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .title {
-    margin-bottom: 30px;
-    font-size: 28px;
     color: aliceblue;
 }
+.titleLight {
+    color: #e91e63;
+}
+.title,
+.titleLight {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.authActions > button,
 .redirect {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+    max-width: 280px;
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: ease-in-out 0.5s;
+}
+.authActions > button:hover,
+.redirect:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+.authActionsLight > button,
+.redirect {
+    margin-bottom: 20px;
+    max-width: 280px;
+    border: 1px solid #e91e63;
+    border-radius: 8px;
+    transition: ease-in-out 0.5s;
+}
+.authActionsLight > button:hover,
+.redirect:hover {
+    background-color: #e91e63;
+    color: white;
+    transform: scale(1.05);
+}
+.authActionsLight,
+.authActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.authActions > h3 {
+    color: white;
+}
+
+.authActions > button {
+    color: white;
+    width: 100%;
+}
+.authActionsLight > h3 {
+    color: #e91e63;
+}
+
+.authActionsLight > button {
+    color: #e91e63;
+    width: 100%;
 }
 .categoriesContainer {
     padding: 0 15px;
@@ -18,34 +82,51 @@
 .productName > a,
 .productNameDark > a {
     padding: 12px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 100%;
     border-radius: 12px;
     transition: ease-in-out 0.5s;
 }
-.productNameDark {
-    color: #5dacbd;
-    border: 1px solid #5dacbd;
-    /* max-width: 400px; */
+.productNameDark,
+.productName {
     width: 100%;
-    height: 140px;
+    height: 120px;
     display: flex;
     align-items: center;
-    transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.4s;
     margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.productNameDark:hover {
-    background-color: aliceblue;
-    color: black;
+.productNameDark {
+    background-color: #22313f;
+    color: #5dacbd;
+    border: 1px solid transparent;
 }
-/* .productNameDark > a:hover {
-    background-color: aliceblue;
-    color: black;
-} */
 .productName {
-    color: black;
-    border: 1px solid black;
+    background-color: #e91e63;
+    color: white;
+    border: 1px solid #e91e63;
 }
+
+.productNameDark:hover,
+.productName:hover {
+    background-color: black;
+    transform: scale(1.025);
+}
+
+.productNameDark:hover {
+    border: 1px solid transparent;
+    transform: scale(1.025);
+}
+.productName:hover {
+    border: 1px solid black;
+    color: white;
+}
+
+.listCategoryLight,
 .listCategory {
     display: grid;
     gap: 40px;
@@ -53,17 +134,20 @@
 }
 
 @media (max-width: 992px) {
+    .listCategoryLight,
     .listCategory {
         gap: 20px;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 @media (max-width: 768px) {
+    .listCategoryLight,
     .listCategory {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 567px) {
+    .listCategoryLight,
     .listCategory {
         grid-template-columns: repeat(1, 1fr);
     }

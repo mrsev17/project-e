@@ -1,14 +1,15 @@
-.productPageWrapperDark {
-    background-color: #22313f;
+.productPageWrapperDark,
+.productPageWrapperLight {
     margin: 10px 10px 30px 10px;
     border-radius: 14px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.productPageWrapperDark {
+    background-color: #22313f;
+}
 .productPageWrapperLight {
     background-color: white;
-    margin: 10px 10px 30px 10px;
-    border-radius: 14px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .productPageContainer {
     padding: 0 18px;
@@ -43,11 +44,7 @@
 .accentLineLight {
     background-color: #233142;
 }
-.productPageImages {
-    width: 40%;
-    background-color: white;
-    border-radius: 12px;
-}
+.productPageImages,
 .productPageImagesLight {
     width: 40%;
     background-color: white;
@@ -101,9 +98,7 @@
         flex-direction: column;
     }
     .productPageImagesLight,
-    .productPageImages {
-        width: 100%;
-    }
+    .productPageImages,
     .productPageInfo {
         width: 100%;
     }

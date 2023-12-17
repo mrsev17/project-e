@@ -1,4 +1,3 @@
-/* styles/tailwind.css */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -30,7 +29,6 @@ a {
     display: none;
 }
 .Toastify__toast-theme--dark.Toastify__toast--default {
-    /* background-color: #385170; */
     background-color: aliceblue;
     border: 1px solid black;
 }
@@ -46,6 +44,7 @@ a {
 }
 .MuiButtonBase-root {
     padding: 4px !important;
+    gap: 12px !important;
 }
 .MuiAccordionSummary-content {
     margin: 4px 0 !important;

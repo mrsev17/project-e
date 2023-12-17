@@ -12,12 +12,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-/* @media (min-width: 1680px) {
-    .catalogList {
-        grid-template-columns: repeat(5, 1fr);
-    }
-} */
-
+.catalogListWrapper {
+    min-height: 800px;
+}
 @media (max-width: 1120px) {
     .catalogList {
         grid-template-columns: repeat(3, 1fr);

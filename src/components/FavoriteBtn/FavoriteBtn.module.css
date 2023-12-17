@@ -2,16 +2,18 @@
 .favoriteDark {
     width: 12%;
 }
-.favoriteDark > svg {
-    cursor: pointer;
-    height: 34px;
-    width: 34px;
-    fill: #e7eaf6;
-}
 
+.favoriteDark > svg,
 .favoriteLight > svg {
     cursor: pointer;
     height: 34px;
     width: 34px;
+}
+
+.favoriteDark > svg {
+    fill: #e7eaf6;
+}
+
+.favoriteLight > svg {
     fill: #e91e63;
 }

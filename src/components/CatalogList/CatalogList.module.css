@@ -1,21 +1,44 @@
+.searchCatalogListLigth,
 .catalogList {
     margin: 10px 10px 30px 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+.searchCatalogListLigth,
+.searchCatalogList {
+    border-radius: 12px;
+    margin: 10px 10px 20px 10px;
+    padding: 12px 0 12px 0;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .searchCatalogList {
     background-color: #22313f;
-    border-radius: 12px;
-    margin: 10px;
-    padding: 12px 0 12px 0;
 }
+.searchCatalogListLigth {
+    background-color: white;
+}
+.searchCatalogListLigth > input,
 .searchCatalogList > input {
+    border: 1px solid transparent;
+    margin-left: 20px;
+    max-width: 320px;
+    width: 100%;
     border-radius: 6px;
-
     outline: none;
-    padding-left: 8px;
+    padding: 8px 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: ease-in-out 0.5s;
 }
+.searchCatalogListLigth > input:focus,
+.searchCatalogList > input:focus {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.searchCatalogListLigth > input {
+    border: 1px solid #e91e63;
+}
+
 @media (min-width: 1680px) {
     .catalogList {
         grid-template-columns: repeat(4, 1fr);

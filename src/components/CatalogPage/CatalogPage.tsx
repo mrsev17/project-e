@@ -28,8 +28,8 @@ export const CatalogPage = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <div>
-            <h1 className={getMode ? styles.titleCatalogPageDark : styles.titleCatalogPageLight}>Catalog Page {products.length}</h1>
+        <div className={styles.catalogListWrapper}>
+            {/* <h1 className={getMode ? styles.titleCatalogPageDark : styles.titleCatalogPageLight}>Catalog Page {products.length}</h1> */}
             <CatalogList currentProducts={currentProducts} setCurrentPage={setCurrentPage} />
             <Pagination totalItems={filteredProducts.length} productsPerPage={productsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
         </div>
