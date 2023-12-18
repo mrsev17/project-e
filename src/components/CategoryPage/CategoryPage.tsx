@@ -98,7 +98,7 @@ export const CategoryPage = () => {
     //
 
     //
-    const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
+    // const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
 
     const filtersData = (categoryData: Product[], excludeKeys: string[] = []) => {
         interface ProductFilter {
@@ -176,6 +176,8 @@ export const CategoryPage = () => {
         }
     };
     const finalData = finalDataCheck();
+    // const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
+    const currentProducts: Product[] = finalData.slice(firstProductIndex, lastProductIndex);
     return (
         <div className={styles.categoryPage}>
             <div className={styles.categoryPageContent}>
@@ -195,13 +197,8 @@ export const CategoryPage = () => {
                     </div>
                     <div className={styles.categoryPageBottom}>
                         {/* <CategoryList targetData={getCompanies.length ? updateAfterFiltersTwo : currentProducts} /> */}
-                        <CategoryList targetData={finalData} />
-                        <Pagination
-                            totalItems={actualData.length}
-                            productsPerPage={productsPerPage}
-                            setCurrentPage={setCurrentPage}
-                            currentPage={currentPage}
-                        />
+                        <CategoryList targetData={currentProducts} />
+                        <Pagination totalItems={finalData.length} productsPerPage={productsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
                     </div>
                 </div>
             </div>
