@@ -62,9 +62,10 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
             setExpanded(newExpanded ? panel : false);
         };
 
-    const checkBoxHandle = (option: number | string): void => {
+    const checkBoxHandle = (option: number | string, category: string): void => {
         setCurrentPage(1);
-        dispatch(setDependencies(option));
+
+        dispatch(setDependencies({ option, category }));
     };
 
     return (
@@ -90,7 +91,7 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
                                                 color: `${getMode ? '#385170' : '#e91e63'}`,
                                             },
                                         }}
-                                        onChange={() => checkBoxHandle(option)}
+                                        onChange={() => checkBoxHandle(option, category)}
                                         checked={dependencies.includes(option)}
                                     />
                                     <span className={getMode ? styles.nameOfTarget : styles.nameOfTargetLight}>{option}</span>
