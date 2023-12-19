@@ -26,3 +26,5 @@ export * from './RegisterPage';
 export * from './FormAuth';
 export * from './Login';
 export * from './SignUp';
+export * from './ImageMagnifier';
+export * from './KeepMounted';

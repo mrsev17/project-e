@@ -1,0 +1,16 @@
+.imageCase {
+    transform: scale(1.5);
+}
+.modalWrapper {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 568px) {
+    .imageCase {
+        transform: scale(1);
+    }
+    /* .modalWrapper {
+        display: none;
+        justify-content: center;
+    } */
+}

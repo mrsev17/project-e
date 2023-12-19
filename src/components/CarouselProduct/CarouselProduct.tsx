@@ -1,5 +1,6 @@
 import { Carousel, IconButton } from '@material-tailwind/react';
-import styles from './CarouselProduct.module.css';
+import * as React from 'react';
+import { KeepMountedModal } from '../KeepMounted';
 
 interface CarouselProps {
     photos: string[];
@@ -9,7 +10,7 @@ interface CarouselProps {
 export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }) => {
     return (
         <Carousel
-            className='rounded-xl'
+            className='rounded-xl flex items-center'
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
                     {new Array(length).fill('').map((_, i) => (
@@ -40,9 +41,10 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
         >
             {photos.map((photo, i) => {
                 return (
-                    <div key={i} className={styles.photoContainer}>
-                        <img src={photo} alt={productName} />
-                    </div>
+                    // <div key={i} className={styles.photoContainer}>
+                    //     <img src={photo} alt={productName} />
+                    // </div>
+                    <KeepMountedModal key={i} photo={photo} productName={productName} />
                 );
             })}
         </Carousel>
