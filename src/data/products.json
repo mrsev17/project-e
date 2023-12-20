@@ -510,6 +510,24 @@
         }
     },
     {
+        "productName": "Apple iPhone 15 Pro Max 512GB Natural Titanium",
+        "category": "Smartphones",
+        "company": "Apple",
+        "storage": 512,
+        "cpu": "Apple A17 Bionic",
+        "color": "Natural Titanium",
+        "price": 1499,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPhone15ProMax256GB-1.webp",
+            "photoTwo": "/images/AppleiPhone15ProMax256GB-2.webp",
+            "photoThree": "/images/AppleiPhone15ProMax256GB-3.webp",
+            "photoFour": "/images/AppleiPhone15ProMax256GB-4.webp",
+            "photoFive": "/images/AppleiPhone15ProMax256GB-5.webp"
+        }
+    },
+    {
         "productName": "Apple iPhone 15 Plus 512GB Black",
         "category": "Smartphones",
         "company": "Apple",
@@ -526,12 +544,30 @@
         }
     },
     {
+        "productName": "Apple iPhone 15 Plus 256GB Black",
+        "category": "Smartphones",
+        "company": "Apple",
+        "storage": 256,
+        "cpu": "Apple A16 Bionic",
+        "color": "Natural Titanium",
+        "price": 1299,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPhone15Plus512GBBlack-1.webp",
+            "photoTwo": "/images/AppleiPhone15Plus512GBBlack-2.webp",
+            "photoThree": "/images/AppleiPhone15Plus512GBBlack-3.webp"
+        }
+    },
+    {
         "productName": "Apple iPad Pro 12.9 512GB M2 Wi-Fi Silver 2022",
         "category": "Tablets",
         "company": "Apple",
+        "diagonal": 12.9,
+        "resolution": "2732 x 2048",
         "storage": 512,
         "cpu": "Apple M2",
-        "color": "Natural Titanium",
+        "color": "Silver",
         "price": 1499,
         "inStock": true,
         "isFavorite": false,
@@ -787,6 +823,210 @@
             "photoTwo": "/images/MichaelKorsGen644mm-2.webp",
             "photoThree": "/images/MichaelKorsGen644mm-3.webp",
             "photoFour": "/images/MichaelKorsGen644mm-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Pro 11 1TB M2 Wi-Fi Silver 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 11,
+        "resolution": "2388 x 1668",
+        "storage": 1000,
+        "cpu": "Apple M2",
+        "color": "Silver",
+        "price": 1799.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-1.webp",
+            "photoTwo": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-2.webp",
+            "photoThree": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-3.webp",
+            "photoFour": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Pro 11 2TB M2 Wi-Fi Silver 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 11,
+        "resolution": "2388 x 1668",
+        "storage": 2000,
+        "cpu": "Apple M2",
+        "color": "Silver",
+        "price": 1999.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-1.webp",
+            "photoTwo": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-2.webp",
+            "photoThree": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-3.webp",
+            "photoFour": "/images/AppleiPadPro111TBM2WiFiSilver(MNXL3)2022-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Air 10.9 64GB Wi-Fi Purple (MME23) 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 10.9,
+        "resolution": "2360x1640",
+        "storage": 64,
+        "cpu": "Apple M1",
+        "color": "Purple",
+        "price": 779.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadAir10964GBWiFiPurple(MME23)2022-1.webp",
+            "photoTwo": "/images/AppleiPadAir10964GBWiFiPurple(MME23)2022-2.webp",
+            "photoThree": "/images/AppleiPadAir10964GBWiFiPurple(MME23)2022-4.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Air 10.9 64GB Wi-Fi Blue (MME23) 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 10.9,
+        "resolution": "2360x1640",
+        "storage": 64,
+        "cpu": "Apple M1",
+        "color": "Blue",
+        "price": 779.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-1.webp",
+            "photoTwo": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-2.webp",
+            "photoThree": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-3.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad Air 10.9 128GB Wi-Fi Blue (MME23) 2022",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 10.9,
+        "resolution": "2360x1640",
+        "storage": 128,
+        "cpu": "Apple M1",
+        "color": "Blue",
+        "price": 879.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-1.webp",
+            "photoTwo": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-2.webp",
+            "photoThree": "/images/AppleiPadAir109256GBWiFiBlue(MM9N3)2022-3.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad mini 8.3 64GB Wi-Fi Purple (MK7R3) 2021",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 8.3,
+        "resolution": "2266x1488",
+        "storage": 64,
+        "cpu": "Apple A15",
+        "color": "Purple",
+        "price": 659.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-1.webp",
+            "photoTwo": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-2.webp",
+            "photoThree": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-3.webp"
+        }
+    },
+    {
+        "productName": "Apple iPad mini 8.3 128GB Wi-Fi Purple (MK7R3) 2021",
+        "category": "Tablets",
+        "company": "Apple",
+        "diagonal": 8.3,
+        "resolution": "2266x1488",
+        "storage": 128,
+        "cpu": "Apple A15",
+        "color": "Purple",
+        "price": 759.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-1.webp",
+            "photoTwo": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-2.webp",
+            "photoThree": "/images/AppleiPadmini8364GBWiFiPurple(MK7R3)2021-3.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Tab А7 Lite 8.7 64Gb LTE Grey",
+        "category": "Tablets",
+        "company": "Samsung",
+        "diagonal": 8.7,
+        "resolution": "1340x800",
+        "storage": 64,
+        "cpu": "MediaTek Helio P22T",
+        "color": "Grey",
+        "price": 149.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-1.webp",
+            "photoTwo": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-2.webp",
+            "photoThree": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-3.webp",
+            "photoFour": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Tab А7 Lite 8.7 128Gb LTE Grey",
+        "category": "Tablets",
+        "company": "Samsung",
+        "diagonal": 8.7,
+        "resolution": "1340x800",
+        "storage": 128,
+        "cpu": "MediaTek Helio P22T",
+        "color": "Grey",
+        "price": 249.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-1.webp",
+            "photoTwo": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-2.webp",
+            "photoThree": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-3.webp",
+            "photoFour": "/images/SamsungGalaxyTabА7Lite87464GbLTEGrey-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Tab S7 FE 12.4 64GB Wi-Fi Black",
+        "category": "Tablets",
+        "company": "Samsung",
+        "diagonal": 12.4,
+        "resolution": "2560x1600",
+        "storage": 64,
+        "cpu": "Qualcomm Snapdragon 750G",
+        "color": "Black",
+        "price": 549.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-1.webp",
+            "photoTwo": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-2.webp",
+            "photoThree": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-3.webp",
+            "photoFour": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-4.webp"
+        }
+    },
+    {
+        "productName": "Samsung Galaxy Tab S7 FE 12.4 128GB Wi-Fi Black",
+        "category": "Tablets",
+        "company": "Samsung",
+        "diagonal": 12.4,
+        "resolution": "2560x1600",
+        "storage": 128,
+        "cpu": "Qualcomm Snapdragon 750G",
+        "color": "Black",
+        "price": 649.99,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-1.webp",
+            "photoTwo": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-2.webp",
+            "photoThree": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-3.webp",
+            "photoFour": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-4.webp"
         }
     }
 ]

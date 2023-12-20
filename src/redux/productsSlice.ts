@@ -19,6 +19,7 @@ export interface Product {
     inStock: boolean;
     isFavorite?: boolean;
     videoCard?: string;
+    diagonal?: number;
     photos: {
         photoOne: string;
         photoTwo: string;
