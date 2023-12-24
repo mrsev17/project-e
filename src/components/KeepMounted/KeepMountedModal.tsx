@@ -8,6 +8,7 @@ interface KeepMountedModalProps {
     productName: string;
 }
 const style = {
+    padding: '12px',
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
@@ -17,7 +18,7 @@ const style = {
     bgcolor: 'background.paper',
     border: '1px solid transparent',
     boxShadow: 24,
-    borderRadius: '12px',
+    borderRadius: '8px',
     // p: 4,
     display: 'flex',
     alignItems: 'center',

@@ -1,4 +1,6 @@
-import { useAppSelector } from '../../hooks/hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+// import { setViewedProduct, selectViewed } from '../../redux/lastViewedSlice';
+import { lastViewedProducts, setViewedProduct } from '../../redux/productsSlice';
 import { selectMode } from '../../redux/modeSlice';
 import { Product } from '../../redux/productsSlice';
 import { useParams } from 'react-router-dom';
@@ -7,6 +9,7 @@ import styles from './ProductPage.module.css';
 import { CarouselProduct } from '../CarouselProduct';
 import { useEffect } from 'react';
 import { BuyBtn } from '../BuyBtn';
+import { LastCheckdProducts } from '../LastCheckdProducts';
 // import { FavoriteBtn } from '../FavoriteBtn';
 
 interface extendProps extends Product {
@@ -14,11 +17,20 @@ interface extendProps extends Product {
 }
 
 export const ProductPage: React.FC = () => {
+    const dispatch = useAppDispatch();
+
+    const lastViewed = useAppSelector(lastViewedProducts);
+    console.log(lastViewed);
+    //
+
     const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price'];
     const { id } = useParams();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
     const getTargetProduct: extendProps = products.filter((product) => product.id === id)[0];
+    //
+    // dispatch(setViewedProduct(getTargetProduct));
+    //
     const getPhotosOfProduct: string[] = Object.values(getTargetProduct.photos);
     const renderCharacteristics = () => {
         const characteristics = [];
@@ -35,6 +47,7 @@ export const ProductPage: React.FC = () => {
     };
     useEffect(() => {
         window.scrollTo(0, 0);
+        dispatch(setViewedProduct(getTargetProduct));
     }, []);
     return (
         <div className={getMode ? styles.productPageWrapperDark : styles.productPageWrapperLight}>

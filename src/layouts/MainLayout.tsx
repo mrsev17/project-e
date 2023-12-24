@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Menu, StickyAdaptiveMenu, Footer } from '../components';
+import { Menu, StickyAdaptiveMenu, LastCheckdProducts, Footer } from '../components';
 
 const MainLayout = () => {
     return (
@@ -9,6 +9,7 @@ const MainLayout = () => {
             <main>
                 <Outlet />
             </main>
+            <LastCheckdProducts />
             <Footer />
         </>
     );

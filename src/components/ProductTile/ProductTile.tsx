@@ -5,7 +5,7 @@ import styles from './ProductTile.module.css';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
 import { BuyBtn } from '../BuyBtn';
-
+//
 interface ProductTileProps {
     product: Product;
 }

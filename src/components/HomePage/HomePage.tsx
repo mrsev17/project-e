@@ -15,6 +15,7 @@ export const HomePage = () => {
     const navigate = useNavigate();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
+    // console.log(products);
     const categories = getUniqueCategories(products);
 
     const handleRedirect = () => {
@@ -27,7 +28,7 @@ export const HomePage = () => {
     return (
         <div>
             <h1 className={getMode ? styles.title : styles.titleLight}>Home Page</h1>
-            <div className={getMode ? styles.authActions : styles.authActionsLight}>
+            {/* <div className={getMode ? styles.authActions : styles.authActionsLight}>
                 {isAuth ? <h3 className={styles.welcome}>Welcome {email}</h3> : <h3 className={styles.registerOrLogin}>You need register or login</h3>}
                 {isAuth ? <button onClick={() => dispatch(removeUser())}>Log out from {email}</button> : ''}
                 {isAuth ? (
@@ -37,7 +38,7 @@ export const HomePage = () => {
                         Login or register
                     </button>
                 )}
-            </div>
+            </div> */}
 
             <div className={styles.categoriesContainer}>
                 <ul className={getMode ? styles.listCategory : styles.listCategoryLight}>

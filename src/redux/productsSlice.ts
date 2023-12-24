@@ -31,10 +31,12 @@ export interface Product {
 
 interface ProductsState {
     products: Product[];
+    lastViewedProducts: Product[];
 }
 
 const initialState: ProductsState = {
     products: [],
+    lastViewedProducts: [],
 };
 
 const productsSlice = createSlice({
@@ -54,12 +56,28 @@ const productsSlice = createSlice({
                 }
                 return product;
             });
-            return { ...state, products: prepareData };
+            const checkLastViewed = state.lastViewedProducts.map((product) => {
+                if (product.id === action.payload) {
+                    return { ...product, isFavorite: !product.isFavorite };
+                }
+                return product;
+            });
+            return { ...state, products: prepareData, lastViewedProducts: checkLastViewed };
+        },
+        setViewedProduct(state, action: PayloadAction<Product>) {
+            state.lastViewedProducts = state.lastViewedProducts.filter((product) => product.id !== action.payload.id);
+            if (state.lastViewedProducts.length !== 6) {
+                state.lastViewedProducts.push(action.payload);
+            } else {
+                state.lastViewedProducts.shift();
+                state.lastViewedProducts.push(action.payload);
+            }
         },
     },
 });
 
 export const selectProducts = (state: RootState) => state.products.products;
+export const lastViewedProducts = (state: RootState) => state.products.lastViewedProducts;
 
-export const { setInitialData, setIsFavoriteProduct } = productsSlice.actions;
+export const { setInitialData, setIsFavoriteProduct, setViewedProduct } = productsSlice.actions;
 export default productsSlice.reducer;

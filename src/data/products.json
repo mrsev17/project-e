@@ -231,6 +231,7 @@
         "company": "Nintendo",
         "color": "White",
         "price": 349.99,
+        "storage": 64,
         "inStock": false,
         "isFavorite": false,
         "photos": {
@@ -246,6 +247,7 @@
         "company": "Sony",
         "color": "White",
         "price": 549.99,
+        "storage": 825,
         "inStock": false,
         "isFavorite": false,
         "photos": {
@@ -260,6 +262,7 @@
         "company": "Microsoft",
         "color": "Black",
         "price": 599.99,
+        "storage": 1000,
         "inStock": false,
         "isFavorite": false,
         "photos": {
@@ -1026,6 +1029,72 @@
             "photoTwo": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-2.webp",
             "photoThree": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-3.webp",
             "photoFour": "/images/Samsung GalaxyTabS7FE124464GBWiFiBlack-4.webp"
+        }
+    },
+    {
+        "productName": "Nintendo Switch Lite (Coral)",
+        "category": "Game-Consoles",
+        "company": "Nintendo",
+        "color": "Coral",
+        "price": 169.99,
+        "storage": 32,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/NintendoSwitchLiteCoral-1.webp",
+            "photoTwo": "/images/NintendoSwitchLiteCoral-2.webp",
+            "photoThree": "/images/NintendoSwitchLiteCoral-3.webp",
+            "photoFour": "/images/NintendoSwitchLiteCoral-4.webp",
+            "photoFive": "/images/NintendoSwitchLiteCoral-5.webp"
+        }
+    },
+    {
+        "productName": "Nintendo Switch Lite (Blue)",
+        "category": "Game-Consoles",
+        "company": "Nintendo",
+        "color": "Blue",
+        "price": 169.99,
+        "storage": 32,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/NintendoSwitchLiteBlue-1.webp",
+            "photoTwo": "/images/NintendoSwitchLiteBlue-2.webp",
+            "photoThree": "/images/NintendoSwitchLiteBlue-3.webp",
+            "photoFour": "/images/NintendoSwitchLiteBlue-4.webp",
+            "photoFive": "/images/NintendoSwitchLiteBlue-5.webp"
+        }
+    },
+    {
+        "productName": "Nintendo Switch Lite (Turquoise)",
+        "category": "Game-Consoles",
+        "company": "Nintendo",
+        "color": "Turquoise",
+        "price": 169.99,
+        "storage": 32,
+        "inStock": true,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/NintendoSwitchLiteTurquoise-1.webp",
+            "photoTwo": "/images/NintendoSwitchLiteTurquoise-2.webp",
+            "photoThree": "/images/NintendoSwitchLiteTurquoise-3.webp",
+            "photoFour": "/images/NintendoSwitchLiteTurquoise-4.webp"
+        }
+    },
+    {
+        "productName": "Nintendo Switch OLED (Neon Blue-Neon Red set)",
+        "category": "Game-Consoles",
+        "company": "Nintendo",
+        "color": "Red&Blue",
+        "price": 349.99,
+        "storage": 64,
+        "inStock": false,
+        "isFavorite": false,
+        "photos": {
+            "photoOne": "/images/NintendoSwitchOLEDModelNeonBlueNeonRedset-1.webp",
+            "photoTwo": "/images/NintendoSwitchOLEDModelNeonBlueNeonRedset-2.webp",
+            "photoThree": "/images/NintendoSwitchOLEDModelNeonBlueNeonRedset-3.webp",
+            "photoFour": "/images/NintendoSwitchOLEDModelNeonBlueNeonRedset-4.webp"
         }
     }
 ]

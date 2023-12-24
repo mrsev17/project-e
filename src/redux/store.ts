@@ -5,12 +5,14 @@ import modeReducer from './modeSlice';
 import productsReducer from './productsSlice';
 import filterReducer from './filterSlice';
 import userReducer from './userSlice';
+// import lastViewedReducer from './lastViewedSlice';
 
 const rootReducer = combineReducers({
     mode: modeReducer,
     products: productsReducer,
     filter: filterReducer,
     user: userReducer,
+    // lastViewed: lastViewedReducer,
 });
 
 const persistConfig = {

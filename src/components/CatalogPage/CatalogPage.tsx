@@ -8,7 +8,7 @@ import styles from './CatalogPage.module.css';
 
 export const CatalogPage = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [productsPerPage] = useState<number>(8);
+    const [productsPerPage] = useState<number>(12);
 
     const products: Product[] = useAppSelector(selectProducts);
     const getMode: boolean = useAppSelector(selectMode);
