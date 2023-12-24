@@ -35,8 +35,8 @@ export const ImageMagnifier: React.FC<ImageMagnifierProps> = ({ imgUrl, productN
                 <div
                     style={{
                         position: 'absolute',
-                        left: `${cursorPosition.x - 150}px`,
-                        top: `${cursorPosition.y - 150}px`,
+                        left: `${cursorPosition.x - 100}px`,
+                        top: `${cursorPosition.y - 100}px`,
                         pointerEvents: 'none',
                     }}
                 >

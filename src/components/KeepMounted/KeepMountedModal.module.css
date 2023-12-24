@@ -1,9 +1,16 @@
 .imageCase {
-    transform: scale(1.5);
+    width: auto;
+    /* height: auto; */
+
+    /* max-width: 1200px;
+    max-height: 1000px; */
 }
 .modalWrapper {
     display: flex;
     justify-content: center;
+}
+.modalWrapper > img {
+    transform: scale(0.5);
 }
 @media (max-width: 568px) {
     .imageCase {

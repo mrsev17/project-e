@@ -7,14 +7,32 @@ import styles from './ProductPage.module.css';
 import { CarouselProduct } from '../CarouselProduct';
 import { useEffect } from 'react';
 import { BuyBtn } from '../BuyBtn';
-import { FavoriteBtn } from '../FavoriteBtn';
+// import { FavoriteBtn } from '../FavoriteBtn';
+
+interface extendProps extends Product {
+    [key: string]: any;
+}
 
 export const ProductPage: React.FC = () => {
+    const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price'];
     const { id } = useParams();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
-    const getTargetProduct: Product = products.filter((product) => product.id === id)[0];
+    const getTargetProduct: extendProps = products.filter((product) => product.id === id)[0];
     const getPhotosOfProduct: string[] = Object.values(getTargetProduct.photos);
+    const renderCharacteristics = () => {
+        const characteristics = [];
+        for (const key in getTargetProduct) {
+            if (!entriesForFilters.includes(key) && key !== '[[Prototype]]') {
+                characteristics.push(
+                    <div key={key} className='characteristic'>
+                        <strong>{key}:</strong> {getTargetProduct[key]}
+                    </div>
+                );
+            }
+        }
+        return characteristics;
+    };
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -50,6 +68,7 @@ export const ProductPage: React.FC = () => {
 
                         <div className={styles.bottomInfo}>
                             {/* <span className={getMode ? styles.idInfoDark : styles.idInfoLight}> ID: {getTargetProduct.id}</span> */}
+                            <div className='specs'>{renderCharacteristics()}</div>
                         </div>
                     </div>
                 </div>

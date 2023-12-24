@@ -30,7 +30,6 @@ export const CategoryPage = () => {
     //
     const filterDataByDepends = (dependencies: (string | number)[], targetProducts: Product[]) => {
         if (getCompanies.length && updateDepies.length) {
-            console.log('TEST ACTION');
             const copyOfData = [...targetProducts];
             const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
 
@@ -48,7 +47,6 @@ export const CategoryPage = () => {
             return filterData;
             //
         } else if (getCompanies.length && !updateDepies.length) {
-            console.log('TEST EMPTY DEPIES');
             const copyOfData = [...targetProducts];
             const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
 
@@ -66,7 +64,6 @@ export const CategoryPage = () => {
             return filterData;
         } else {
             //
-            console.log('GET');
             const copyOfData = [...targetProducts];
             const indexesOfDepies = copyOfData.reduce((acc: number[], product: Product, index: number) => {
                 for (let i = 0; i <= updateDepies.length; i += 1) {
@@ -178,6 +175,7 @@ export const CategoryPage = () => {
     const finalData = finalDataCheck();
     // const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
     const currentProducts: Product[] = finalData.slice(firstProductIndex, lastProductIndex);
+
     return (
         <div className={styles.categoryPage}>
             <div className={styles.categoryPageContent}>
