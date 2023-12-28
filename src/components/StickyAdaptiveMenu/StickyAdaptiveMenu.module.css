@@ -8,6 +8,7 @@
 }
 .adaptiveMenuLight,
 .adaptiveMenu {
+    padding: 12px;
     display: none;
     border-radius: 50px;
     justify-content: center;
@@ -15,7 +16,7 @@
     max-width: 95%;
     margin: 0 auto;
     position: sticky;
-    top: 92%;
+    top: 89%;
     z-index: 100;
     gap: 10%;
     animation: fadeIn 1.1s ease-out forwards;
@@ -41,6 +42,10 @@
 .adaptiveMenuUser > svg {
     width: 30px;
     height: 30px;
+}
+.adaptiveMenuUser,
+.adaptiveMenuUserLight {
+    margin-bottom: 8px;
 }
 .adaptiveMenuUser > svg {
     fill: aliceblue;

@@ -7,6 +7,7 @@ import styles from './FavoritesPage.module.css';
 
 export const FavoritesPage = () => {
     const getProducts: Product[] = useAppSelector(selectProducts);
+    const getWishList = getProducts.filter((product) => product.isFavorite);
     const getMode: boolean = useAppSelector(selectMode);
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -14,12 +15,14 @@ export const FavoritesPage = () => {
     return (
         <div>
             <h1 className={getMode ? styles.favoriteTitleDark : styles.favoriteTitleLight}>Wish List</h1>
+            {!getWishList.length ? (
+                <h2 className={getMode ? styles.titleEmptyListDark : styles.titleEmptyListLight}>The list of favorite products is empty</h2>
+            ) : (
+                ''
+            )}
+
             <div className={styles.favoriteList}>
-                {getProducts
-                    .filter((product) => product.isFavorite)
-                    .map((product, i) => (
-                        <ProductTile key={i} product={product} />
-                    ))}
+                {getWishList.length !== 0 ? getWishList.map((product, i) => <ProductTile key={i} product={product} />) : ''}
             </div>
         </div>
     );
