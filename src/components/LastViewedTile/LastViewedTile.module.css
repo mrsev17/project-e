@@ -1,0 +1,150 @@
+.lastViewedTileDark,
+.lastViewedTileLight {
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: ease-in-out 0.5s;
+}
+.lastViewedTileDark {
+    background-color: #22313f;
+}
+.lastViewedTileLight {
+    background-color: white;
+}
+.lastViewedTileDark:hover,
+.lastViewedTileLight:hover {
+    transform: scale(1.0075);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.lastViewedTileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+.lastViewedTileUpper {
+    margin: 20px 0 20px 0;
+    width: 94%;
+    display: flex;
+    justify-content: end;
+}
+.lastViewedTileImage {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    max-width: 220px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.lastViewedTileImage > img {
+    padding: 12px;
+    margin: 0 auto;
+    max-height: 300px;
+    max-width: 220px;
+}
+.lastViewedTileLinkLight,
+.lastViewedTileLinkDark {
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lastViewedTileLinkDark > a {
+    font-size: 18px;
+    color: white;
+    transition: ease-in-out 0.7s;
+}
+.lastViewedTileLinkLight > a {
+    font-size: 18px;
+    color: #e91e63;
+    transition: ease-in-out 0.7s;
+}
+
+.lastViewedTileLinkDark > a:hover {
+    color: #5dacbd;
+}
+.lastViewedTileLinkLight > a:hover {
+    color: black;
+}
+.lastViewedTilePriceAndBuyDark,
+.lastViewedTilePriceAndBuyLight {
+    margin: 0 auto 20px;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lastViewedTilePriceDark > span,
+.lastViewedTilePriceLight > span {
+    font-size: 24px;
+}
+.lastViewedTilePriceDark > span {
+    color: white;
+}
+.lastViewedTilePriceLight > span {
+    color: #e91e63;
+}
+.lastViewedTileBuyLight > button > svg,
+.lastViewedTileBuyDark > button > svg {
+    margin: 0 auto;
+}
+.lastViewedTileBuyDark > button:hover {
+    background-color: #5dacbd;
+}
+.lastViewedTileBuyLight > button:hover {
+    background-color: black;
+}
+
+.basket__dark {
+    color: aliceblue;
+}
+.basket__light {
+    color: #e91e63;
+}
+.basket__dark,
+.basket__light {
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+    .lastViewedContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    .basket__dark,
+    .basket__light {
+        height: 30px;
+        width: 30px;
+    }
+}
+@media (max-width: 992px) {
+    .basket__dark,
+    .basket__light {
+        height: 30px;
+        width: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .basket__dark,
+    .basket__light {
+        height: 30px;
+        width: 30px;
+    }
+}
+@media (max-width: 567px) {
+    .basket__dark,
+    .basket__light {
+        height: 30px;
+        width: 30px;
+    }
+}

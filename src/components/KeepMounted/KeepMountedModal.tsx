@@ -19,7 +19,6 @@ const style = {
     border: '1px solid transparent',
     boxShadow: 24,
     borderRadius: '8px',
-    // p: 4,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

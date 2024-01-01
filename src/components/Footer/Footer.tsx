@@ -9,6 +9,15 @@ import styles from './Footer.module.css';
 
 export const Footer = () => {
     const getMode: boolean = useAppSelector(selectMode);
+    const servicesOptions = ['Bonus program', 'Gift cards', 'Credit and payment', 'Trade in', 'Service contracts', 'Payment'];
+    const buyerAssistanceOptions = [
+        'Сustomer help center',
+        'Find order',
+        'Delivery terms',
+        'Exchange and return of goods',
+        'Guarantee',
+        'Product status under repair',
+    ];
     return (
         <footer>
             <div className={getMode ? styles.footerContainer : styles.footerContainerLight}>
@@ -21,47 +30,25 @@ export const Footer = () => {
                         <div className={getMode ? styles.footerWrapperMid : styles.footerWrapperMidLight}>
                             <p>Services</p>
                             <ul>
-                                <li>
-                                    <a href=''>Bonus program</a>
-                                </li>
-                                <li>
-                                    <a href=''>Gift cards</a>
-                                </li>
-                                <li>
-                                    <a href=''>Credit and payment</a>
-                                </li>
-                                <li>
-                                    <a href=''>Trade in</a>
-                                </li>
-                                <li>
-                                    <a href=''>Service contracts</a>
-                                </li>
-                                <li>
-                                    <a href=''>Payment</a>
-                                </li>
+                                {servicesOptions.map((link, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <span>{link}</span>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                         <div className={getMode ? styles.footerWrapperMid : styles.footerWrapperMidLight}>
                             <p>Buyer assistance</p>
                             <ul>
-                                <li>
-                                    <a href=''>Сustomer help center</a>
-                                </li>
-                                <li>
-                                    <a href=''>Find order</a>
-                                </li>
-                                <li>
-                                    <a href=''>Delivery terms</a>
-                                </li>
-                                <li>
-                                    <a href=''>Exchange and return of goods</a>
-                                </li>
-                                <li>
-                                    <a href=''>Guarantee</a>
-                                </li>
-                                <li>
-                                    <a href=''>Product status under repair</a>
-                                </li>
+                                {buyerAssistanceOptions.map((link, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <span>{link}</span>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>
@@ -72,19 +59,16 @@ export const Footer = () => {
                             <li>
                                 <a href='https://github.com/mrsev17'>
                                     <IoLogoGithub />
-                                    {/* <span>Git Hub</span> */}
                                 </a>
                             </li>
                             <li>
                                 <a href='https://www.codewars.com/users/mrsev17'>
                                     <FaLinkedin />
-                                    {/* <span>Linked In</span> */}
                                 </a>
                             </li>
                             <li>
                                 <a href='https://t.me/mrsev7'>
                                     <SiTelegram />
-                                    {/* <span>Telegram</span> */}
                                 </a>
                             </li>
                         </ul>

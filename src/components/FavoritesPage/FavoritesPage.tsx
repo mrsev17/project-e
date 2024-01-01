@@ -20,7 +20,6 @@ export const FavoritesPage = () => {
             ) : (
                 ''
             )}
-
             <div className={styles.favoriteList}>
                 {getWishList.length !== 0 ? getWishList.map((product, i) => <ProductTile key={i} product={product} />) : ''}
             </div>

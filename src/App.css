@@ -1,16 +1,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-.app {
+/* .appLight,
+.appDark {
+} */
+.appLight {
+    background-color: #f1f1f1;
+}
+.appDark {
+    background-color: #385170;
+}
+.app-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
     min-height: 100vh;
     height: 100%;
-    max-width: 1680px;
+
     margin: 0 auto;
+    max-width: 1680px;
 }
 a {
     text-decoration: none;

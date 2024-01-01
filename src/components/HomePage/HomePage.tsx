@@ -5,7 +5,7 @@ import { selectMode } from '../../redux/modeSlice';
 import { selectProducts, Product } from '../../redux/productsSlice';
 import { getUniqueCategories } from '../../utils/functions';
 import { useAuth } from '../../hooks/useAuth';
-import { removeUser } from '../../redux/userSlice';
+// import { removeUser } from '../../redux/userSlice';
 import { useAppDispatch } from '../../hooks/hook';
 import styles from './HomePage.module.css';
 
@@ -16,7 +16,7 @@ export const HomePage = () => {
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
     // console.log(products);
-    const categories = getUniqueCategories(products);
+    const categories: unknown | string[] = getUniqueCategories(products);
 
     const handleRedirect = () => {
         navigate('/login');
@@ -42,11 +42,17 @@ export const HomePage = () => {
 
             <div className={styles.categoriesContainer}>
                 <ul className={getMode ? styles.listCategory : styles.listCategoryLight}>
-                    {categories.map((category, i) => (
-                        <li className={getMode ? styles.productNameDark : styles.productName} key={i}>
-                            <Link to={`/${category}`}>{`${category}`}</Link>
+                    {Array.isArray(categories) ? (
+                        categories.map((category: string, i: number) => (
+                            <li className={getMode ? styles.productNameDark : styles.productName} key={i}>
+                                <Link to={`/${category}`}>{category}</Link>
+                            </li>
+                        ))
+                    ) : (
+                        <li className={getMode ? styles.productNameDark : styles.productName}>
+                            <span>No categories available</span>
                         </li>
-                    ))}
+                    )}
                 </ul>
             </div>
         </div>

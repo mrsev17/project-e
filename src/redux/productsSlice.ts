@@ -17,7 +17,7 @@ export interface Product {
     id: string;
     price: number;
     inStock: boolean;
-    isFavorite?: boolean;
+    isFavorite: boolean;
     videoCard?: string;
     diagonal?: number;
     photos: {

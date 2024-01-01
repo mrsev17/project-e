@@ -34,8 +34,6 @@ const filtersSlice = createSlice({
                 } else {
                     state.companies.push(action.payload.option);
                 }
-
-                // console.log(state.companies);
             }
             if (state.dependencies.includes(action.payload.option)) {
                 state.dependencies = state.dependencies.filter((dep) => dep !== action.payload.option);

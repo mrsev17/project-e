@@ -17,8 +17,8 @@ export const ImageMagnifier: React.FC<ImageMagnifierProps> = ({ imgUrl, productN
 
     const handleMouseHover = (e: React.MouseEvent<HTMLDivElement>) => {
         const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = ((e.pageX - left) / width) * 100;
-        const y = ((e.pageY - top) / height) * 100;
+        const x: number = ((e.pageX - left) / width) * 100;
+        const y: number = ((e.pageY - top) / height) * 100;
         setPosition({ x, y });
         setCursorPosition({ x: e.pageX - left, y: e.pageY - top });
     };

@@ -118,25 +118,27 @@
 .footerWrapperMidLight > ul > li {
     text-align: start;
 }
-.footerWrapperMid > ul > li > a,
-.footerWrapperMidLight > ul > li > a {
+
+.footerWrapperMid > ul > li > span,
+.footerWrapperMidLight > ul > li > span {
     transition: ease-in-out 0.5s;
+    cursor: pointer;
 }
-.footerWrapperMid > ul > li > a:hover {
+.footerWrapperMid > ul > li > span:hover {
     color: #5dacbd;
 }
-.footerWrapperMidLight > ul > li > a:hover {
+.footerWrapperMidLight > ul > li > span:hover {
     color: black;
 }
-.footerWrapperMid > ul > li > a {
+.footerWrapperMid > ul > li > span {
     color: aliceblue;
 }
 
-.footerWrapperMidLight > ul > li > a {
+.footerWrapperMidLight > ul > li > span {
     color: #e91e63;
 }
-.footerWrapperMid > ul > li > a,
-.footerWrapperMidLight > ul > li > a {
+.footerWrapperMid > ul > li > span,
+.footerWrapperMidLight > ul > li > span {
     font-size: 18px;
 }
 .footerMidWrapper,

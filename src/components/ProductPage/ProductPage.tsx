@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-// import { setViewedProduct, selectViewed } from '../../redux/lastViewedSlice';
-import { lastViewedProducts, setViewedProduct } from '../../redux/productsSlice';
+import { setViewedProduct } from '../../redux/productsSlice';
 import { selectMode } from '../../redux/modeSlice';
 import { Product } from '../../redux/productsSlice';
 import { useParams } from 'react-router-dom';
@@ -9,8 +8,6 @@ import styles from './ProductPage.module.css';
 import { CarouselProduct } from '../CarouselProduct';
 import { useEffect } from 'react';
 import { BuyBtn } from '../BuyBtn';
-import { LastCheckdProducts } from '../LastCheckdProducts';
-// import { FavoriteBtn } from '../FavoriteBtn';
 
 interface extendProps extends Product {
     [key: string]: any;
@@ -18,19 +15,11 @@ interface extendProps extends Product {
 
 export const ProductPage: React.FC = () => {
     const dispatch = useAppDispatch();
-
-    const lastViewed = useAppSelector(lastViewedProducts);
-    console.log(lastViewed);
-    //
-
     const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price'];
     const { id } = useParams();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
     const getTargetProduct: extendProps = products.filter((product) => product.id === id)[0];
-    //
-    // dispatch(setViewedProduct(getTargetProduct));
-    //
     const getPhotosOfProduct: string[] = Object.values(getTargetProduct.photos);
     const renderCharacteristics = () => {
         const characteristics = [];
@@ -48,7 +37,7 @@ export const ProductPage: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(setViewedProduct(getTargetProduct));
-    }, []);
+    }, [getTargetProduct, dispatch]);
     return (
         <div className={getMode ? styles.productPageWrapperDark : styles.productPageWrapperLight}>
             <div className={styles.productPageContainer}>
@@ -62,9 +51,6 @@ export const ProductPage: React.FC = () => {
                         <div className={styles.upperInfo}>
                             <h1 className={getMode ? styles.productPageTitleDark : styles.productPageTitleLight}>{getTargetProduct.productName}</h1>
                             <div className={getMode ? styles.accentLineDark : styles.accentLineLight}></div>
-                            {/* <div className={getMode ? styles.priceInfoDark : styles.priceInfoLight}>
-                                <span>{getTargetProduct.price}$</span>
-                            </div> */}
                         </div>
 
                         <div className={styles.productMidInfo}>
@@ -72,15 +58,9 @@ export const ProductPage: React.FC = () => {
                                 <span>{getTargetProduct.price}$</span>
                             </div>
                             <BuyBtn inStock={getTargetProduct.inStock} />
-                            {/* <FavoriteBtn
-                                productName={getTargetProduct.productName}
-                                productIsFavorite={getTargetProduct.isFavorite}
-                                productId={getTargetProduct.id}
-                            /> */}
                         </div>
 
                         <div className={styles.bottomInfo}>
-                            {/* <span className={getMode ? styles.idInfoDark : styles.idInfoLight}> ID: {getTargetProduct.id}</span> */}
                             <div className='specs'>{renderCharacteristics()}</div>
                         </div>
                     </div>

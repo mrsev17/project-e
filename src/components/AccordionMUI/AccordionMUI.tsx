@@ -13,7 +13,7 @@ import styles from './AccordionMUI.module.css';
 
 interface AccordionMUIProps {
     category: string;
-    options: any;
+    options: string[] | number[] | unknown;
     setCurrentPage: (page: number) => void;
 }
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -50,12 +50,9 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, setCurrentPage }) => {
     const getMode: boolean = useAppSelector(selectMode);
-
     const dependencies: (string | number)[] = useAppSelector(selectDependncies);
-
     const dispatch = useAppDispatch();
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
-
     const handleChange =
         (panel: string) =>
         (event: React.SyntheticEvent, newExpanded: boolean): void => {
@@ -64,7 +61,6 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
 
     const checkBoxHandle = (option: number | string, category: string): void => {
         setCurrentPage(1);
-
         dispatch(setDependencies({ option, category }));
     };
 

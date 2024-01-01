@@ -40,12 +40,7 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
             )}
         >
             {photos.map((photo, i) => {
-                return (
-                    // <div key={i} className={styles.photoContainer}>
-                    //     <img src={photo} alt={productName} />
-                    // </div>
-                    <KeepMountedModal key={i} photo={photo} productName={productName} />
-                );
+                return <KeepMountedModal key={i} photo={photo} productName={productName} />;
             })}
         </Carousel>
     );

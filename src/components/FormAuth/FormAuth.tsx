@@ -10,8 +10,8 @@ interface FormAuthProps {
 
 export const FormAuth: React.FC<FormAuthProps> = ({ title, handleClick }) => {
     const getMode: boolean = useAppSelector(selectMode);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
 
     return (
         <div className={getMode ? styles.formAuth : styles.formAuthLight}>

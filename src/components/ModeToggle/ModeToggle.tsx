@@ -7,7 +7,6 @@ import styles from './ModeToggle.module.css';
 export const ModeToggle = () => {
     const dispatch = useAppDispatch();
     const getMode: boolean = useAppSelector(selectMode);
-    document.body.style.backgroundColor = getMode ? '#385170' : '#f1f1f1';
     const changeMode = () => dispatch(setMode());
     return (
         <button className={styles.button} onClick={changeMode}>

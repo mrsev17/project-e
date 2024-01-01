@@ -11,11 +11,8 @@ export const CategoryPage = () => {
     const getMode: boolean = useAppSelector(selectMode);
     const getCompanies: (string | number)[] = useAppSelector(selectCompanies);
     const dependencies: (string | number)[] = useAppSelector(selectDependncies);
-    //
     const updateDepies = dependencies.filter((item) => !getCompanies.includes(item));
-    //
     const products: Product[] = useAppSelector(selectProducts);
-
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(9);
     const location = useLocation();
@@ -25,14 +22,11 @@ export const CategoryPage = () => {
     const getTargetCategoryItems = (name: string, data: Product[]): Product[] => {
         return data.filter((product) => product.category === name);
     };
-    //
     const targetData: Product[] = getTargetCategoryItems(pathname.substring(1), products);
-    //
     const filterDataByDepends = (dependencies: (string | number)[], targetProducts: Product[]) => {
         if (getCompanies.length && updateDepies.length) {
             const copyOfData = [...targetProducts];
             const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
-
             const indexesOfDepies = filterDataByCompanies.reduce((acc: number[], product: Product, index: number) => {
                 for (let i = 0; i <= dependencies.length; i += 1) {
                     if (Object.values(product).includes(dependencies[i])) {
@@ -41,15 +35,12 @@ export const CategoryPage = () => {
                 }
                 return acc;
             }, []);
-
             indexesOfDepies.sort((a, b) => b - a);
             const filterData = filterDataByCompanies.filter((_, index) => indexesOfDepies.includes(index));
             return filterData;
-            //
         } else if (getCompanies.length && !updateDepies.length) {
             const copyOfData = [...targetProducts];
             const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
-
             const indexesOfDepies = filterDataByCompanies.reduce((acc: number[], product: Product, index: number) => {
                 for (let i = 0; i <= dependencies.length; i += 1) {
                     if (Object.values(product).includes(dependencies[i])) {
@@ -58,12 +49,10 @@ export const CategoryPage = () => {
                 }
                 return acc;
             }, []);
-
             indexesOfDepies.sort((a, b) => b - a);
             const filterData = filterDataByCompanies.filter((_, index) => indexesOfDepies.includes(index));
             return filterData;
         } else {
-            //
             const copyOfData = [...targetProducts];
             const indexesOfDepies = copyOfData.reduce((acc: number[], product: Product, index: number) => {
                 for (let i = 0; i <= updateDepies.length; i += 1) {
@@ -78,10 +67,7 @@ export const CategoryPage = () => {
             return filterData;
         }
     };
-
     const updateAfterFilters: Product[] = filterDataByDepends(dependencies, targetData);
-    // console.log('updateOne', updateAfterFilters);
-
     const lastProductIndex: number = currentPage * productsPerPage;
     const firstProductIndex: number = lastProductIndex - productsPerPage;
     const chooseOption = () => {
@@ -92,11 +78,6 @@ export const CategoryPage = () => {
         }
     };
     const actualData = chooseOption();
-    //
-
-    //
-    // const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
-
     const filtersData = (categoryData: Product[], excludeKeys: string[] = []) => {
         interface ProductFilter {
             [key: string]: any;
@@ -112,10 +93,8 @@ export const CategoryPage = () => {
                 }
             });
         });
-
         return result;
     };
-
     const removeDuplicatesFromObject = (obj: any) => {
         const uniqueValues = {};
         const filterUnique = (value: string | number, index: number, self: (string | number)[]): boolean => {
@@ -133,9 +112,7 @@ export const CategoryPage = () => {
 
     const entriesForFilters = filtersData(targetData, ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price']);
     const entriesRemoveDuplicates = removeDuplicatesFromObject(entriesForFilters);
-
     const updateAfterFiltersTwo: Product[] = filterDataByDepends(updateDepies, actualData);
-
     const clearFiltersHandle = useCallback(() => {
         dispatch(resetFilters());
     }, [dispatch]);
@@ -154,7 +131,7 @@ export const CategoryPage = () => {
         }
         return secondSet.size === 0;
     }
-    //
+
     const finalDataCheck = () => {
         if (getCompanies.length && updateDepies.length) {
             return updateAfterFiltersTwo;
@@ -173,7 +150,7 @@ export const CategoryPage = () => {
         }
     };
     const finalData = finalDataCheck();
-    // const currentProducts: Product[] = actualData.slice(firstProductIndex, lastProductIndex);
+
     const currentProducts: Product[] = finalData.slice(firstProductIndex, lastProductIndex);
 
     return (
