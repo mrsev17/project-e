@@ -59,4 +59,17 @@
     .catalogList {
         grid-template-columns: repeat(1, 1fr);
     }
+    .searchCatalogListLigth,
+    .searchCatalogList {
+        display: flex;
+        justify-content: center;
+    }
+    .searchCatalogListLigth > input,
+    .searchCatalogList > input {
+        /* margin: 0 auto; */
+        /* padding: 0 10px; */
+        max-width: 400px;
+        margin-left: 0;
+        font-size: 22px;
+    }
 }

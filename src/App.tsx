@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, LoginPage, RegisterPage } from './components';
+import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, LoginPage, RegisterPage, AdaptiveLogo } from './components';
 import MainLayout from './layouts/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
@@ -25,6 +25,7 @@ const App: React.FC = () => {
         <BrowserRouter>
             <div className={getMode ? 'appDark' : 'appLight'}>
                 <div className='app-container'>
+                    <AdaptiveLogo />
                     <Routes>
                         <Route path='/' element={<MainLayout />}>
                             <Route index element={<HomePage />} />

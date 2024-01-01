@@ -7,7 +7,6 @@ import styles from './LastCheckdProducts.module.css';
 export const LastCheckdProducts = () => {
     const getMode: boolean = useAppSelector(selectMode);
     const lastViewed: Product[] = useAppSelector((state) => state.products.lastViewedProducts);
-
     return (
         <section className={getMode ? styles.lastViewedDark : styles.lastViewedLight}>
             {lastViewed.length !== 0 ? <h3>Last viewed products</h3> : ''}

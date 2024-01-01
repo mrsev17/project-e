@@ -15,7 +15,7 @@ export const HomePage = () => {
     const navigate = useNavigate();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
-    // console.log(products);
+    console.log(products);
     const categories: unknown | string[] = getUniqueCategories(products);
 
     const handleRedirect = () => {

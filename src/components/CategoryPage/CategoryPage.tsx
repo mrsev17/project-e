@@ -110,7 +110,7 @@ export const CategoryPage = () => {
         return uniqueValues;
     };
 
-    const entriesForFilters = filtersData(targetData, ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price']);
+    const entriesForFilters = filtersData(targetData, ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description']);
     const entriesRemoveDuplicates = removeDuplicatesFromObject(entriesForFilters);
     const updateAfterFiltersTwo: Product[] = filterDataByDepends(updateDepies, actualData);
     const clearFiltersHandle = useCallback(() => {

@@ -34,8 +34,8 @@ button > svg {
 @media (max-width: 567px) {
     .sunny {
         color: whitesmoke;
-        height: 36px;
-        width: 36px;
+        height: 42px;
+        width: 42px;
     }
 
     .moon {

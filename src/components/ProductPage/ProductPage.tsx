@@ -15,7 +15,7 @@ interface extendProps extends Product {
 
 export const ProductPage: React.FC = () => {
     const dispatch = useAppDispatch();
-    const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price'];
+    const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
     const { id } = useParams();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
@@ -26,8 +26,14 @@ export const ProductPage: React.FC = () => {
         for (const key in getTargetProduct) {
             if (!entriesForFilters.includes(key) && key !== '[[Prototype]]') {
                 characteristics.push(
-                    <div key={key} className='characteristic'>
-                        <strong>{key}:</strong> {getTargetProduct[key]}
+                    <div key={key} className={styles.characteristic}>
+                        {/* <strong>{key}:</strong> {getTargetProduct[key]} */}
+                        <div className={styles.spec}>
+                            <span>{key}:</span>
+                        </div>
+                        <div className={styles.value}>
+                            <span>{key !== 'storage' ? `${getTargetProduct[key]}` : `${getTargetProduct[key]}GB`}</span>
+                        </div>
                     </div>
                 );
             }
@@ -61,9 +67,16 @@ export const ProductPage: React.FC = () => {
                         </div>
 
                         <div className={styles.bottomInfo}>
-                            <div className='specs'>{renderCharacteristics()}</div>
+                            <div className={getMode ? styles.specsDark : styles.specsLight}>{renderCharacteristics()}</div>
+                            {/* <div className={styles.description}>
+                                <p>{getTargetProduct.description}</p>
+                            </div> */}
                         </div>
                     </div>
+                </div>
+                <div className={getMode ? styles.descriptionDark : styles.descriptionLight}>
+                    <h3>{getTargetProduct.productName}</h3>
+                    <p>{getTargetProduct.description}</p>
                 </div>
             </div>
         </div>

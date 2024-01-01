@@ -16,6 +16,9 @@
     .imageCase {
         transform: scale(1);
     }
+    /* .mountedImage {
+        display: none;
+    } */
     /* .modalWrapper {
         display: none;
         justify-content: center;

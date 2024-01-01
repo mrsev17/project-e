@@ -142,6 +142,13 @@
     }
 }
 @media (max-width: 567px) {
+    .lastViewedTileDark,
+    .lastViewedTileLight {
+        height: 560px;
+    }
+    .lastViewedTileImage {
+        max-width: 340px;
+    }
     .basket__dark,
     .basket__light {
         height: 30px;

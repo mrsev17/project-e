@@ -1,0 +1,19 @@
+.adaptiveLogoContent {
+    margin: 30px 0 -60px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.adaptiveLogoContent > div > svg {
+    width: 50px;
+    height: 50px;
+}
+.adaptiveLogoContent > div > a {
+    font-size: 32px;
+}
+
+@media (min-width: 567px) {
+    .adaptiveLogoContent {
+        display: none;
+    }
+}

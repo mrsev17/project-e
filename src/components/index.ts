@@ -30,3 +30,4 @@ export * from './ImageMagnifier';
 export * from './KeepMounted';
 export * from './LastCheckdProducts';
 export * from './LastViewedTile';
+export * from './AdaptiveLogo';

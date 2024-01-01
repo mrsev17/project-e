@@ -20,6 +20,7 @@ export interface Product {
     isFavorite: boolean;
     videoCard?: string;
     diagonal?: number;
+    description?: string;
     photos: {
         photoOne: string;
         photoTwo: string;

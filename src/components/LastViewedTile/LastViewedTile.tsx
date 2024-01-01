@@ -1,5 +1,4 @@
-import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-import { setViewedProduct } from '../../redux/productsSlice';
+import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
@@ -17,11 +16,6 @@ interface LastViewedTileProps {
 
 export const LastViewedTile: React.FC<LastViewedTileProps> = ({ productName, isFavorite, id, itemPhotoOne, itemCategory, itemPrice }) => {
     const getMode: boolean = useAppSelector(selectMode);
-    // const dispatch = useAppDispatch();
-    // const goToProductHandle = () => {
-    //     window.scrollTo(0, 0);
-    //     dispatch(setViewedProduct(getTargetProduct));
-    // };
     return (
         <div className={getMode ? styles.lastViewedTileDark : styles.lastViewedTileLight}>
             <div className={styles.lastViewedTileContainer}>
