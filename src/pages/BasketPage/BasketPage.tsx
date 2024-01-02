@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { setClearOrder, setProductPlusOne, setProductMinusOne, setRemoveItemFromOrder } from '../../redux/orderSlice';
+import { useAppDispatch } from '../../hooks/hook';
 import { useAppSelector } from '../../hooks/hook';
 import { Link } from 'react-router-dom';
 import { OrderProduct } from '../../components/OrderProduct';
@@ -7,8 +9,10 @@ import styles from './BasketPage.module.css';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 
 export const BasketPage = () => {
+    const dispatch = useAppDispatch();
     const getBasket = useAppSelector((state) => state.checkout.orderList);
-
+    const getBasketPrice = useAppSelector((state) => state.checkout.finalPrice).toFixed(2);
+    console.log(getBasketPrice);
     const getDateAfterThreeDays = () => {
         const today = new Date();
         const afterThreeDays = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);
@@ -19,6 +23,22 @@ export const BasketPage = () => {
         return formattedDate;
     };
 
+    const clearAllOrderHandle = () => {
+        dispatch(setClearOrder());
+    };
+
+    const plusItemToOrder = (id: string) => {
+        dispatch(setProductPlusOne(id));
+    };
+
+    const minusItemFromOrder = (id: string, itemQuantity: number) => {
+        if (itemQuantity !== 1) {
+            dispatch(setProductMinusOne(id));
+        } else {
+            dispatch(setRemoveItemFromOrder(id));
+        }
+    };
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -26,19 +46,22 @@ export const BasketPage = () => {
     return (
         <section className={styles.basketPageDark}>
             <h1 className={styles.basketPageDarkTitle}>{`Order: ${getBasket.length} items`}</h1>
+
             <div className={styles.basketPageDarkContent}>
                 <div className={styles.basketPageDarkOrderContent}>
                     <div className={styles.clearOrderDark}>
-                        <button className={styles.basketPageClearOrderDark}>
+                        <button onClick={clearAllOrderHandle} className={styles.basketPageClearOrderDark}>
                             <span>
                                 <VscTrash />
                             </span>
                             <span>Delete All</span>
                         </button>
                     </div>
+
                     <div className={styles.deliveryDateDark}>
-                        <span>{getBasket.length ? `Delivery date ${getDateAfterThreeDays()}` : ''}</span>
+                        <span>{getBasket.length ? `Delivery date ${getDateAfterThreeDays()}` : 'Order list is empty'}</span>
                     </div>
+
                     <ul className={styles.basketPageDarkOrderList}>
                         {getBasket.map((item, i) => {
                             return (
@@ -66,7 +89,7 @@ export const BasketPage = () => {
                                                 </button>
                                             </div>
                                             <div className={styles.removeDark}>
-                                                <button>
+                                                <button onClick={() => dispatch(setRemoveItemFromOrder(item.id))}>
                                                     <span>
                                                         <VscTrash />
                                                     </span>
@@ -75,9 +98,16 @@ export const BasketPage = () => {
                                             </div>
                                             <div className={styles.selectQuantityDark}>
                                                 <div className={styles.wrapperQuantityControl}>
-                                                    <button className={styles.quantityControlPlus}>+</button>
+                                                    <button onClick={() => plusItemToOrder(item.id)} className={styles.quantityControlPlus}>
+                                                        +
+                                                    </button>
                                                     <span>{item.quantInOrder}</span>
-                                                    <button className={styles.quantityControlMinus}>-</button>
+                                                    <button
+                                                        onClick={() => minusItemFromOrder(item.id, item.quantInOrder)}
+                                                        className={styles.quantityControlMinus}
+                                                    >
+                                                        -
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -88,8 +118,12 @@ export const BasketPage = () => {
                     </ul>
                 </div>
                 <div className={styles.basketPageDarkSubmitOrder}>
-                    <div className={styles.basketPageDarkClearOrder}></div>
-                    <div className={styles.basketPageDarkDeliveryDate}></div>
+                    <div className={styles.basketPageDarkSubmitOrderContainer}>
+                        <button>Proceed to Checkout</button>
+                        <div className={styles.basketPageDarkSubmitOrderInfo}></div>
+                        <div className={styles.basketPageDarkSubmitOrderDiscount}></div>
+                        <div className={styles.basketPageDarkSubmitOrderFullPrice}></div>
+                    </div>
                 </div>
             </div>
         </section>
