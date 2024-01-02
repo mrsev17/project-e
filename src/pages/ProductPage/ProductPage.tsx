@@ -5,9 +5,8 @@ import { Product } from '../../redux/productsSlice';
 import { useParams } from 'react-router-dom';
 import { selectProducts } from '../../redux/productsSlice';
 import styles from './ProductPage.module.css';
-import { CarouselProduct } from '../CarouselProduct';
+import { CarouselProduct, BuyBtn } from '../../components';
 import { useEffect } from 'react';
-import { BuyBtn } from '../BuyBtn';
 
 interface extendProps extends Product {
     [key: string]: any;
@@ -15,7 +14,7 @@ interface extendProps extends Product {
 
 export const ProductPage: React.FC = () => {
     const dispatch = useAppDispatch();
-    const entriesForFilters = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
+    const entriesForFilters: string[] = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
     const { id } = useParams();
     const getMode: boolean = useAppSelector(selectMode);
     const products: Product[] = useAppSelector(selectProducts);
@@ -27,7 +26,6 @@ export const ProductPage: React.FC = () => {
             if (!entriesForFilters.includes(key) && key !== '[[Prototype]]') {
                 characteristics.push(
                     <div key={key} className={styles.characteristic}>
-                        {/* <strong>{key}:</strong> {getTargetProduct[key]} */}
                         <div className={styles.spec}>
                             <span>{key}:</span>
                         </div>
@@ -63,14 +61,11 @@ export const ProductPage: React.FC = () => {
                             <div className={getMode ? styles.priceInfoDark : styles.priceInfoLight}>
                                 <span>{getTargetProduct.price}$</span>
                             </div>
-                            <BuyBtn inStock={getTargetProduct.inStock} />
+                            <BuyBtn product={getTargetProduct} />
                         </div>
 
                         <div className={styles.bottomInfo}>
                             <div className={getMode ? styles.specsDark : styles.specsLight}>{renderCharacteristics()}</div>
-                            {/* <div className={styles.description}>
-                                <p>{getTargetProduct.description}</p>
-                            </div> */}
                         </div>
                     </div>
                 </div>

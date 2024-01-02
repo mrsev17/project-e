@@ -112,7 +112,7 @@
 .footerWrapperMidLight > ul {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 .footerWrapperMid > ul > li,
 .footerWrapperMidLight > ul > li {

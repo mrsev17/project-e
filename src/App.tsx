@@ -1,12 +1,12 @@
+import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, CategoryPage, LoginPage, RegisterPage } from './pages';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, LoginPage, RegisterPage, AdaptiveLogo } from './components';
+import { AdaptiveLogo } from './components';
 import MainLayout from './layouts/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
 import { selectMode } from './redux/modeSlice';
-import { CategoryPage } from './components';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 

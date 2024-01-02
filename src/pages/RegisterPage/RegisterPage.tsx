@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './RegisterPage.module.css';
-import { SignUp } from '../SignUp';
+import { SignUp } from '../../components';
 
 export const RegisterPage = () => {
     const getMode: boolean = useAppSelector(selectMode);

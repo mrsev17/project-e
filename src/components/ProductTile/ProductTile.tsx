@@ -1,17 +1,17 @@
-import { Product } from '../../redux/productsSlice';
-import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
-import styles from './ProductTile.module.css';
+import { Product, setProductInBasket } from '../../redux/productsSlice';
+import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
 import { BuyBtn } from '../BuyBtn';
+import styles from './ProductTile.module.css';
 
 interface ProductTileProps {
     product: Product;
 }
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+
     return (
         <div className={getMode ? styles.productTile : styles.productTileDark}>
             <div className={styles.productTileContainer}>
@@ -26,7 +26,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
                 </div>
                 <div className={styles.productActionLine}></div>
                 <div className={styles.actionsWrapper}>
-                    <BuyBtn inStock={product.inStock} />
+                    <BuyBtn product={product} />
                     <FavoriteBtn productName={product.productName} productIsFavorite={product.isFavorite} productId={product.id} />
                 </div>
             </div>

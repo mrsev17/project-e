@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
-import { ProductTile } from '../ProductTile';
-import { useEffect } from 'react';
+import { ProductTile } from '../../components';
 import styles from './FavoritesPage.module.css';
 
 export const FavoritesPage = () => {
@@ -18,7 +18,7 @@ export const FavoritesPage = () => {
             {!getWishList.length ? (
                 <h2 className={getMode ? styles.titleEmptyListDark : styles.titleEmptyListLight}>The list of favorite products is empty</h2>
             ) : (
-                ''
+                <></>
             )}
             <div className={styles.favoriteList}>
                 {getWishList.length !== 0 ? getWishList.map((product, i) => <ProductTile key={i} product={product} />) : ''}

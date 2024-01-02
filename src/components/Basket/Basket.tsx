@@ -1,14 +1,14 @@
 import { SlBasket } from 'react-icons/sl';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import Badge from '@mui/material/Badge';
 import styles from './Basket.module.css';
 
 export const Basket = () => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getBasketLength = useAppSelector((state) => state.products.inBasket).length;
     return (
         <button>
-            <Badge badgeContent={3} color='primary'>
+            <Badge badgeContent={getBasketLength} color='primary'>
                 <SlBasket className={getMode ? styles.basket__dark : styles.basket__light} />
             </Badge>
         </button>

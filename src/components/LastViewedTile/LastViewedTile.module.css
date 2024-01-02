@@ -28,7 +28,7 @@
     margin: 20px 0 20px 0;
     width: 94%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .lastViewedTileImage {
     width: 100%;

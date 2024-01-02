@@ -12,17 +12,7 @@ export const LastCheckdProducts = () => {
             {lastViewed.length !== 0 ? <h3>Last viewed products</h3> : ''}
             <div className={styles.lastViewedContainer}>
                 {lastViewed.map((item: Product, i: number) => {
-                    return (
-                        <LastViewedTile
-                            key={i}
-                            productName={item.productName}
-                            isFavorite={item.isFavorite}
-                            id={item.id}
-                            itemPhotoOne={item.photos.photoOne}
-                            itemCategory={item.category}
-                            itemPrice={item.price}
-                        />
-                    );
+                    return <LastViewedTile key={i} product={item} />;
                 })}
             </div>
         </section>

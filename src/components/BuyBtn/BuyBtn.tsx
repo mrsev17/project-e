@@ -1,22 +1,36 @@
-import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
+import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { SlBasket } from 'react-icons/sl';
+import { Product, setProductInBasket } from '../../redux/productsSlice';
+import { ImCheckmark } from 'react-icons/im';
+import { toast } from 'react-toastify';
 import styles from './BuyBtn.module.css';
 
 interface BuyBtnProps {
-    inStock: boolean;
+    product: Product;
 }
 
-export const BuyBtn: React.FC<BuyBtnProps> = ({ inStock }) => {
-    const getMode: boolean = useAppSelector(selectMode);
+export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
+    const notify = () => toast(`${product.productName} already in basket list`);
+    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const dispatch = useAppDispatch();
+    const getBasket = useAppSelector((state) => state.products.inBasket);
+    const checkBasketForProduct = () => {
+        return getBasket.some((productInBasket) => productInBasket.id === product.id);
+    };
+    const productBasketHandle = (product: Product) => {
+        if (!checkBasketForProduct()) {
+            dispatch(setProductInBasket(product));
+        } else {
+            notify();
+        }
+    };
+
     return (
         <div className={getMode ? styles.buyButtonDark : styles.buyButtonLight}>
-            {inStock ? (
-                <button className={getMode ? styles.buyDark : styles.buyLight}>
+            {product.inStock ? (
+                <button onClick={() => productBasketHandle(product)} className={getMode ? styles.buyDark : styles.buyLight}>
                     <span>Buy</span>
-                    <span>
-                        <SlBasket />
-                    </span>
+                    <span>{checkBasketForProduct() ? <ImCheckmark /> : <SlBasket />}</span>
                 </button>
             ) : (
                 <button className={styles.outOfStock} disabled>

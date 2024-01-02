@@ -136,7 +136,7 @@
 .value,
 .spec {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 .descriptionLight,
 .descriptionDark {

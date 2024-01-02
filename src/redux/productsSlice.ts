@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import productsData from '../data/products.json';
 import { RootState } from './store';
+import { spread } from 'axios';
 
 export interface Product {
     productName: string;
@@ -30,14 +31,21 @@ export interface Product {
     };
 }
 
+interface ProductInBasket extends Product {
+    quantInBask: number;
+    alreadyInBasket: boolean;
+}
+
 interface ProductsState {
     products: Product[];
     lastViewedProducts: Product[];
+    inBasket: ProductInBasket[];
 }
 
 const initialState: ProductsState = {
     products: [],
     lastViewedProducts: [],
+    inBasket: [],
 };
 
 const productsSlice = createSlice({
@@ -74,11 +82,19 @@ const productsSlice = createSlice({
                 state.lastViewedProducts.push(action.payload);
             }
         },
+        setProductInBasket(state, action: PayloadAction<Product>) {
+            const getId = action.payload.id;
+            const checkForItem = state.inBasket.some((product) => product.id === getId);
+            if (!checkForItem) {
+                const preBasket = { ...action.payload, quantInBask: 1, alreadyInBasket: true };
+                return { ...state, inBasket: [...state.inBasket, preBasket] };
+            }
+        },
     },
 });
 
 export const selectProducts = (state: RootState) => state.products.products;
 export const lastViewedProducts = (state: RootState) => state.products.lastViewedProducts;
 
-export const { setInitialData, setIsFavoriteProduct, setViewedProduct } = productsSlice.actions;
+export const { setInitialData, setIsFavoriteProduct, setViewedProduct, setProductInBasket } = productsSlice.actions;
 export default productsSlice.reducer;
