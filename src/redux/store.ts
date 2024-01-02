@@ -6,12 +6,14 @@ import productsReducer from './productsSlice';
 import filterReducer from './filterSlice';
 import userReducer from './userSlice';
 // import lastViewedReducer from './lastViewedSlice';
+import orderReducer from './orderSlice';
 
 const rootReducer = combineReducers({
     mode: modeReducer,
     products: productsReducer,
     filter: filterReducer,
     user: userReducer,
+    checkout: orderReducer,
     // lastViewed: lastViewedReducer,
 });
 

@@ -4,12 +4,14 @@ import { RootState } from './store';
 interface FilterState {
     companies: (string | number)[];
     title: string;
+    filterByPrice: string;
     dependencies: (string | number)[];
 }
 
 const initialState: FilterState = {
     companies: [],
     title: '',
+    filterByPrice: '',
     dependencies: [],
 };
 

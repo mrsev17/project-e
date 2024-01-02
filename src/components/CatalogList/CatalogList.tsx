@@ -18,6 +18,12 @@ export const CatalogList: React.FC<CatalogListProps> = ({ currentProducts, setCu
         setCurrentPage(1);
         dispatch(setTitleFilter(e.target.value));
     };
+    // const sortFromLowToHigh = (data: Product[]) => {
+    //     return data.sort((productA, productB) => {
+    //         return productA.price - productB.price;
+    //     });
+    // };
+    // console.log(sortFromLowToHigh(currentProducts));
     return (
         <>
             <div className={getMode ? styles.searchCatalogList : styles.searchCatalogListLigth}>

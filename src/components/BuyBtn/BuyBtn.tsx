@@ -1,6 +1,7 @@
 import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { SlBasket } from 'react-icons/sl';
-import { Product, setProductInBasket } from '../../redux/productsSlice';
+import { Product } from '../../redux/productsSlice';
+import { setProductInBasket } from '../../redux/orderSlice';
 import { ImCheckmark } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import styles from './BuyBtn.module.css';
@@ -13,7 +14,7 @@ export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
     const notify = () => toast(`${product.productName} already in basket list`);
     const getMode: boolean = useAppSelector((state) => state.mode.mode);
     const dispatch = useAppDispatch();
-    const getBasket = useAppSelector((state) => state.products.inBasket);
+    const getBasket = useAppSelector((state) => state.checkout.orderList);
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };

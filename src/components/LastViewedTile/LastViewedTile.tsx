@@ -5,7 +5,8 @@ import { FavoriteBtn } from '../FavoriteBtn';
 import { SlBasket } from 'react-icons/sl';
 import { ImCheckmark } from 'react-icons/im';
 import styles from './LastViewedTile.module.css';
-import { Product, setProductInBasket } from '../../redux/productsSlice';
+import { Product } from '../../redux/productsSlice';
+import { setProductInBasket } from '../../redux/orderSlice';
 import { toast } from 'react-toastify';
 
 interface LastViewedTileProps {
@@ -16,11 +17,13 @@ export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
     const getMode: boolean = useAppSelector(selectMode);
     const notify = () => toast(`${product.productName} already in basket list`);
     const dispatch = useAppDispatch();
-    const getBasket = useAppSelector((state) => state.products.inBasket);
+    const getBasket = useAppSelector((state) => state.checkout.orderList);
+    console.log(getBasket);
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };
     const productBasketHandle = (product: Product) => {
+        console.log('test');
         if (!checkBasketForProduct()) {
             dispatch(setProductInBasket(product));
         } else {
@@ -45,18 +48,24 @@ export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
                     </Link>
                 </div>
                 <div className={getMode ? styles.lastViewedTilePriceAndBuyDark : styles.lastViewedTilePriceAndBuyLight}>
-                    <div className={getMode ? styles.lastViewedTilePriceDark : styles.lastViewedTilePriceLight}>
-                        <span>{product.price}$</span>
-                    </div>
-                    <div className={getMode ? styles.lastViewedTileBuyDark : styles.lastViewedTileBuyLight}>
-                        <button onClick={() => productBasketHandle(product)}>
-                            {checkBasketForProduct() ? (
-                                <ImCheckmark className={getMode ? styles.basket__dark : styles.basket__light} />
-                            ) : (
-                                <SlBasket className={getMode ? styles.basket__dark : styles.basket__light} />
-                            )}
-                        </button>
-                    </div>
+                    {product.inStock ? (
+                        <>
+                            <div className={getMode ? styles.lastViewedTilePriceDark : styles.lastViewedTilePriceLight}>
+                                <span>{product.price}$</span>
+                            </div>
+                            <div className={getMode ? styles.lastViewedTileBuyDark : styles.lastViewedTileBuyLight}>
+                                <button onClick={() => productBasketHandle(product)}>
+                                    {checkBasketForProduct() ? (
+                                        <ImCheckmark className={getMode ? styles.basket__dark : styles.basket__light} />
+                                    ) : (
+                                        <SlBasket className={getMode ? styles.basket__dark : styles.basket__light} />
+                                    )}
+                                </button>
+                            </div>
+                        </>
+                    ) : (
+                        <span className={styles.outOfStockDark}>Out of stock</span>
+                    )}
                 </div>
             </div>
         </div>

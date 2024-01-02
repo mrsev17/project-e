@@ -1,5 +1,5 @@
-import { Product, setProductInBasket } from '../../redux/productsSlice';
-import { useAppSelector, useAppDispatch } from '../../hooks/hook';
+import { Product } from '../../redux/productsSlice';
+import { useAppSelector } from '../../hooks/hook';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
 import { BuyBtn } from '../BuyBtn';

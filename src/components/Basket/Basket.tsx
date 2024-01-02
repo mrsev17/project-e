@@ -5,7 +5,7 @@ import styles from './Basket.module.css';
 
 export const Basket = () => {
     const getMode: boolean = useAppSelector((state) => state.mode.mode);
-    const getBasketLength = useAppSelector((state) => state.products.inBasket).length;
+    const getBasketLength = useAppSelector((state) => state.checkout.orderList).length;
     return (
         <button>
             <Badge badgeContent={getBasketLength} color='primary'>
