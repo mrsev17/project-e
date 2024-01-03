@@ -7,12 +7,16 @@ import { OrderProduct } from '../../components/OrderProduct';
 import { VscTrash } from 'react-icons/vsc';
 import styles from './BasketPage.module.css';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
+import { Product } from '../../redux/productsSlice';
+import { OrderSlice } from '../../redux/orderSlice';
+import { toast } from 'react-toastify';
 
 export const BasketPage = () => {
+    const notify = () => toast('Currently not available');
     const dispatch = useAppDispatch();
     const getBasket = useAppSelector((state) => state.checkout.orderList);
     const getBasketPrice = useAppSelector((state) => state.checkout.finalPrice).toFixed(2);
-    console.log(getBasketPrice);
+
     const getDateAfterThreeDays = () => {
         const today = new Date();
         const afterThreeDays = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);
@@ -39,13 +43,17 @@ export const BasketPage = () => {
         }
     };
 
+    console.log(getBasket);
+    const calculateItems = getBasket.reduce((acc: number, item: OrderSlice) => {
+        return acc + item.quantInOrder;
+    }, 0);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <section className={styles.basketPageDark}>
-            <h1 className={styles.basketPageDarkTitle}>{`Order: ${getBasket.length} items`}</h1>
+            <h1 className={styles.basketPageDarkTitle}>{`Order list`}</h1>
 
             <div className={styles.basketPageDarkContent}>
                 <div className={styles.basketPageDarkOrderContent}>
@@ -119,8 +127,13 @@ export const BasketPage = () => {
                 </div>
                 <div className={styles.basketPageDarkSubmitOrder}>
                     <div className={styles.basketPageDarkSubmitOrderContainer}>
-                        <button>Proceed to Checkout</button>
-                        <div className={styles.basketPageDarkSubmitOrderInfo}></div>
+                        <button onClick={() => notify()} className={styles.proceedToCheckoutBtn}>
+                            Proceed to Checkout
+                        </button>
+                        <div className={styles.basketPageDarkSubmitOrderInfo}>
+                            <h4>{`${calculateItems} items, full amount: `}</h4>
+                            <h4>{getBasketPrice} $</h4>
+                        </div>
                         <div className={styles.basketPageDarkSubmitOrderDiscount}></div>
                         <div className={styles.basketPageDarkSubmitOrderFullPrice}></div>
                     </div>

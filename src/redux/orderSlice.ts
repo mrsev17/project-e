@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from './productsSlice';
 import { get } from 'http';
 
-interface OrderSlice extends Product {
+export interface OrderSlice extends Product {
     quantInOrder: number;
     alreadyInOrder: boolean;
 }
@@ -41,10 +41,11 @@ const orderSlice = createSlice({
         },
         setRemoveItemFromOrder(state, action: PayloadAction<string>) {
             const getItem = state.orderList.filter((item: OrderSlice) => item.id === action.payload)[0];
+            const getAmount = getItem.price * getItem.quantInOrder;
             return {
                 ...state,
                 orderList: state.orderList.filter((product: Product) => product.id !== action.payload),
-                finalPrice: state.finalPrice - getItem.price,
+                finalPrice: state.finalPrice - getAmount,
             };
         },
         setClearOrder(state) {

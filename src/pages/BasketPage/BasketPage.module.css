@@ -9,9 +9,11 @@
     padding-top: 20px;
     font-size: 32px;
     color: white;
+    margin-bottom: 20px;
 }
 .basketPageDarkContent {
     display: flex;
+    gap: 10px;
     margin: 10px;
 }
 .basketPageDarkOrderContent {
@@ -25,12 +27,12 @@
     width: 40%;
 }
 .basketPageDarkSubmitOrderContainer {
-    margin: 10px;
+    /* margin: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    background-color: aliceblue;
+    /* width: 100%; */
+    /* background-color: aliceblue; */
 }
 .basketPageDarkSubmitOrderContainer > button {
     width: 100%;
@@ -54,7 +56,7 @@
     transition: ease-in-out 0.8s;
 }
 .basketPageClearOrderDark:hover {
-    background-color: #5dacbd;
+    background-color: #dc2f2f;
 }
 .basketPageClearOrderDark > span > svg {
     width: 24px;
@@ -176,8 +178,8 @@
 }
 .quantityControlMinus:hover,
 .quantityControlPlus:hover {
-    background-color: white;
-    color: #303841;
+    background-color: #5dacbd;
+    color: aliceblue;
 }
 .wrapperQuantityControl > button {
     font-size: 22px;
@@ -189,4 +191,138 @@
     justify-content: center;
     align-items: center;
     width: 40px;
+}
+
+.proceedToCheckoutBtn {
+    border-radius: 8px;
+    background-color: #5dacbd;
+    color: aliceblue;
+    height: 68px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: ease-in-out 0.8s;
+    margin-bottom: 16px;
+}
+.proceedToCheckoutBtn:hover {
+    background-color: #79c2d0;
+}
+.basketPageDarkSubmitOrderInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.basketPageDarkSubmitOrderInfo > h4:first-child {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.basketPageDarkSubmitOrderInfo > h4:last-child {
+    font-size: 28px;
+    color: aliceblue;
+}
+
+@media (max-width: 1200px) {
+    .basketPageDarkOrderContent {
+        width: 70%;
+    }
+    .basketPageDarkSubmitOrder {
+        width: 30%;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 24px;
+        color: aliceblue;
+    }
+}
+
+@media (max-width: 992px) {
+    .basketPageDark {
+        min-height: 580px;
+    }
+    .basketPageDarkContent {
+        flex-direction: column-reverse;
+    }
+    .basketPageDarkOrderContent,
+    .basketPageDarkSubmitOrder {
+        width: 100%;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 24px;
+        color: aliceblue;
+    }
+    .proceedToCheckoutBtn {
+        margin-bottom: 20px;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:first-child {
+        font-size: 20px;
+    }
+
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 28px;
+    }
+    .basketPageDarkSubmitOrderInfo {
+        margin-bottom: 10px;
+    }
+    .clearOrderDark {
+        padding: 0;
+    }
+    .basketPageClearOrderDark {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        height: 50px;
+    }
+    .orderItemActionsDark {
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .orderItemWrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .orderItemImage {
+        width: 300px;
+        height: 480px;
+    }
+    .orderNameAndPriceDark {
+        flex-direction: column;
+    }
+    .orderNameAndPriceDark > a {
+        font-size: 20px;
+    }
+    .orderBuyRemoveQuantityDark {
+        margin-right: 0;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .removeDark,
+    .toFavoriteDark {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .removeDark > button,
+    .toFavoriteDark > button {
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+        font-size: 32px;
+    }
+    .orderNameAndPriceDark > span {
+        margin-right: 0;
+        font-size: 28px;
+    }
+    .orderNameAndPriceDark {
+        gap: 12px;
+    }
+    .wrapperQuantityControl {
+        justify-content: center;
+        width: 100%;
+    }
+    .wrapperQuantityControl > span,
+    .wrapperQuantityControl > button {
+        width: 120px;
+        height: 50px;
+        font-size: 28px;
+    }
 }
