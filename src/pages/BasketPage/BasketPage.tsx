@@ -6,6 +6,7 @@ import styles from './BasketPage.module.css';
 import { BasketSubmitOrder, ClearOrder, DeliveryDate, ItemInBasket } from '../../components';
 
 export const BasketPage: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.mode);
     const getBasket = useAppSelector((state) => state.checkout.orderList);
     const getBasketPrice = useAppSelector((state) => state.checkout.finalPrice).toFixed(2);
     const calculateItems = getBasket.reduce((acc: number, item: OrderSlice) => {
@@ -17,8 +18,8 @@ export const BasketPage: React.FC = () => {
     }, []);
 
     return (
-        <section className={styles.basketPageDark}>
-            <h1 className={styles.basketPageDarkTitle}>{`Order list`}</h1>
+        <section className={getMode ? styles.basketPageDark : styles.basketPageLight}>
+            <h1 className={getMode ? styles.basketPageDarkTitle : styles.basketPageLightTitle}>{`Order list`}</h1>
             <div className={styles.basketPageDarkContent}>
                 <div className={styles.basketPageDarkOrderContent}>
                     <ClearOrder />

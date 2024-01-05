@@ -9,6 +9,7 @@
 .basketPageDarkSubmitOrderContainer > button {
     width: 100%;
 }
+.proceedToCheckoutBtnLight,
 .proceedToCheckoutBtn {
     border-radius: 8px;
     background-color: #5dacbd;
@@ -19,14 +20,22 @@
     transition: ease-in-out 0.8s;
     margin-bottom: 16px;
 }
+.proceedToCheckoutBtnLight {
+    background-color: #e91e63;
+}
+.proceedToCheckoutBtnLight:hover {
+    background-color: #ff007b;
+}
 .proceedToCheckoutBtn:hover {
     background-color: #79c2d0;
 }
+.basketPageDarkSubmitOrderInfoLight,
 .basketPageDarkSubmitOrderInfo {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
+
 .basketPageDarkSubmitOrderInfo > h4:first-child {
     font-size: 20px;
     color: aliceblue;
@@ -35,6 +44,15 @@
 .basketPageDarkSubmitOrderInfo > h4:last-child {
     font-size: 28px;
     color: aliceblue;
+}
+
+.basketPageDarkSubmitOrderInfoLight > h4:first-child {
+    font-size: 20px;
+    color: #e91e63;
+}
+.basketPageDarkSubmitOrderInfoLight > h4:last-child {
+    font-size: 28px;
+    color: #e91e63;
 }
 
 @media (max-width: 1200px) {

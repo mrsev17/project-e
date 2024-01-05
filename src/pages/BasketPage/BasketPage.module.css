@@ -1,16 +1,30 @@
+.basketPageLight,
 .basketPageDark {
-    background-color: #22313f;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 10px;
     border-radius: 14px;
     height: 100%;
     min-height: 720px;
 }
+.basketPageDark {
+    background-color: #22313f;
+}
+.basketPageLight {
+    background-color: white;
+}
+.basketPageLightTitle,
 .basketPageDarkTitle {
     padding-top: 20px;
     font-size: 32px;
-    color: white;
     margin-bottom: 20px;
 }
+.basketPageLightTitle {
+    color: #e91e63;
+}
+.basketPageDarkTitle {
+    color: white;
+}
+
 .basketPageDarkContent {
     display: flex;
     gap: 10px;

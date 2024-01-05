@@ -1,3 +1,4 @@
+import { useAppSelector } from '../../hooks/hook';
 import styles from './DeliveryDate.module.css';
 
 interface DeliveryDateProps {
@@ -5,6 +6,7 @@ interface DeliveryDateProps {
 }
 
 export const DeliveryDate: React.FC<DeliveryDateProps> = ({ getBasketLenght }) => {
+    const getMode = useAppSelector((state) => state.mode.mode);
     const getDateAfterThreeDays = () => {
         const today = new Date();
         const afterThreeDays = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);
@@ -15,7 +17,7 @@ export const DeliveryDate: React.FC<DeliveryDateProps> = ({ getBasketLenght }) =
         return formattedDate;
     };
     return (
-        <div className={styles.deliveryDateDark}>
+        <div className={getMode ? styles.deliveryDateDark : styles.deliveryDateLight}>
             <span>{getBasketLenght ? `Delivery date ${getDateAfterThreeDays()}` : 'Order list is empty'}</span>
         </div>
     );

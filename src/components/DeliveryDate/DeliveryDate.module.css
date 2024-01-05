@@ -1,10 +1,23 @@
+.deliveryDateLight,
 .deliveryDateDark {
-    background-color: #303841;
     border-radius: 8px;
     padding: 8px 0 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.deliveryDateDark {
+    background-color: #303841;
+}
+.deliveryDateLight {
+    background-color: white;
+}
+.deliveryDateLight > span,
+.deliveryDateDark > span {
+    font-size: 18px;
+    font-weight: 600;
+}
+.deliveryDateLight > span {
+    color: #dc2f2f;
 }
 .deliveryDateDark > span {
     color: white;
-    font-size: 18px;
-    font-weight: 600;
 }

@@ -1,4 +1,4 @@
-import { useAppDispatch } from '../../hooks/hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { setRemoveItemFromOrder } from '../../redux/orderSlice';
 import { VscTrash } from 'react-icons/vsc';
 import styles from './RemoveFromOrder.module.css';
@@ -8,12 +8,13 @@ interface RemoveFromOrderProps {
 }
 
 export const RemoveFromOrder: React.FC<RemoveFromOrderProps> = ({ productId }) => {
+    const getMode = useAppSelector((state) => state.mode.mode);
     const dispatch = useAppDispatch();
     const removeItemHandle = (id: string) => {
         dispatch(setRemoveItemFromOrder(id));
     };
     return (
-        <div className={styles.removeDark}>
+        <div className={getMode ? styles.removeDark : styles.removeLight}>
             <button onClick={() => removeItemHandle(productId)}>
                 <span>
                     <VscTrash />

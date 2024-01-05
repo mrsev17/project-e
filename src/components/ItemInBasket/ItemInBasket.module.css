@@ -1,31 +1,40 @@
-.basketPageDarkOrderList {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 10px;
-    margin-bottom: 40px;
-}
+.orderItemWrapperLight,
 .orderItemWrapper {
-    background-color: #303841;
     padding: 10px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.orderItemWrapper {
+    background-color: #303841;
+}
+.orderItemWrapperLight {
+    background-color: white;
+}
+.orderItemImageLight,
 .orderItemImage {
     width: 100px;
     height: 140px;
     padding: 10px;
     margin: 10px;
     border-radius: 8px;
-    border: 1px solid white;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
+.orderItemImageLight {
+    border: 1px solid white;
+}
+.orderItemImage {
+    border: 1px solid white;
+}
+.orderItemImageLight > img,
 .orderItemImage > img {
-    object-fit: cover;
+    object-fit: contain;
     max-width: 100%;
     max-height: 100%;
 }
@@ -36,6 +45,7 @@
     justify-content: space-between;
     height: 80%;
 }
+
 .orderBuyRemoveQuantityDark {
     display: flex;
     margin-right: 20px;
@@ -46,6 +56,7 @@
     align-items: center;
     gap: 20px;
 }
+
 .favoritesBasketSubDark {
     font-size: 20px;
     color: aliceblue;
@@ -113,14 +124,17 @@
         display: block;
         font-size: 28px;
     }
+    .orderItemWrapperLight,
     .orderItemWrapper {
         flex-direction: column;
         gap: 40px;
     }
+    .orderItemImageLight,
     .orderItemImage {
         width: 300px;
         height: 480px;
     }
+
     .orderBuyRemoveQuantityDark {
         margin-right: 0;
         flex-direction: column;

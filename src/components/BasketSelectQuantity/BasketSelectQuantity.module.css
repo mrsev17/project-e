@@ -1,12 +1,15 @@
+.selectQuantityLight,
 .selectQuantityDark {
     width: 100%;
 }
+.wrapperQuantityControlLight,
 .wrapperQuantityControl {
     display: flex;
     align-items: center;
     justify-content: end;
     width: 100%;
 }
+
 .wrapperQuantityControl > button,
 .wrapperQuantityControl > span {
     color: aliceblue;
@@ -14,12 +17,25 @@
     height: 40px;
     border-radius: 0;
 }
+.wrapperQuantityControlLight > button,
+.wrapperQuantityControlLight > span {
+    color: #dc2f2f;
+    background-color: white;
+    height: 40px;
+    border-radius: 0;
+}
+.quantityControlPlusLight,
 .quantityControlPlus {
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-radius: 10px 0 0 10px !important;
 }
+.quantityControlMinusLight,
 .quantityControlMinus {
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-radius: 0 10px 10px 0 !important;
 }
+.quantityControlMinusLight,
+.quantityControlPlusLight,
 .quantityControlMinus,
 .quantityControlPlus {
     transition: ease-in-out 0.8s;
@@ -29,9 +45,17 @@
     background-color: #5dacbd;
     color: aliceblue;
 }
+.quantityControlMinusLight:hover,
+.quantityControlPlusLight:hover {
+    background-color: transition;
+    color: black;
+}
+.wrapperQuantityControlLight > button,
 .wrapperQuantityControl > button {
     font-size: 22px;
 }
+.wrapperQuantityControlLight > span,
+.wrapperQuantityControlLight > button,
 .wrapperQuantityControl > button,
 .wrapperQuantityControl > span {
     display: flex;
@@ -40,15 +64,23 @@
     align-items: center;
     width: 40px;
 }
+
 @media (max-width: 768px) {
+    .wrapperQuantityControlLight {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 8px;
+    }
+    .wrapperQuantityControlLight,
     .wrapperQuantityControl {
         justify-content: center;
         width: 100%;
     }
+    .wrapperQuantityControlLight > span,
+    .wrapperQuantityControlLight > button,
     .wrapperQuantityControl > span,
     .wrapperQuantityControl > button {
         width: 120px;
         height: 50px;
-        font-size: 28px;
+        font-size: 38px;
     }
 }

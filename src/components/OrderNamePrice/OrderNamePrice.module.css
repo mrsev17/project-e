@@ -1,31 +1,48 @@
+.orderNameAndPriceLight,
 .orderNameAndPriceDark {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.orderNameAndPriceLight > a,
 .orderNameAndPriceDark > a {
-    color: aliceblue;
     font-size: 18px;
     font-weight: 600;
     transition: ease-in-out 0.8s;
 }
+.orderNameAndPriceLight > a {
+    color: #dc2f2f;
+}
+.orderNameAndPriceDark > a {
+    color: aliceblue;
+}
+
 .orderNameAndPriceDark > a:hover {
     color: #5dacbd;
 }
+.orderNameAndPriceLight > span,
 .orderNameAndPriceDark > span {
     margin-right: 20px;
     font-size: 24px;
-    color: aliceblue;
+}
+.orderNameAndPriceLight > span {
+    color: #dc2f2f;
+}
+.orderNameAndPriceDark > span {
+    color: white;
 }
 @media (max-width: 768px) {
+    .orderNameAndPriceLight,
     .orderNameAndPriceDark {
         flex-direction: column;
         gap: 12px;
     }
+    .orderNameAndPriceLight > span,
     .orderNameAndPriceDark > span {
         margin-right: 0;
         font-size: 28px;
     }
+    .orderNameAndPriceLight > a,
     .orderNameAndPriceDark > a {
         font-size: 20px;
     }
