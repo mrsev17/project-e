@@ -1,0 +1,32 @@
+.orderNameAndPriceDark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.orderNameAndPriceDark > a {
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 600;
+    transition: ease-in-out 0.8s;
+}
+.orderNameAndPriceDark > a:hover {
+    color: #5dacbd;
+}
+.orderNameAndPriceDark > span {
+    margin-right: 20px;
+    font-size: 24px;
+    color: aliceblue;
+}
+@media (max-width: 768px) {
+    .orderNameAndPriceDark {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .orderNameAndPriceDark > span {
+        margin-right: 0;
+        font-size: 28px;
+    }
+    .orderNameAndPriceDark > a {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,54 @@
+.selectQuantityDark {
+    width: 100%;
+}
+.wrapperQuantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+.wrapperQuantityControl > button,
+.wrapperQuantityControl > span {
+    color: aliceblue;
+    background-color: black;
+    height: 40px;
+    border-radius: 0;
+}
+.quantityControlPlus {
+    border-radius: 10px 0 0 10px !important;
+}
+.quantityControlMinus {
+    border-radius: 0 10px 10px 0 !important;
+}
+.quantityControlMinus,
+.quantityControlPlus {
+    transition: ease-in-out 0.8s;
+}
+.quantityControlMinus:hover,
+.quantityControlPlus:hover {
+    background-color: #5dacbd;
+    color: aliceblue;
+}
+.wrapperQuantityControl > button {
+    font-size: 22px;
+}
+.wrapperQuantityControl > button,
+.wrapperQuantityControl > span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+}
+@media (max-width: 768px) {
+    .wrapperQuantityControl {
+        justify-content: center;
+        width: 100%;
+    }
+    .wrapperQuantityControl > span,
+    .wrapperQuantityControl > button {
+        width: 120px;
+        height: 50px;
+        font-size: 28px;
+    }
+}

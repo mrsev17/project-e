@@ -1,0 +1,70 @@
+.basketPageDarkSubmitOrder {
+    width: 40%;
+}
+.basketPageDarkSubmitOrderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.basketPageDarkSubmitOrderContainer > button {
+    width: 100%;
+}
+.proceedToCheckoutBtn {
+    border-radius: 8px;
+    background-color: #5dacbd;
+    color: aliceblue;
+    height: 68px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: ease-in-out 0.8s;
+    margin-bottom: 16px;
+}
+.proceedToCheckoutBtn:hover {
+    background-color: #79c2d0;
+}
+.basketPageDarkSubmitOrderInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.basketPageDarkSubmitOrderInfo > h4:first-child {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.basketPageDarkSubmitOrderInfo > h4:last-child {
+    font-size: 28px;
+    color: aliceblue;
+}
+
+@media (max-width: 1200px) {
+    .basketPageDarkSubmitOrder {
+        width: 30%;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 24px;
+        color: aliceblue;
+    }
+}
+
+@media (max-width: 992px) {
+    .basketPageDarkSubmitOrder {
+        width: 100%;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 24px;
+        color: aliceblue;
+    }
+    .proceedToCheckoutBtn {
+        margin-bottom: 20px;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:first-child {
+        font-size: 20px;
+    }
+    .basketPageDarkSubmitOrderInfo > h4:last-child {
+        font-size: 28px;
+    }
+    .basketPageDarkSubmitOrderInfo {
+        margin-bottom: 10px;
+    }
+}

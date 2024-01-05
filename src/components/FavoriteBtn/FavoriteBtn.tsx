@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import { setIsFavoriteProduct } from '../../redux/productsSlice';
+import { setIsFavoriteProductBasket } from '../../redux/orderSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import styles from './FavoriteBtn.module.css';
@@ -17,6 +18,7 @@ export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({ productName, productIs
     const getMode: boolean = useAppSelector(selectMode);
     const favoriteHandle = (id: string) => {
         dispatch(setIsFavoriteProduct(id));
+        dispatch(setIsFavoriteProductBasket(id));
         notify();
     };
     return (

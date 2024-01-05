@@ -18,12 +18,12 @@ export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
     const notify = () => toast(`${product.productName} already in basket list`);
     const dispatch = useAppDispatch();
     const getBasket = useAppSelector((state) => state.checkout.orderList);
-    console.log(getBasket);
+
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };
+
     const productBasketHandle = (product: Product) => {
-        console.log('test');
         if (!checkBasketForProduct()) {
             dispatch(setProductInBasket(product));
         } else {

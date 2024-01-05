@@ -1,0 +1,10 @@
+.deliveryDateDark {
+    background-color: #303841;
+    border-radius: 8px;
+    padding: 8px 0 10px 0;
+}
+.deliveryDateDark > span {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}

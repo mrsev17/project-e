@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from './productsSlice';
-import { get } from 'http';
 
 export interface OrderSlice extends Product {
     quantInOrder: number;
@@ -48,14 +47,21 @@ const orderSlice = createSlice({
                 finalPrice: state.finalPrice - getAmount,
             };
         },
+        setIsFavoriteProductBasket(state, action: PayloadAction<string>) {
+            const prepareData: OrderSlice[] = state.orderList.map((product: OrderSlice) => {
+                if (product.id === action.payload) {
+                    return { ...product, isFavorite: !product.isFavorite };
+                }
+                return product;
+            });
+            return { ...state, orderList: prepareData };
+        },
         setClearOrder(state) {
             return initialState;
         },
     },
 });
 
-// export const selectProducts = (state: RootState) => state.products.products;
-// export const lastViewedProducts = (state: RootState) => state.products.lastViewedProducts;
-
-export const { setProductInBasket, setProductPlusOne, setProductMinusOne, setRemoveItemFromOrder, setClearOrder } = orderSlice.actions;
+export const { setProductInBasket, setProductPlusOne, setProductMinusOne, setRemoveItemFromOrder, setIsFavoriteProductBasket, setClearOrder } =
+    orderSlice.actions;
 export default orderSlice.reducer;
