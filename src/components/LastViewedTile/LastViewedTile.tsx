@@ -14,10 +14,10 @@ interface LastViewedTileProps {
 }
 
 export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
-    const getMode: boolean = useAppSelector(selectMode);
-    const notify = () => toast(`${product.productName} already in basket list`);
     const dispatch = useAppDispatch();
+    const getMode: boolean = useAppSelector(selectMode);
     const getBasket = useAppSelector((state) => state.checkout.orderList);
+    const notify = () => toast(`${product.productName} already in basket list`);
 
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);

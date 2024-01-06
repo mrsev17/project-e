@@ -5,9 +5,13 @@ import { Product } from '../../redux/productsSlice';
 import { resetFilters } from '../../redux/filterSlice';
 import { CategoryList, Pagination, AccordionMUI } from '../../components';
 import styles from './CategoryPage.module.css';
-import { match } from 'assert';
 
 export const CategoryPage = () => {
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [productsPerPage] = useState<number>(9);
+    const lastProductIndex: number = currentPage * productsPerPage;
+    const firstProductIndex: number = lastProductIndex - productsPerPage;
+
     const getMode: boolean = useAppSelector((state) => state.mode.mode);
     const products: Product[] = useAppSelector((state) => state.products.products);
     const notTrackedFilters: string[] = useAppSelector((state) => state.filter.notTrackedDataFilters);
@@ -18,16 +22,13 @@ export const CategoryPage = () => {
     // Logic for render filters options by category
 
     const getCategoryName: string = pathname.substring(1);
-    //
     const getProductsByCategory = (nameOfCategory: string, data: Product[]): Product[] => {
         return data.filter((product) => product.category === nameOfCategory);
     };
-    const getTargetProductsPag = getProductsByCategory(getCategoryName, products);
-    //
+    const getTargetProductsPag: Product[] = getProductsByCategory(getCategoryName, products);
 
     const makeFiltersByCategory = (data: Product[], categoryName: string, untrackableKeys: string[]) => {
         const collectKeys: string[] = [];
-
         const getTargetProducts: Product[] = getProductsByCategory(categoryName, products);
         for (const product of getTargetProducts) {
             const getKeys: string[] = Object.keys(product);
@@ -72,30 +73,14 @@ export const CategoryPage = () => {
     const resultDataWithFilters: ResultDataWithFilters = makeFiltersByCategory(products, getCategoryName, notTrackedFilters);
     const getEntriesFilters = Object.entries(resultDataWithFilters);
 
-    // = = = = = = = = = = = = = = = = = = = //
+    // Filters in work
 
-    // Filters in work V.2
-
-    // const getCompanies: (string | number)[] = useAppSelector((state) => state.filter.companies);
     const dependencies = useAppSelector((state) => state.filter.dependencies);
 
     const dataAfterDependencies = () => {
-        // console.log(getTargetProductsPag);
-        console.log(dependencies);
         interface ProductMod extends Product {
             [key: string]: any;
-            // other properties if you have specific ones with known types
         }
-
-        // const result: Product[] = getTargetProductsPag.reduce((acc: Product[], product: ProductMod) => {
-        //     for (const key in product) {
-        //         console.log('key', product[key]);
-        //         if (dependencies[key]?.includes(product[key])) {
-        //             acc.push(product);
-        //         }
-        //     }
-        //     return acc;
-        // }, [] as Product[]);
         const result: Product[] = getTargetProductsPag.reduce((acc: Product[], product: ProductMod) => {
             if (Object.keys(dependencies).every((key) => dependencies[key]?.includes(product[key]))) {
                 acc.push(product);
@@ -105,116 +90,8 @@ export const CategoryPage = () => {
 
         return result;
     };
-    console.log(dataAfterDependencies());
-    const productsAfterFilters = dataAfterDependencies();
-
-    // console.log('Get Companies', getCompanies);
-    // console.log('Get depies', dependencies);
-    // console.log(dependencies);
-
-    // Filters in work V.1
-
-    // const getCompanies: (string | number)[] = useAppSelector((state) => state.filter.companies);
-    // const dependencies: (string | number)[] = useAppSelector((state) => state.filter.dependencies);
-    // const updateDepies = dependencies.filter((item) => !getCompanies.includes(item));
-
-    // const getTargetCategoryItems = (name: string, data: Product[]): Product[] => {
-    //     return data.filter((product) => product.category === name);
-    // };
-    // const targetData: Product[] = getTargetCategoryItems(getCategoryName, products);
-    // const filterDataByDepends = (dependencies: (string | number)[], targetProducts: Product[]) => {
-    //     if (getCompanies.length && updateDepies.length) {
-    //         const copyOfData = [...targetProducts];
-    //         const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
-    //         const indexesOfDepies = filterDataByCompanies.reduce((acc: number[], product: Product, index: number) => {
-    //             for (let i = 0; i <= dependencies.length; i += 1) {
-    //                 if (Object.values(product).includes(dependencies[i])) {
-    //                     acc.push(index);
-    //                 }
-    //             }
-    //             return acc;
-    //         }, []);
-    //         indexesOfDepies.sort((a, b) => b - a);
-    //         const filterData = filterDataByCompanies.filter((_, index) => indexesOfDepies.includes(index));
-    //         return filterData;
-    //     } else if (getCompanies.length && !updateDepies.length) {
-    //         const copyOfData = [...targetProducts];
-    //         const filterDataByCompanies = copyOfData.filter((item) => getCompanies.includes(item.company));
-    //         const indexesOfDepies = filterDataByCompanies.reduce((acc: number[], product: Product, index: number) => {
-    //             for (let i = 0; i <= dependencies.length; i += 1) {
-    //                 if (Object.values(product).includes(dependencies[i])) {
-    //                     acc.push(index);
-    //                 }
-    //             }
-    //             return acc;
-    //         }, []);
-    //         indexesOfDepies.sort((a, b) => b - a);
-    //         const filterData = filterDataByCompanies.filter((_, index) => indexesOfDepies.includes(index));
-    //         return filterData;
-    //     } else {
-    //         const copyOfData = [...targetProducts];
-    //         const indexesOfDepies = copyOfData.reduce((acc: number[], product: Product, index: number) => {
-    //             for (let i = 0; i <= updateDepies.length; i += 1) {
-    //                 if (Object.values(product).includes(updateDepies[i])) {
-    //                     acc.push(index);
-    //                 }
-    //             }
-    //             return acc;
-    //         }, []);
-    //         indexesOfDepies.sort((a, b) => b - a);
-    //         const filterData = copyOfData.filter((_, index) => indexesOfDepies.includes(index));
-    //         return filterData;
-    //     }
-    // };
-    // const updateAfterFilters: Product[] = filterDataByDepends(dependencies, targetData);
-
-    // const chooseOption = () => {
-    //     if (dependencies.length === 0) {
-    //         return targetData;
-    //     } else {
-    //         return updateAfterFilters;
-    //     }
-    // };
-    // const actualData = chooseOption();
-    // const updateAfterFiltersTwo: Product[] = filterDataByDepends(updateDepies, actualData);
-
-    // function checkValuesInArray(firstArray: (string | number)[], secondArray: (string | number)[]) {
-    //     const secondSet = new Set(secondArray);
-    //     for (const element of firstArray) {
-    //         if (secondSet.has(element)) {
-    //             secondSet.delete(element);
-    //         }
-    //     }
-    //     return secondSet.size === 0;
-    // }
-
-    // const finalDataCheck = () => {
-    //     if (getCompanies.length && updateDepies.length) {
-    //         return updateAfterFiltersTwo;
-    //     } else if (getCompanies.length && !updateDepies.length) {
-    //         return actualData;
-    //     } else if (!getCompanies.length && updateDepies.length) {
-    //         return actualData;
-    //     } else {
-    //         let result = [];
-    //         for (let target of actualData) {
-    //             const valuesTarget = Object.values(target);
-    //             const checkMatch = checkValuesInArray(valuesTarget, updateDepies);
-    //             if (checkMatch) result.push(target);
-    //         }
-    //         return result;
-    //     }
-    // };
-
-    // Data for pagination
-    const [currentPage, setCurrentPage] = useState<number>(1);
-    const [productsPerPage] = useState<number>(9);
-    // const finalData = finalDataCheck();
-    const lastProductIndex: number = currentPage * productsPerPage;
-    const firstProductIndex: number = lastProductIndex - productsPerPage;
-    // const currentProducts: Product[] = finalData.slice(firstProductIndex, lastProductIndex);
-
-    // = = = = = = = = = = = = = = = = = = = = = = = = //
+    const productsAfterFilters: Product[] = dataAfterDependencies();
+    const currentProducts: Product[] = productsAfterFilters.slice(firstProductIndex, lastProductIndex);
 
     // Reset filters
 
@@ -245,7 +122,7 @@ export const CategoryPage = () => {
                         ))}
                     </div>
                     <div className={styles.categoryPageBottom}>
-                        <CategoryList targetData={productsAfterFilters} />
+                        <CategoryList targetData={currentProducts} />
                         <Pagination
                             totalItems={productsAfterFilters.length}
                             productsPerPage={productsPerPage}

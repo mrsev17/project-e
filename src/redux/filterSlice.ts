@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
 
 interface FilterState {
     title: string;
@@ -55,10 +54,6 @@ const filtersSlice = createSlice({
         },
     },
 });
-
-// export const selectCompanies = (state: RootState) => state.filter.companies;
-export const selectTitleFilter = (state: RootState) => state.filter.title;
-export const selectDependncies = (state: RootState) => state.filter.dependencies;
 
 export const { setTitleFilter, setDependencies, resetFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;

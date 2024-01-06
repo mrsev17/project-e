@@ -5,7 +5,6 @@ import modeReducer from './modeSlice';
 import productsReducer from './productsSlice';
 import filterReducer from './filterSlice';
 import userReducer from './userSlice';
-// import lastViewedReducer from './lastViewedSlice';
 import orderReducer from './orderSlice';
 
 const rootReducer = combineReducers({
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
     filter: filterReducer,
     user: userReducer,
     checkout: orderReducer,
-    // lastViewed: lastViewedReducer,
 });
 
 const persistConfig = {

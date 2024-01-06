@@ -66,8 +66,7 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
         dispatch(setDependencies({ option, category }));
     };
 
-    const checkBoxState = dependencies[category] ? true : false;
-    // console.log(checkBoxState);
+    const checkBoxState: boolean = dependencies[category] ? true : false;
 
     return (
         <div className={styles.accordionWrapper}>
