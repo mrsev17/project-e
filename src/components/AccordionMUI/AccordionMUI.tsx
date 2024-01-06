@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { setDependencies, selectDependncies } from '../../redux/filterSlice';
+import { setDependencies } from '../../redux/filterSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { selectMode } from '../../redux/modeSlice';
 import { styled } from '@mui/material/styles';
@@ -50,7 +50,9 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, setCurrentPage }) => {
     const getMode: boolean = useAppSelector(selectMode);
-    const dependencies: (string | number)[] = useAppSelector(selectDependncies);
+    const dependencies: {
+        [key: string]: (number | string)[];
+    } = useAppSelector((state) => state.filter.dependencies);
     const dispatch = useAppDispatch();
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
     const handleChange =
@@ -63,6 +65,9 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
         setCurrentPage(1);
         dispatch(setDependencies({ option, category }));
     };
+
+    const checkBoxState = dependencies[category] ? true : false;
+    // console.log(checkBoxState);
 
     return (
         <div className={styles.accordionWrapper}>
@@ -88,7 +93,7 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
                                             },
                                         }}
                                         onChange={() => checkBoxHandle(option, category)}
-                                        checked={dependencies.includes(option)}
+                                        checked={checkBoxState ? dependencies[category].includes(option) : false}
                                     />
                                     <span className={getMode ? styles.nameOfTarget : styles.nameOfTargetLight}>{option}</span>
                                 </label>

@@ -2,17 +2,19 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 interface FilterState {
-    companies: (string | number)[];
     title: string;
     filterByPrice: string;
-    dependencies: (string | number)[];
+    dependencies: {
+        [key: string]: (number | string)[];
+    };
+    notTrackedDataFilters: string[];
 }
 
 const initialState: FilterState = {
-    companies: [],
     title: '',
     filterByPrice: '',
-    dependencies: [],
+    dependencies: {},
+    notTrackedDataFilters: ['productName', 'category', 'price', 'inStock', 'isFavorite', 'photos', 'description', 'id'],
 };
 
 interface setDependenciesParameters {
@@ -28,19 +30,23 @@ const filtersSlice = createSlice({
             state.title = action.payload;
         },
         setDependencies(state, action: PayloadAction<setDependenciesParameters>) {
-            if (action.payload.category === 'company') {
-                const checkExistOrNot = state.companies.includes(action.payload.option);
+            const category = action.payload.category;
+            const value = action.payload.option;
 
-                if (checkExistOrNot) {
-                    state.companies = state.companies.filter((company) => company !== action.payload.option);
-                } else {
-                    state.companies.push(action.payload.option);
+            if (!state.dependencies.hasOwnProperty(category)) {
+                state.dependencies[category] = [];
+                state.dependencies[category].push(value);
+            } else if (state.dependencies.hasOwnProperty(category)) {
+                if (!state.dependencies[category].includes(value)) {
+                    state.dependencies[category].push(value);
+                } else if (state.dependencies[category].includes(value)) {
+                    state.dependencies[category] = state.dependencies[category].filter((item) => {
+                        return item !== value;
+                    });
                 }
             }
-            if (state.dependencies.includes(action.payload.option)) {
-                state.dependencies = state.dependencies.filter((dep) => dep !== action.payload.option);
-            } else {
-                state.dependencies.push(action.payload.option);
+            if (!state.dependencies[category].length) {
+                delete state.dependencies[category];
             }
             return state;
         },
@@ -50,7 +56,7 @@ const filtersSlice = createSlice({
     },
 });
 
-export const selectCompanies = (state: RootState) => state.filter.companies;
+// export const selectCompanies = (state: RootState) => state.filter.companies;
 export const selectTitleFilter = (state: RootState) => state.filter.title;
 export const selectDependncies = (state: RootState) => state.filter.dependencies;
 
