@@ -19,10 +19,71 @@ export const CategoryPage = () => {
     const dispatch = useAppDispatch();
     const { pathname } = location;
 
+    // Logic for create filters by category
+
+    // Filters V.2
+
+    const notTracked = ['productName', 'category', 'price', 'inStock', 'isFavorite', 'photos', 'description', 'id'];
+    const getCategoryName = pathname.substring(1);
+    const makeFiltersByCategory = (data: Product[], categoryName: string, untrackableKeys: string[]) => {
+        const testKeys = [];
+        const getProductsByCategory = (nameOfCategory: string) => {
+            return data.filter((product) => product.category === nameOfCategory);
+        };
+        const getTargetProducts = getProductsByCategory(categoryName);
+        for (const product of getTargetProducts) {
+            const getKeys = Object.keys(product);
+            testKeys.push(getKeys);
+        }
+        const mergeKeys: string[] = testKeys.reduce((acc, data) => {
+            data.forEach((item) => {
+                if (!acc.includes(item) && !untrackableKeys.includes(item)) {
+                    acc.push(item);
+                }
+            });
+            return acc;
+        }, []);
+        interface LayerForFilters {
+            [key: string]: (string | number)[];
+        }
+        const layerForFilters: LayerForFilters = mergeKeys.reduce((acc, key) => {
+            acc[key] = [];
+            return acc;
+        }, {} as LayerForFilters);
+        interface ProductForFilters {
+            [key: string]: any;
+        }
+        for (const keyFilter in layerForFilters) {
+            getTargetProducts.forEach((product: ProductForFilters) => {
+                for (const keyProduct in product) {
+                    if (keyFilter === keyProduct && !layerForFilters[keyFilter].includes(product[keyProduct])) {
+                        layerForFilters[keyFilter].push(product[keyProduct]);
+                    }
+                }
+            });
+        }
+        for (const keyReadyFilter in layerForFilters) {
+            if (typeof layerForFilters[keyReadyFilter][0] === 'string') {
+                layerForFilters[keyReadyFilter] = (layerForFilters[keyReadyFilter] as string[]).sort();
+            }
+            if (typeof layerForFilters[keyReadyFilter][0] === 'number') {
+                layerForFilters[keyReadyFilter] = (layerForFilters[keyReadyFilter] as number[]).sort((valueA, valueB) => valueA - valueB);
+            }
+        }
+        return layerForFilters;
+    };
+    const resultDataWithFilters = makeFiltersByCategory(products, getCategoryName, notTracked);
+    console.log('V.2', resultDataWithFilters);
+    const getEntriesFilters = Object.entries(resultDataWithFilters);
+
+    // = = = = = = = = = = = = = = = = = = = //
+
     const getTargetCategoryItems = (name: string, data: Product[]): Product[] => {
         return data.filter((product) => product.category === name);
     };
     const targetData: Product[] = getTargetCategoryItems(pathname.substring(1), products);
+
+    //
     const filterDataByDepends = (dependencies: (string | number)[], targetProducts: Product[]) => {
         if (getCompanies.length && updateDepies.length) {
             const copyOfData = [...targetProducts];
@@ -67,7 +128,11 @@ export const CategoryPage = () => {
             return filterData;
         }
     };
+    //
     const updateAfterFilters: Product[] = filterDataByDepends(dependencies, targetData);
+
+    // console.log(dependencies);
+    // console.log(targetData);
     const lastProductIndex: number = currentPage * productsPerPage;
     const firstProductIndex: number = lastProductIndex - productsPerPage;
     const chooseOption = () => {
@@ -78,40 +143,8 @@ export const CategoryPage = () => {
         }
     };
     const actualData = chooseOption();
-    const filtersData = (categoryData: Product[], excludeKeys: string[] = []) => {
-        interface ProductFilter {
-            [key: string]: any;
-        }
-        const result: ProductFilter = {};
-        categoryData.forEach((obj) => {
-            Object.keys(obj).forEach((key) => {
-                if (!excludeKeys.includes(key)) {
-                    if (!result[key]) {
-                        result[key] = [];
-                    }
-                    result[key].push((obj as any)[key]);
-                }
-            });
-        });
-        return result;
-    };
-    const removeDuplicatesFromObject = (obj: any) => {
-        const uniqueValues = {};
-        const filterUnique = (value: string | number, index: number, self: (string | number)[]): boolean => {
-            return self.indexOf(value) === index;
-        };
-        for (const key in obj) {
-            if (Array.isArray(obj[key])) {
-                (uniqueValues as any)[key] = obj[key].filter(filterUnique);
-            } else {
-                (uniqueValues as any)[key] = obj[key];
-            }
-        }
-        return uniqueValues;
-    };
+    // console.log(actualData);
 
-    const entriesForFilters = filtersData(targetData, ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description']);
-    const entriesRemoveDuplicates = removeDuplicatesFromObject(entriesForFilters);
     const updateAfterFiltersTwo: Product[] = filterDataByDepends(updateDepies, actualData);
     const clearFiltersHandle = useCallback(() => {
         dispatch(resetFilters());
@@ -153,6 +186,8 @@ export const CategoryPage = () => {
 
     const currentProducts: Product[] = finalData.slice(firstProductIndex, lastProductIndex);
 
+    // console.log('V.1', entriesRemoveDuplicates);
+
     return (
         <div className={styles.categoryPage}>
             <div className={styles.categoryPageContent}>
@@ -166,12 +201,11 @@ export const CategoryPage = () => {
                             <span>Price:</span>
                             <div className={styles.priceInputs}></div>
                         </div>
-                        {Object.entries(entriesRemoveDuplicates).map(([category, options]) => (
+                        {getEntriesFilters.map(([category, options]) => (
                             <AccordionMUI key={category} category={category} options={options} setCurrentPage={setCurrentPage} />
                         ))}
                     </div>
                     <div className={styles.categoryPageBottom}>
-                        {/* <CategoryList targetData={getCompanies.length ? updateAfterFiltersTwo : currentProducts} /> */}
                         <CategoryList targetData={currentProducts} />
                         <Pagination totalItems={finalData.length} productsPerPage={productsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
                     </div>
