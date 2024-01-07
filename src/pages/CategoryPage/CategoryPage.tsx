@@ -105,7 +105,7 @@ export const CategoryPage = () => {
     return (
         <div className={styles.categoryPage}>
             <div className={styles.categoryPageContent}>
-                <h2 className={styles.categoryTitle}>{getCategoryName}</h2>
+                <h2 className={getMode ? styles.categoryTitleDark : styles.categoryTitleLight}>{getCategoryName}</h2>
                 <div className={styles.categoryWrapperContent}>
                     <div className={getMode ? styles.filter : styles.filterLight}>
                         <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>

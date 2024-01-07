@@ -16,7 +16,7 @@ export const BasketSubmitOrder: React.FC<BasketSubmitOrderProps> = ({ calculateI
                 <button onClick={() => notify()} className={getMode ? styles.proceedToCheckoutBtn : styles.proceedToCheckoutBtnLight}>
                     Proceed to Checkout
                 </button>
-                <div className={getMode ? styles.basketPageDarkSubmitOrderInfo : styles.basketPageDarkSubmitOrderInfoLight}>
+                <div className={getMode ? styles.basketPageDarkSubmitOrderInfo : styles.basketPageLightSubmitOrderInfo}>
                     <h4>{`${calculateItems} items, full amount: `}</h4>
                     <h4>{getBasketPrice} $</h4>
                 </div>

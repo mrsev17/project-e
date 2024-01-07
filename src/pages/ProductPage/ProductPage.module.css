@@ -232,4 +232,23 @@
     .productMidInfo > div {
         width: 100%;
     }
+    .specsDark,
+    .specsLight {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .specDark > span,
+    .valueDark > span {
+        font-size: 16px;
+        /* color: #d9dad7; */
+        color: aliceblue;
+    }
+    .specLight > span,
+    .valueLight > span {
+        font-size: 16px;
+        /* color: #d9dad7; */
+        color: black;
+    }
 }

@@ -29,7 +29,7 @@
 .proceedToCheckoutBtn:hover {
     background-color: #79c2d0;
 }
-.basketPageDarkSubmitOrderInfoLight,
+.basketPageLightSubmitOrderInfo,
 .basketPageDarkSubmitOrderInfo {
     display: flex;
     justify-content: space-between;
@@ -46,11 +46,11 @@
     color: aliceblue;
 }
 
-.basketPageDarkSubmitOrderInfoLight > h4:first-child {
+.basketPageLightSubmitOrderInfo > h4:first-child {
     font-size: 20px;
     color: #e91e63;
 }
-.basketPageDarkSubmitOrderInfoLight > h4:last-child {
+.basketPageLightSubmitOrderInfo > h4:last-child {
     font-size: 28px;
     color: #e91e63;
 }
@@ -69,19 +69,19 @@
     .basketPageDarkSubmitOrder {
         width: 100%;
     }
-    .basketPageDarkSubmitOrderInfo > h4:last-child {
-        font-size: 24px;
-        color: aliceblue;
-    }
+    .proceedToCheckoutBtnLight,
     .proceedToCheckoutBtn {
         margin-bottom: 20px;
     }
+    .basketPageLightSubmitOrderInfo > h4:first-child,
     .basketPageDarkSubmitOrderInfo > h4:first-child {
         font-size: 20px;
     }
+    .basketPageLightSubmitOrderInfo > h4:last-child,
     .basketPageDarkSubmitOrderInfo > h4:last-child {
         font-size: 28px;
     }
+    .basketPageLightSubmitOrderInfo,
     .basketPageDarkSubmitOrderInfo {
         margin-bottom: 10px;
     }

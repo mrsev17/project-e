@@ -100,6 +100,7 @@
     .basketPageDarkSubmitOrderInfo > h4:last-child {
         font-size: 28px;
     }
+
     .basketPageDarkSubmitOrderInfo {
         margin-bottom: 10px;
     }
@@ -120,6 +121,7 @@
     .toFavoriteDark {
         justify-content: center;
     }
+    .favoritesBasketSubLight,
     .favoritesBasketSubDark {
         display: block;
         font-size: 28px;
@@ -127,12 +129,12 @@
     .orderItemWrapperLight,
     .orderItemWrapper {
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
     }
     .orderItemImageLight,
     .orderItemImage {
-        width: 300px;
-        height: 480px;
+        width: 340px;
+        height: 180px;
     }
 
     .orderBuyRemoveQuantityDark {

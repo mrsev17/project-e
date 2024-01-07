@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     from {
         transform: translateY(120px);
     }
@@ -91,6 +91,144 @@
     }
     .adaptiveMenuSearchLight,
     .adaptiveMenuSearch {
+        transform: scale(1.1);
+        margin-top: -8px;
+    }
+} */
+
+/* After Vendor prefixes */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@-webkit-keyframes fadeIn {
+    from {
+        -webkit-transform: translateY(120px);
+        transform: translateY(120px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        -webkit-transform: translateY(120px);
+        transform: translateY(120px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.adaptiveMenuLight,
+.adaptiveMenu {
+    padding: 12px;
+    display: none;
+    border-radius: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    position: sticky;
+    top: 90%;
+    z-index: 100;
+    gap: 10%;
+    -webkit-animation: fadeIn 1.1s ease-out forwards;
+    animation: fadeIn 1.1s ease-out forwards;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.adaptiveMenu {
+    background-color: #385170;
+}
+.adaptiveMenuLight {
+    background-color: white;
+}
+.adaptiveMenuSearchLight,
+.adaptiveMenuSearch,
+.adaptiveMenuUser,
+.adaptiveMenuUserLight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.adaptiveMenuUserLight > svg,
+.adaptiveMenuUser > svg {
+    width: 40px;
+    height: 40px;
+}
+.adaptiveMenuUser,
+.adaptiveMenuUserLight {
+    margin-bottom: 8px;
+}
+.adaptiveMenuUser > svg {
+    fill: aliceblue;
+}
+.adaptiveMenuUserLight > svg {
+    fill: #e91e63;
+}
+.adaptiveMenuSearchLight,
+.adaptiveMenuSearch {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin-top: -12px;
+}
+.adaptiveMenuSearch {
+    background-color: whitesmoke;
+}
+.adaptiveMenuSearchLight {
+    background-color: #e91e63;
+}
+.adaptiveMenuSearchLight > a > svg,
+.adaptiveMenuSearch > a > svg {
+    width: 36px;
+    height: 36px;
+}
+.adaptiveMenuSearchLight > a > svg {
+    color: aliceblue;
+}
+.adaptiveMenuSearch > a > svg {
+    color: black;
+}
+
+@media (max-width: 567px) {
+    .adaptiveMenuLight,
+    .adaptiveMenu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+@media (max-width: 400px) {
+    .adaptiveMenu {
+        gap: 20px;
+    }
+    .adaptiveMenuSearchLight,
+    .adaptiveMenuSearch {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
         transform: scale(1.1);
         margin-top: -8px;
     }

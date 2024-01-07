@@ -66,8 +66,7 @@
     }
     .searchCatalogListLigth > input,
     .searchCatalogList > input {
-        /* margin: 0 auto; */
-        /* padding: 0 10px; */
+        width: 94%;
         max-width: 400px;
         margin-left: 0;
         font-size: 22px;

@@ -13,7 +13,7 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
             key={key}
             className='rounded-xl flex items-center'
             navigation={({ setActiveIndex, activeIndex, length }) => (
-                <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
+                <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-4'>
                     {new Array(length).fill('').map((_, i) => (
                         <span
                             key={i}

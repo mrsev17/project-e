@@ -22,7 +22,7 @@ export const HomePage = () => {
     const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const products: Product[] = useAppSelector((state) => state.products.products);
     const categories: unknown | string[] = getUniqueCategories(products);
-    console.log(categories);
+
     const handleRedirect = () => {
         navigate('/login');
     };

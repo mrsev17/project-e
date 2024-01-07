@@ -15,7 +15,6 @@
     text-align: center;
     min-height: 100vh;
     height: 100%;
-
     margin: 0 auto;
     max-width: 1680px;
 }
@@ -69,7 +68,8 @@ a {
         width: 30px !important;
         height: 30px !important;
     }
-    /* .MuiModal-root {
-        display: none !important;
-    } */
+    .content-\[\'\'\] {
+        width: 20px;
+        height: 20px;
+    }
 }
