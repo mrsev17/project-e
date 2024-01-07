@@ -7,12 +7,14 @@ interface CarouselProps {
 }
 
 export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }) => {
+    const key = photos.join('-');
     return (
         <Carousel
+            key={key}
             className='rounded-xl flex items-center'
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
-                    {new Array(length).fill('1').map((_, i) => (
+                    {new Array(length).fill('').map((_, i) => (
                         <span
                             key={i}
                             className={`block h-3 cursor-pointer rounded-full transition-all content-[''] ${
@@ -38,7 +40,7 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
                 </IconButton>
             )}
         >
-            {photos.map((photo, i) => {
+            {photos.map((photo: string, i: number) => {
                 return <KeepMountedModal key={i} photo={photo} productName={productName} />;
             })}
         </Carousel>

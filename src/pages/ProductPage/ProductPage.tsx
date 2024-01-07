@@ -44,9 +44,7 @@ export const ProductPage: React.FC = () => {
             <div className={styles.productPageContainer}>
                 <div className={styles.productPageMainDark}>
                     <div className={getMode ? styles.productPageImages : styles.productPageImagesLight}>
-                        <div>
-                            <CarouselProduct photos={getPhotosOfProduct} productName={getTargetProduct.productName} />
-                        </div>
+                        <CarouselProduct photos={getPhotosOfProduct} productName={getTargetProduct.productName} />
                     </div>
                     <div className={styles.productPageInfo}>
                         <div className={styles.upperInfo}>
