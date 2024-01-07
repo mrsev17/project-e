@@ -1,5 +1,4 @@
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './Pagination.module.css';
 
 interface PaginationProps {
@@ -10,7 +9,7 @@ interface PaginationProps {
 }
 
 export const Pagination: React.FC<PaginationProps> = ({ totalItems, productsPerPage, setCurrentPage, currentPage }) => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     let pages: number[] = [];
     for (let i = 1; i <= Math.ceil(totalItems / productsPerPage); i += 1) {
         pages.push(i);

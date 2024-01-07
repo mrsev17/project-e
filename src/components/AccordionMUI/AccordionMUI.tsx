@@ -1,7 +1,6 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { setDependencies } from '../../redux/filterSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
@@ -49,12 +48,12 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, setCurrentPage }) => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const dependencies: {
         [key: string]: (number | string)[];
     } = useAppSelector((state) => state.filter.dependencies);
     const dispatch = useAppDispatch();
-    const [expanded, setExpanded] = React.useState<string | false>('panel1');
+    const [expanded, setExpanded] = useState<string | false>('panel1');
     const handleChange =
         (panel: string) =>
         (event: React.SyntheticEvent, newExpanded: boolean): void => {
@@ -65,14 +64,12 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
         setCurrentPage(1);
         dispatch(setDependencies({ option, category }));
     };
-
     const checkBoxState: boolean = dependencies[category] ? true : false;
-
     return (
-        <div className={styles.accordionWrapper}>
+        <div className={getMode ? styles.accordionWrapperDark : styles.accordionWrapperLight}>
             <Accordion expanded={expanded === category} onChange={handleChange(category)}>
                 <AccordionSummary aria-controls={`${category}d-content`} id={`${category}d-header`}>
-                    <Typography fontSize={18} sx={{ textTransform: 'uppercase', color: `${getMode ? '#385170' : '#e91e63'}` }}>
+                    <Typography fontSize={18} sx={{ textTransform: 'uppercase', color: `${getMode ? '#385170' : '#e91e63'}`, fontSize: '16px' }}>
                         {category}
                     </Typography>
                 </AccordionSummary>
@@ -84,7 +81,7 @@ export const AccordionMUI: React.FC<AccordionMUIProps> = ({ category, options, s
                                     <Checkbox
                                         {...label}
                                         sx={{
-                                            fontSize: '20px',
+                                            fontSize: '18px',
                                             padding: '4px 0 4px 4p',
                                             color: `${getMode ? '#385170' : '#e91e63'}`,
                                             '&.Mui-checked': {

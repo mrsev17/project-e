@@ -8,7 +8,7 @@ interface RemoveFromOrderProps {
 }
 
 export const RemoveFromOrder: React.FC<RemoveFromOrderProps> = ({ productId }) => {
-    const getMode = useAppSelector((state) => state.mode.mode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     const dispatch = useAppDispatch();
     const removeItemHandle = (id: string) => {
         dispatch(setRemoveItemFromOrder(id));

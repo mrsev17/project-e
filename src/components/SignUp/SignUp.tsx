@@ -1,15 +1,15 @@
 import { useAppDispatch } from '../../hooks/hook';
+import { setUser } from '../../redux/userSlice';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { FormAuth } from '../FormAuth';
-import { setUser } from '../../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
 
-export const SignUp = () => {
+export const SignUp: React.FC = () => {
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const handleRedirect = () => {
         navigate('/');
     };
-    const dispatch = useAppDispatch();
     const handleRegister = (email: string, password: string) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)

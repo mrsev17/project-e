@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './FormAuth.module.css';
 
 interface FormAuthProps {
@@ -9,7 +8,7 @@ interface FormAuthProps {
 }
 
 export const FormAuth: React.FC<FormAuthProps> = ({ title, handleClick }) => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 

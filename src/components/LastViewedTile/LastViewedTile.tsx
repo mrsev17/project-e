@@ -1,5 +1,4 @@
 import { useAppSelector, useAppDispatch } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import { Link } from 'react-router-dom';
 import { FavoriteBtn } from '../FavoriteBtn';
 import { SlBasket } from 'react-icons/sl';
@@ -14,15 +13,13 @@ interface LastViewedTileProps {
 }
 
 export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
-    const dispatch = useAppDispatch();
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const getBasket = useAppSelector((state) => state.checkout.orderList);
+    const dispatch = useAppDispatch();
     const notify = () => toast(`${product.productName} already in basket list`);
-
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };
-
     const productBasketHandle = (product: Product) => {
         if (!checkBasketForProduct()) {
             dispatch(setProductInBasket(product));

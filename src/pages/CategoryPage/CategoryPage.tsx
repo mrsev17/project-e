@@ -11,15 +11,12 @@ export const CategoryPage = () => {
     const [productsPerPage] = useState<number>(9);
     const lastProductIndex: number = currentPage * productsPerPage;
     const firstProductIndex: number = lastProductIndex - productsPerPage;
-
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const products: Product[] = useAppSelector((state) => state.products.products);
     const notTrackedFilters: string[] = useAppSelector((state) => state.filter.notTrackedDataFilters);
     const location = useLocation();
     const dispatch = useAppDispatch();
     const { pathname } = location;
-
-    // Logic for render filters options by category
 
     const getCategoryName: string = pathname.substring(1);
     const getProductsByCategory = (nameOfCategory: string, data: Product[]): Product[] => {
@@ -73,8 +70,6 @@ export const CategoryPage = () => {
     const resultDataWithFilters: ResultDataWithFilters = makeFiltersByCategory(products, getCategoryName, notTrackedFilters);
     const getEntriesFilters = Object.entries(resultDataWithFilters);
 
-    // Filters in work
-
     const dependencies = useAppSelector((state) => state.filter.dependencies);
 
     const dataAfterDependencies = () => {
@@ -91,9 +86,12 @@ export const CategoryPage = () => {
         return result;
     };
     const productsAfterFilters: Product[] = dataAfterDependencies();
-    const currentProducts: Product[] = productsAfterFilters.slice(firstProductIndex, lastProductIndex);
-
-    // Reset filters
+    const sortByName = productsAfterFilters.sort((productA, productB) => {
+        if (productA.productName < productB.productName) return -1;
+        if (productA.productName > productB.productName) return 1;
+        return 0;
+    });
+    const currentProducts: Product[] = sortByName.slice(firstProductIndex, lastProductIndex);
 
     const clearFiltersHandle = useCallback(() => {
         dispatch(resetFilters());

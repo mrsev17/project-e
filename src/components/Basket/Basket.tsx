@@ -3,8 +3,8 @@ import { useAppSelector } from '../../hooks/hook';
 import Badge from '@mui/material/Badge';
 import styles from './Basket.module.css';
 
-export const Basket = () => {
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+export const Basket: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const getBasketLength = useAppSelector((state) => state.checkout.orderList).length;
     return (
         <button>

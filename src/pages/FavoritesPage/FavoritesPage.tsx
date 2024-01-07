@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import { Product, selectProducts } from '../../redux/productsSlice';
 import { ProductTile } from '../../components';
 import styles from './FavoritesPage.module.css';
 
 export const FavoritesPage = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const getProducts: Product[] = useAppSelector(selectProducts);
     const getWishList = getProducts.filter((product) => product.isFavorite);
-    const getMode: boolean = useAppSelector(selectMode);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

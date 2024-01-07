@@ -1,9 +1,8 @@
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './SubscribeDiscounts.module.css';
 
-export const SubscribeDiscounts = () => {
-    const getMode: boolean = useAppSelector(selectMode);
+export const SubscribeDiscounts: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     return (
         <div className={getMode ? styles.subscribeDiscounts : styles.subscribeDiscountsLight}>
             <div className={getMode ? styles.wrapperSubs : styles.wrapperSubsLight}>

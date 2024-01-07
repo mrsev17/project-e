@@ -8,7 +8,7 @@ interface BasketSelectQuantityProps {
 }
 
 export const BasketSelectQuantity: React.FC<BasketSelectQuantityProps> = ({ productId, quantInOrder }) => {
-    const getMode = useAppSelector((state) => state.mode.mode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     const dispatch = useAppDispatch();
     const plusItemToOrder = (id: string): void => {
         dispatch(setProductPlusOne(id));

@@ -1,26 +1,23 @@
 .imageCase {
     width: auto;
-    /* height: auto; */
-
-    /* max-width: 1200px;
-    max-height: 1000px; */
 }
 .modalWrapper {
+    margin: 0 auto;
+    width: 320px;
+    height: 440px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .modalWrapper > img {
-    transform: scale(0.6);
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 84%;
 }
+
 @media (max-width: 568px) {
     .imageCase {
         transform: scale(1);
     }
-    /* .mountedImage {
-        display: none;
-    } */
-    /* .modalWrapper {
-        display: none;
-        justify-content: center;
-    } */
 }

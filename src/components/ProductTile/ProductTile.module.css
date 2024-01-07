@@ -36,18 +36,17 @@
     margin-top: 40px;
     border-radius: 8px;
     background-color: white;
-    max-width: 260px;
-    width: 100%;
-    height: 180px;
+    width: 240px;
+    height: 160px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 .mainPicture {
+    object-fit: contain;
+    max-width: 90%;
+    max-height: 90%;
     margin: 0 auto;
-    max-width: 180px;
-    max-height: 160px;
-    border-radius: 4px;
 }
 .productNameDark > a,
 .productName > a {

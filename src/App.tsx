@@ -6,13 +6,13 @@ import MainLayout from './layouts/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
-import { selectMode } from './redux/modeSlice';
+// import { selectMode } from './redux/modeSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch();
-    const getMode = useAppSelector(selectMode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     useEffect(() => {
         const storedData = localStorage.getItem('persist:e-app');
         if (storedData) {

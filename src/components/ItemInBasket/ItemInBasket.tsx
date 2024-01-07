@@ -1,8 +1,5 @@
 import { useAppSelector } from '../../hooks/hook';
-import { BasketSelectQuantity } from '../BasketSelectQuantity';
-import { OrderNamePrice } from '../OrderNamePrice';
-import { RemoveFromOrder } from '../RemoveFromOrder';
-import { FavoriteBtn } from '../FavoriteBtn';
+import { BasketSelectQuantity, OrderNamePrice, RemoveFromOrder, FavoriteBtn } from '../../components';
 import styles from './ItemInBasket.module.css';
 
 interface ItemInBasketProps {
@@ -24,7 +21,7 @@ export const ItemInBasket: React.FC<ItemInBasketProps> = ({
     productIsFavorite,
     quantInOrder,
 }) => {
-    const getMode = useAppSelector((state) => state.mode.mode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     return (
         <li className={getMode ? styles.orderItemWrapper : styles.orderItemWrapperLight}>
             <div className={getMode ? styles.orderItemImage : styles.orderItemImageLight}>
@@ -35,7 +32,6 @@ export const ItemInBasket: React.FC<ItemInBasketProps> = ({
                 <div className={styles.orderBuyRemoveQuantityDark}>
                     <div className={styles.toFavoriteDark}>
                         <FavoriteBtn productId={productId} productName={productName} productIsFavorite={productIsFavorite} />
-                        {/* <span className={styles.favoritesBasketSubDark}>{productIsFavorite ? 'Remove from favorites' : 'To favorites'}</span> */}
                     </div>
                     <RemoveFromOrder productId={productId} />
                     <BasketSelectQuantity productId={productId} quantInOrder={quantInOrder} />

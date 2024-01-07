@@ -8,7 +8,7 @@ interface BasketSubmitOrderProps {
 }
 
 export const BasketSubmitOrder: React.FC<BasketSubmitOrderProps> = ({ calculateItems, getBasketPrice }) => {
-    const getMode = useAppSelector((state) => state.mode.mode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     const notify = () => toast('Currently not available');
     return (
         <div className={styles.basketPageDarkSubmitOrder}>

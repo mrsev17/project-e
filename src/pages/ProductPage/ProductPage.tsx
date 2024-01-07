@@ -1,29 +1,26 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-import { setViewedProduct } from '../../redux/productsSlice';
-import { selectMode } from '../../redux/modeSlice';
-import { Product } from '../../redux/productsSlice';
-import { useParams } from 'react-router-dom';
-import { selectProducts } from '../../redux/productsSlice';
-import styles from './ProductPage.module.css';
-import { CarouselProduct, BuyBtn } from '../../components';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { setViewedProduct, Product } from '../../redux/productsSlice';
+import { CarouselProduct, BuyBtn } from '../../components';
+import styles from './ProductPage.module.css';
 
 interface extendProps extends Product {
     [key: string]: any;
 }
 
 export const ProductPage: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
+    const products: Product[] = useAppSelector((state) => state.products.products);
     const dispatch = useAppDispatch();
     const entriesForFilters: string[] = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
     const { id } = useParams();
-    const getMode: boolean = useAppSelector(selectMode);
-    const products: Product[] = useAppSelector(selectProducts);
     const getTargetProduct: extendProps = products.filter((product) => product.id === id)[0];
     const getPhotosOfProduct: string[] = Object.values(getTargetProduct.photos);
     const renderCharacteristics = () => {
         const characteristics = [];
         for (const key in getTargetProduct) {
-            if (!entriesForFilters.includes(key) && key !== '[[Prototype]]') {
+            if (!entriesForFilters.includes(key)) {
                 characteristics.push(
                     <div key={key} className={styles.characteristic}>
                         <div className={styles.spec}>

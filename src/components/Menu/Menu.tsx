@@ -1,14 +1,10 @@
-import { NavLink } from 'react-router-dom';
-import { ModeToggle } from '../ModeToggle';
-import styles from './Menu.module.css';
-import { Basket } from '../Basket';
-import { Favorites } from '../Favorites';
-import { Logo } from '../Logo';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
+import { ModeToggle, Basket, Favorites, Logo } from '../../components';
+import { NavLink } from 'react-router-dom';
+import styles from './Menu.module.css';
 
-export const Menu = () => {
-    const getMode: boolean = useAppSelector(selectMode);
+export const Menu: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     return (
         <header className={getMode ? styles.menu : styles.menuLight}>
             <nav className={styles.navigation}>

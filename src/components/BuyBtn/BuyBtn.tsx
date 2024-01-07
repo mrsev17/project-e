@@ -12,9 +12,9 @@ interface BuyBtnProps {
 
 export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
     const notify = () => toast(`${product.productName} already in basket list`);
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
-    const dispatch = useAppDispatch();
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const getBasket = useAppSelector((state) => state.checkout.orderList);
+    const dispatch = useAppDispatch();
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };
@@ -25,7 +25,6 @@ export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
             notify();
         }
     };
-
     return (
         <div className={getMode ? styles.buyButtonDark : styles.buyButtonLight}>
             {product.inStock ? (

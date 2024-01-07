@@ -4,7 +4,7 @@ import { VscTrash } from 'react-icons/vsc';
 import styles from './ClearOrder.module.css';
 
 export const ClearOrder = () => {
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const dispatch = useAppDispatch();
     const clearAllOrderHandle = () => {
         dispatch(setClearOrder());

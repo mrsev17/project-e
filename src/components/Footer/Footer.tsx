@@ -1,18 +1,16 @@
-import { Logo } from '../Logo';
+import { useAppSelector } from '../../hooks/hook';
+import { SubscribeDiscounts, Logo } from '../../components';
 import { IoLogoGithub } from 'react-icons/io';
 import { FaLinkedin } from 'react-icons/fa6';
 import { SiTelegram } from 'react-icons/si';
-import { SubscribeDiscounts } from '../SubscribeDiscounts';
-import { useAppSelector } from '../../hooks/hook';
 import { toast } from 'react-toastify';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './Footer.module.css';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const notify = () => toast('Currently not available');
-    const getMode: boolean = useAppSelector(selectMode);
-    const servicesOptions = ['Bonus program', 'Gift cards', 'Credit and payment', 'Trade in', 'Service contracts', 'Payment'];
-    const buyerAssistanceOptions = [
+    const servicesOptions: string[] = ['Bonus program', 'Gift cards', 'Credit and payment', 'Trade in', 'Service contracts', 'Payment'];
+    const buyerAssistanceOptions: string[] = [
         'Сustomer help center',
         'Find order',
         'Delivery terms',

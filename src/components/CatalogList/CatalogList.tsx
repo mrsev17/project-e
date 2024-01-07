@@ -10,7 +10,7 @@ interface CatalogListProps {
 }
 
 export const CatalogList: React.FC<CatalogListProps> = ({ currentProducts, setCurrentPage }) => {
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const titleFilter: string = useAppSelector((state) => state.filter.title);
     const dispatch = useAppDispatch();
     const handleTitleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {

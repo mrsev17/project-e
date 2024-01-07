@@ -6,7 +6,7 @@ interface DeliveryDateProps {
 }
 
 export const DeliveryDate: React.FC<DeliveryDateProps> = ({ getBasketLenght }) => {
-    const getMode = useAppSelector((state) => state.mode.mode);
+    const getMode = useAppSelector((state) => state.mode.modeState);
     const getDateAfterThreeDays = () => {
         const today = new Date();
         const afterThreeDays = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);

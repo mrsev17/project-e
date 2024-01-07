@@ -1,5 +1,4 @@
 import { Carousel, IconButton } from '@material-tailwind/react';
-import * as React from 'react';
 import { KeepMountedModal } from '../KeepMounted';
 
 interface CarouselProps {
@@ -13,7 +12,7 @@ export const CarouselProduct: React.FC<CarouselProps> = ({ photos, productName }
             className='rounded-xl flex items-center'
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
-                    {new Array(length).fill('').map((_, i) => (
+                    {new Array(length).fill('1').map((_, i) => (
                         <span
                             key={i}
                             className={`block h-3 cursor-pointer rounded-full transition-all content-[''] ${

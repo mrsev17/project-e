@@ -13,9 +13,15 @@ export const CatalogPage = () => {
         const matchesTitle: boolean = product.productName.toLowerCase().includes(titleFilter.toLowerCase());
         return matchesTitle;
     });
+    const sortByName = filteredProducts.sort((productA, productB) => {
+        if (productA.productName < productB.productName) return -1;
+        if (productA.productName > productB.productName) return 1;
+        return 0;
+    });
     const lastProductIndex: number = currentPage * productsPerPage;
     const firstProductIndex: number = lastProductIndex - productsPerPage;
-    const currentProducts: Product[] = filteredProducts.slice(firstProductIndex, lastProductIndex);
+
+    const currentProducts: Product[] = sortByName.slice(firstProductIndex, lastProductIndex);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

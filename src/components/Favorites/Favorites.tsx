@@ -1,13 +1,12 @@
-import { FaHeart } from 'react-icons/fa';
 import { useAppSelector } from '../../hooks/hook';
-import { selectProducts, Product } from '../../redux/productsSlice';
+import { Product } from '../../redux/productsSlice';
+import { FaHeart } from 'react-icons/fa';
 import Badge from '@mui/material/Badge';
 import styles from './Favorites.module.css';
-import { selectMode } from '../../redux/modeSlice';
 
-export const Favorites = () => {
-    const getProducts: Product[] = useAppSelector(selectProducts).filter((product) => product.isFavorite);
-    const getMode: boolean = useAppSelector(selectMode);
+export const Favorites: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
+    const getProducts: Product[] = useAppSelector((state) => state.products.products).filter((product) => product.isFavorite);
     return (
         <button>
             <Badge badgeContent={getProducts.length} color='primary'>

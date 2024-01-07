@@ -1,8 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
-import { selectProducts, Product } from '../../redux/productsSlice';
+import { Product } from '../../redux/productsSlice';
 import { getUniqueCategories } from '../../utils/functions';
 import { useAuth } from '../../hooks/useAuth';
 // import { removeUser } from '../../redux/userSlice';
@@ -13,8 +12,8 @@ export const HomePage = () => {
     const { isAuth, email } = useAuth();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const getMode: boolean = useAppSelector(selectMode);
-    const products: Product[] = useAppSelector(selectProducts);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
+    const products: Product[] = useAppSelector((state) => state.products.products);
     const categories: unknown | string[] = getUniqueCategories(products);
 
     const handleRedirect = () => {
@@ -38,7 +37,6 @@ export const HomePage = () => {
                     </button>
                 )}
             </div> */}
-
             <div className={styles.categoriesContainer}>
                 <ul className={getMode ? styles.listCategory : styles.listCategoryLight}>
                     {Array.isArray(categories) ? (

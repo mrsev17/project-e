@@ -1,17 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { darkBodyBackGround, lightBodyBackGround } from '../utils/colorsCSS';
-import { RootState } from './store';
 
 interface modeState {
-    mode: boolean;
-    ligthModeBG: string;
-    darkModeBG: string;
+    modeState: boolean;
 }
 
 const initialState: modeState = {
-    mode: true,
-    ligthModeBG: lightBodyBackGround,
-    darkModeBG: darkBodyBackGround,
+    modeState: true,
 };
 
 const modeSlice = createSlice({
@@ -19,12 +13,10 @@ const modeSlice = createSlice({
     initialState,
     reducers: {
         setMode(state) {
-            return { ...state, mode: !state.mode };
+            return { ...state, modeState: !state.modeState };
         },
     },
 });
-
-export const selectMode = (state: RootState) => state.mode.mode;
 
 export const { setMode } = modeSlice.actions;
 export default modeSlice.reducer;

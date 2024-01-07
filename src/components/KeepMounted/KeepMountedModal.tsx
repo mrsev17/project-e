@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import { useState } from 'react';
+import { Box, Modal } from '@mui/material';
 import styles from './KeepMountedModal.module.css';
 
 interface KeepMountedModalProps {
@@ -25,24 +24,9 @@ const style = {
 };
 
 export const KeepMountedModal: React.FC<KeepMountedModalProps> = ({ photo, productName }) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    // useEffect(() => {
-    //     // Update windowWidth when the window is resized
-    //     const handleResize = () => {
-    //         setWindowWidth(window.innerWidth);
-    //     };
-    //     window.addEventListener('resize', handleResize);
-    //     // Cleanup the event listener on component unmount
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
-
     return (
         <div className={styles.modalWrapper}>
             <img onClick={handleOpen} src={photo} alt={productName} />

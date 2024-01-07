@@ -1,14 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { Favorites, Basket, ModeToggle } from '../../components';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import { GrSearch } from 'react-icons/gr';
-import { FaUser } from 'react-icons/fa';
 import { BiCategory } from 'react-icons/bi';
 import styles from './StickyAdaptiveMenu.module.css';
 
-export const StickyAdaptiveMenu = () => {
-    const getMode: boolean = useAppSelector(selectMode);
+export const StickyAdaptiveMenu: React.FC = () => {
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     return (
         <div className={getMode ? styles.adaptiveMenu : styles.adaptiveMenuLight}>
             <div>

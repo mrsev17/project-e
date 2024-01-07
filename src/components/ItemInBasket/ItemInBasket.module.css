@@ -13,6 +13,13 @@
 .orderItemWrapperLight {
     background-color: white;
 }
+
+.orderItemImageLight {
+    border: 1px solid white;
+}
+.orderItemImage {
+    border: 1px solid white;
+}
 .orderItemImageLight,
 .orderItemImage {
     width: 100px;
@@ -24,13 +31,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.orderItemImageLight {
-    border: 1px solid white;
-}
-.orderItemImage {
-    border: 1px solid white;
 }
 .orderItemImageLight > img,
 .orderItemImage > img {

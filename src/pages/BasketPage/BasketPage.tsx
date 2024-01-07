@@ -6,7 +6,7 @@ import styles from './BasketPage.module.css';
 import { BasketSubmitOrder, ClearOrder, DeliveryDate, ItemInBasket } from '../../components';
 
 export const BasketPage: React.FC = () => {
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const getBasket = useAppSelector((state) => state.checkout.orderList);
     const getBasketPrice = useAppSelector((state) => state.checkout.finalPrice).toFixed(2);
     const calculateItems = getBasket.reduce((acc: number, item: OrderSlice) => {

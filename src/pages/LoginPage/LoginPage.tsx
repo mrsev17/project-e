@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/hook';
-import { selectMode } from '../../redux/modeSlice';
 import styles from './LoginPage.module.css';
 import { Login } from '../../components';
 
 export const LoginPage = () => {
-    const getMode: boolean = useAppSelector(selectMode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     return (
         <div className={getMode ? styles.loginPageDark : styles.loginPageLight}>
             <h2>Login</h2>

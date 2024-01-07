@@ -10,7 +10,7 @@ interface ProductTileProps {
 }
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
-    const getMode: boolean = useAppSelector((state) => state.mode.mode);
+    const getMode: boolean = useAppSelector((state) => state.mode.modeState);
 
     return (
         <div className={getMode ? styles.productTile : styles.productTileDark}>
