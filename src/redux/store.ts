@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig = {
-    key: 'e-app',
+    key: 'e-app-test-january',
     storage,
 };
 

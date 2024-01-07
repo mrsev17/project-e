@@ -5,6 +5,13 @@ import { Product } from '../../redux/productsSlice';
 import { getUniqueCategories } from '../../utils/functions';
 import { useAuth } from '../../hooks/useAuth';
 // import { removeUser } from '../../redux/userSlice';
+import { FaLaptop } from 'react-icons/fa';
+import { ImPowerCord } from 'react-icons/im';
+import { FaGamepad } from 'react-icons/fa';
+import { BiGame } from 'react-icons/bi';
+import { SlScreenSmartphone } from 'react-icons/sl';
+import { BsSmartwatch } from 'react-icons/bs';
+import { IoMdTabletPortrait } from 'react-icons/io';
 import { useAppDispatch } from '../../hooks/hook';
 import styles from './HomePage.module.css';
 
@@ -15,11 +22,21 @@ export const HomePage = () => {
     const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const products: Product[] = useAppSelector((state) => state.products.products);
     const categories: unknown | string[] = getUniqueCategories(products);
-
+    console.log(categories);
     const handleRedirect = () => {
         navigate('/login');
     };
-
+    //
+    const iconsCategory = (category: string) => {
+        if (category === 'Laptops') return <FaLaptop />;
+        if (category === 'Powerbanks') return <ImPowerCord />;
+        if (category === 'Game-Consoles') return <FaGamepad />;
+        if (category === 'Games') return <BiGame />;
+        if (category === 'Smartphones') return <SlScreenSmartphone />;
+        if (category === 'Smartwatches') return <BsSmartwatch />;
+        if (category === 'Tablets') return <IoMdTabletPortrait />;
+    };
+    //
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -42,7 +59,10 @@ export const HomePage = () => {
                     {Array.isArray(categories) ? (
                         categories.map((category: string, i: number) => (
                             <li className={getMode ? styles.productNameDark : styles.productName} key={i}>
-                                <Link to={`/${category}`}>{category}</Link>
+                                <Link to={`/${category}`}>
+                                    <span>{category}</span>
+                                    <span>{iconsCategory(category)}</span>
+                                </Link>
                             </li>
                         ))
                     ) : (

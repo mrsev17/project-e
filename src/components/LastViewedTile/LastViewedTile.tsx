@@ -27,7 +27,6 @@ export const LastViewedTile: React.FC<LastViewedTileProps> = ({ product }) => {
             notify();
         }
     };
-
     return (
         <div className={getMode ? styles.lastViewedTileDark : styles.lastViewedTileLight}>
             <div className={styles.lastViewedTileContainer}>

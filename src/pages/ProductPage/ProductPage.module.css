@@ -18,7 +18,7 @@
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 .accentLineLight,
 .accentLineDark {
@@ -36,7 +36,7 @@
     color: aliceblue;
 }
 .priceInfoLight {
-    color: #233142;
+    color: black;
 }
 .accentLineDark {
     background-color: aliceblue;
@@ -49,6 +49,7 @@
     width: 40%;
     background-color: white;
     border-radius: 12px;
+
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .productPageInfo {
@@ -98,7 +99,7 @@
     margin-left: 18px;
 }
 
-.specs {
+/* .specs {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -107,54 +108,75 @@
 
     border-radius: 8px;
     padding: 12px;
-}
+} */
 .specsDark {
     border: 1px solid white;
 }
 .specsLight {
-    border: 1px solid #e91e63;
+    border: 1px solid black;
 }
-.characteristic {
+.specsDark,
+.specsLight {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 8px;
+}
+.characteristicLight,
+.characteristicDark {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-.spec,
-.value {
+.specLight,
+.valueLight,
+.specDark,
+.valueDark {
     width: 100%;
-    max-width: 300px;
+    max-width: 240px;
 }
-.specs > span,
-.value > span {
-    font-size: 22px;
+.specDark > span,
+.valueDark > span {
+    font-size: 18px;
     /* color: #d9dad7; */
+    color: aliceblue;
 }
-.specs,
-.specs {
+.specLight > span,
+.valueLight > span {
+    font-size: 18px;
+    /* color: #d9dad7; */
+    color: black;
+}
+.specDark > span,
+.specLight > span {
     text-transform: capitalize;
 }
-.value,
-.spec {
+.specLight,
+.valueLight,
+.valueDark,
+.specDark {
     display: flex;
     justify-content: flex-start;
 }
+/* = = = = = = = */
 .descriptionLight,
 .descriptionDark {
     max-width: 68%;
     margin: 0 auto;
     font-size: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 .descriptionDark {
     color: white;
 }
 .descriptionLight {
-    color: #e91e63;
+    color: black;
 }
 .descriptionLight > h3,
 .descriptionDark > h3 {
     font-size: 28px;
     margin-bottom: 20px;
+    /* color: black; */
 }
 
 @media (max-width: 992px) {
@@ -205,7 +227,7 @@
 @media (max-width: 767px) {
     .productMidInfo {
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
     }
     .productMidInfo > div {
         width: 100%;

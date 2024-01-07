@@ -22,11 +22,11 @@ export const ProductPage: React.FC = () => {
         for (const key in getTargetProduct) {
             if (!entriesForFilters.includes(key)) {
                 characteristics.push(
-                    <div key={key} className={styles.characteristic}>
-                        <div className={styles.spec}>
+                    <div key={key} className={getMode ? styles.characteristicDark : styles.characteristicLight}>
+                        <div className={getMode ? styles.specDark : styles.specLight}>
                             <span>{key}:</span>
                         </div>
-                        <div className={styles.value}>
+                        <div className={getMode ? styles.valueDark : styles.valueLight}>
                             <span>{key !== 'storage' ? `${getTargetProduct[key]}` : `${getTargetProduct[key]}GB`}</span>
                         </div>
                     </div>
