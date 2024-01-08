@@ -10,11 +10,11 @@ interface extendProps extends Product {
 }
 
 export const ProductPage: React.FC = () => {
+    const entriesForFilters: string[] = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
+    const { id } = useParams<{ id: string }>();
+    const dispatch = useAppDispatch();
     const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const products: Product[] = useAppSelector((state) => state.products.products);
-    const dispatch = useAppDispatch();
-    const entriesForFilters: string[] = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
-    const { id } = useParams();
     const getTargetProduct: extendProps = products.filter((product) => product.id === id)[0];
     const getPhotosOfProduct: string[] = Object.values(getTargetProduct.photos);
     const renderCharacteristics = () => {
@@ -51,7 +51,6 @@ export const ProductPage: React.FC = () => {
                             <h1 className={getMode ? styles.productPageTitleDark : styles.productPageTitleLight}>{getTargetProduct.productName}</h1>
                             <div className={getMode ? styles.accentLineDark : styles.accentLineLight}></div>
                         </div>
-
                         <div className={styles.productMidInfo}>
                             <div className={getMode ? styles.priceInfoDark : styles.priceInfoLight}>
                                 <span>{getTargetProduct.price}$</span>

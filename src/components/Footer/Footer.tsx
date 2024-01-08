@@ -18,6 +18,9 @@ export const Footer: React.FC = () => {
         'Guarantee',
         'Product status under repair',
     ];
+    const clearLocalStorage = () => {
+        localStorage.clear();
+    };
     return (
         <footer>
             <div className={getMode ? styles.footerContainer : styles.footerContainerLight}>
@@ -40,7 +43,11 @@ export const Footer: React.FC = () => {
                             </ul>
                         </div>
                         <div className={getMode ? styles.footerWrapperMid : styles.footerWrapperMidLight}>
+                            <button className={getMode ? styles.clearLocalStorageDark : styles.clearLocalStorageLight} onClick={clearLocalStorage}>
+                                Clear Local Storage
+                            </button>
                             <p>Buyer assistance</p>
+
                             <ul>
                                 {buyerAssistanceOptions.map((link, i) => {
                                     return (
@@ -55,6 +62,7 @@ export const Footer: React.FC = () => {
 
                     <div className={getMode ? styles.footerWrapperRight : styles.footerWrapperRightLight}>
                         <p>Contact with us</p>
+
                         <ul>
                             <li>
                                 <a href='https://github.com/mrsev17'>
