@@ -2,7 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface FilterState {
     title: string;
-    filterByPrice: string;
+    filterByPrice: {
+        from: number | null;
+        to: number | null;
+    };
     dependencies: {
         [key: string]: (number | string)[];
     };
@@ -11,10 +14,18 @@ interface FilterState {
 
 const initialState: FilterState = {
     title: '',
-    filterByPrice: '',
+    filterByPrice: {
+        from: null,
+        to: null,
+    },
     dependencies: {},
     notTrackedDataFilters: ['productName', 'category', 'price', 'inStock', 'isFavorite', 'photos', 'description', 'id'],
 };
+
+interface SetFilterByPricePayload {
+    from: number;
+    to: number;
+}
 
 interface setDependenciesParameters {
     option: string | number;
@@ -28,10 +39,14 @@ const filtersSlice = createSlice({
         setTitleFilter(state, action: PayloadAction<string>) {
             state.title = action.payload;
         },
+        setFilterByPrice(state, action: PayloadAction<SetFilterByPricePayload>) {
+            const priceFrom: number = action.payload.from;
+            const priceTo: number = action.payload.to;
+            return { ...state, filterByPrice: { from: priceFrom, to: priceTo } };
+        },
         setDependencies(state, action: PayloadAction<setDependenciesParameters>) {
-            const category = action.payload.category;
-            const value = action.payload.option;
-
+            const category: string = action.payload.category;
+            const value: string | number = action.payload.option;
             if (!state.dependencies.hasOwnProperty(category)) {
                 state.dependencies[category] = [];
                 state.dependencies[category].push(value);
@@ -55,5 +70,5 @@ const filtersSlice = createSlice({
     },
 });
 
-export const { setTitleFilter, setDependencies, resetFilters } = filtersSlice.actions;
+export const { setTitleFilter, setFilterByPrice, setDependencies, resetFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;

@@ -3,8 +3,13 @@ import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { useLocation } from 'react-router-dom';
 import { Product } from '../../redux/productsSlice';
 import { resetFilters } from '../../redux/filterSlice';
-import { CategoryList, Pagination, AccordionMUI } from '../../components';
+import { CategoryList, Pagination, AccordionMUI, PriceFilter } from '../../components';
 import styles from './CategoryPage.module.css';
+
+interface GetFilterByPrice {
+    from: number | null;
+    to: number | null;
+}
 
 export const CategoryPage = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -13,6 +18,7 @@ export const CategoryPage = () => {
     const firstProductIndex: number = lastProductIndex - productsPerPage;
     const getMode: boolean = useAppSelector((state) => state.mode.modeState);
     const products: Product[] = useAppSelector((state) => state.products.products);
+    const getFilterByPrice: GetFilterByPrice = useAppSelector((state) => state.filter.filterByPrice);
     const notTrackedFilters: string[] = useAppSelector((state) => state.filter.notTrackedDataFilters);
     const location = useLocation();
     const dispatch = useAppDispatch();
@@ -69,8 +75,16 @@ export const CategoryPage = () => {
     }
     const resultDataWithFilters: ResultDataWithFilters = makeFiltersByCategory(products, getCategoryName, notTrackedFilters);
     const getEntriesFilters = Object.entries(resultDataWithFilters);
-
     const dependencies = useAppSelector((state) => state.filter.dependencies);
+    const sortByPriceFilter = (getFilterByPrice: { from: number; to: number }, products: Product[]) => {
+        return products.filter((product: Product) => {
+            if (product.price >= getFilterByPrice.from && product.price <= getFilterByPrice.to) {
+                return product;
+            } else {
+                return;
+            }
+        });
+    };
 
     const dataAfterDependencies = () => {
         interface ProductMod extends Product {
@@ -82,11 +96,15 @@ export const CategoryPage = () => {
             }
             return acc;
         }, [] as Product[]);
-
-        return result;
+        if (getFilterByPrice.from !== null && getFilterByPrice.to !== null) {
+            return sortByPriceFilter({ from: getFilterByPrice.from, to: getFilterByPrice.to }, result);
+        } else {
+            return result;
+        }
     };
     const productsAfterFilters: Product[] = dataAfterDependencies();
-    const sortByName = productsAfterFilters.sort((productA, productB) => {
+    console.log(productsAfterFilters);
+    const sortByName: Product[] = productsAfterFilters.sort((productA, productB) => {
         if (productA.productName < productB.productName) return -1;
         if (productA.productName > productB.productName) return 1;
         return 0;
@@ -96,6 +114,8 @@ export const CategoryPage = () => {
     const clearFiltersHandle = useCallback(() => {
         dispatch(resetFilters());
     }, [dispatch]);
+
+    // console.log(sortByPriceFilter({ from: 100, to: 3000 }, productsAfterFilters));
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -111,10 +131,7 @@ export const CategoryPage = () => {
                         <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>
                             Remove all filters
                         </button>
-                        <div className={styles.priceSelector}>
-                            <span>Price:</span>
-                            <div className={styles.priceInputs}></div>
-                        </div>
+                        <PriceFilter />
                         {getEntriesFilters.map(([category, options]) => (
                             <AccordionMUI key={category} category={category} options={options} setCurrentPage={setCurrentPage} />
                         ))}

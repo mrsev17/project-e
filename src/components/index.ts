@@ -28,3 +28,4 @@ export * from './ItemInBasket';
 export * from './BasketSelectQuantity';
 export * from './OrderNamePrice';
 export * from './RemoveFromOrder';
+export * from './PriceFilter';
