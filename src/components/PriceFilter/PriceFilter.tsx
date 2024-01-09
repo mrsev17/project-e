@@ -1,10 +1,11 @@
-import { useAppDispatch } from '../../hooks/hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { useState } from 'react';
 import { setFilterByPrice } from '../../redux/filterSlice';
 import styles from './PriceFilter.module.css';
 
 export const PriceFilter: React.FC = () => {
     const dispatch = useAppDispatch();
+    const getMode = useAppSelector((state) => state.mode.modeState);
     const [inputFrom, setInputFrom] = useState<string | number>('0');
     const [inputTo, setInputTo] = useState<string | number>('0');
 
@@ -30,16 +31,16 @@ export const PriceFilter: React.FC = () => {
     };
 
     return (
-        <div className={styles.filterPriceDark}>
+        <div className={getMode ? styles.filterPriceDark : styles.filterPriceLight}>
             <span>Price</span>
-            <div className={styles.filterPriceDarkContent}>
-                <div className={styles.filterPriceDarkInputs}>
+            <div className={getMode ? styles.filterPriceDarkContent : styles.filterPriceLightContent}>
+                <div className={getMode ? styles.filterPriceDarkInputs : styles.filterPriceLightInputs}>
                     <label className={styles.hidden} htmlFor='priceFrom'></label>
                     <input type='text' id='priceFrom' value={inputFrom} onChange={handleInputFrom} placeholder='From...' />
                     <label className={styles.hidden} htmlFor='priceTo'></label>
                     <input type='text' id='priceTo' value={inputTo} onChange={handleInputTo} placeholder='To...' />
                 </div>
-                <button onClick={() => applyFilterPrice(+inputFrom, +inputTo)} className={styles.filterPriceDarkApply}>
+                <button onClick={() => applyFilterPrice(+inputFrom, +inputTo)} className={getMode ? styles.filterPriceDarkApply : styles.filterPriceLightApply}>
                     Apply price filter
                 </button>
             </div>
