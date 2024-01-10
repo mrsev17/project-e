@@ -11,6 +11,8 @@ interface ProductTileProps {
 
 export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
     const getMode: boolean = useAppSelector((state) => state.mode.modeState);
+    const checkWidth = window.innerWidth < 567;
+    const getProductNameLength = product.productName.length;
     return (
         <div className={getMode ? styles.productTile : styles.productTileDark}>
             <div className={styles.productTileContainer}>
@@ -18,7 +20,9 @@ export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
                     <img className={styles.mainPicture} src={product.photos.photoOne} alt={product.productName} />
                 </div>
                 <div className={getMode ? styles.productName : styles.productNameDark}>
-                    <Link to={`/products/${product.category}/${product.productName.replace(/\s/g, '')}/${product.id}`}>{product.productName}</Link>
+                    <Link to={`/products/${product.category}/${product.productName.replace(/\s/g, '')}/${product.id}`}>
+                        {getProductNameLength > 30 && checkWidth ? `${product.productName.slice(0, 30)}...` : product.productName}
+                    </Link>
                 </div>
                 <div className={getMode ? styles.productPrice : styles.productPriceDark}>
                     <span>{product.price}$</span>
