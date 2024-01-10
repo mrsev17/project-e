@@ -73,6 +73,7 @@
     max-width: 280px;
     background-color: #e7eaf6;
 }
+.actionsWrapperLight,
 .actionsWrapper {
     width: 100%;
     display: flex;
@@ -143,10 +144,26 @@
 @media (max-width: 567px) {
     .productTile,
     .productTileDark {
-        height: 430px;
+        height: 400px;
     }
     .favoriteLight > svg,
     .favoriteDark > svg {
         margin-top: 20px;
+    }
+    .actionsWrapperLight,
+    .actionsWrapper {
+        width: 96%;
+        justify-content: space-around;
+    }
+    .actionsWrapperLight > span svg,
+    .actionsWrapper > span svg {
+        height: 38px;
+        width: 38px;
+    }
+    .actionsWrapperLight button {
+        border: 2px solid #e91e63;
+    }
+    .productTilePictureWrapper {
+        margin-top: 10px;
     }
 }

@@ -145,10 +145,11 @@
 @media (max-width: 567px) {
     .lastViewedTileDark,
     .lastViewedTileLight {
-        height: 450px;
+        height: 430px;
     }
     .lastViewedTileImage {
-        max-width: 340px;
+        width: 160px;
+        height: 180px;
     }
     .basket__dark,
     .basket__light {

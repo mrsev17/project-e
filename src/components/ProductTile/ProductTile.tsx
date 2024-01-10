@@ -24,7 +24,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({ product }) => {
                     <span>{product.price}$</span>
                 </div>
                 <div className={styles.productActionLine}></div>
-                <div className={styles.actionsWrapper}>
+                <div className={getMode ? styles.actionsWrapper : styles.actionsWrapperLight}>
                     <BuyBtn product={product} />
                     <FavoriteBtn productName={product.productName} productIsFavorite={product.isFavorite} productId={product.id} />
                 </div>

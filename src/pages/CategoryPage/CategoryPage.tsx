@@ -12,6 +12,8 @@ interface GetFilterByPrice {
 }
 
 export const CategoryPage = () => {
+    const [openFilters, setOpenFilters] = useState<boolean>(true);
+    //
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(9);
     const lastProductIndex: number = currentPage * productsPerPage;
@@ -127,7 +129,18 @@ export const CategoryPage = () => {
             <div className={styles.categoryPageContent}>
                 <h2 className={getMode ? styles.categoryTitleDark : styles.categoryTitleLight}>{getCategoryName}</h2>
                 <div className={styles.categoryWrapperContent}>
-                    <div className={getMode ? styles.filter : styles.filterLight}>
+                    <div className={`${getMode ? styles.filter : styles.filterLight} ${!openFilters ? styles.openFilters : styles.closeFilters}`}>
+                        <button onClick={() => setOpenFilters(!openFilters)} className={getMode ? styles.toogleFiltersBtn : styles.toogleFiltersBtnLight}>
+                            {!openFilters ? (
+                                <span key='closeFilters' className={styles.closeFiltersSub}>
+                                    Close filters
+                                </span>
+                            ) : (
+                                <span key='openFilters' className={styles.openFiltersSub}>
+                                    Open filters
+                                </span>
+                            )}
+                        </button>
                         <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>
                             Remove all filters
                         </button>

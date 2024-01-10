@@ -38,13 +38,11 @@
 .searchCatalogListLigth > input {
     border: 1px solid #e91e63;
 }
-
 @media (min-width: 1680px) {
     .catalogList {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
 @media (max-width: 1120px) {
     .catalogList {
         grid-template-columns: repeat(3, 1fr);
@@ -57,7 +55,7 @@
 }
 @media (max-width: 567px) {
     .catalogList {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .searchCatalogListLigth,
     .searchCatalogList {
