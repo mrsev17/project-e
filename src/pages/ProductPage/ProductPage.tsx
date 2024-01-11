@@ -1,8 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { setViewedProduct, Product } from '../../redux/productsSlice';
-import { CarouselProduct, BuyBtn } from '../../components';
+import { CarouselProduct, BuyBtn, FavoriteBtn, CarouselItem } from '../../components';
 import styles from './ProductPage.module.css';
 
 interface extendProps extends Product {
@@ -10,6 +10,7 @@ interface extendProps extends Product {
 }
 
 export const ProductPage: React.FC = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const entriesForFilters: string[] = ['photos', 'productName', 'category', 'inStock', 'id', 'isFavorite', 'price', 'description'];
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
@@ -36,6 +37,15 @@ export const ProductPage: React.FC = () => {
         return characteristics;
     };
     useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(setViewedProduct(getTargetProduct));
     }, [getTargetProduct, dispatch]);
@@ -44,7 +54,11 @@ export const ProductPage: React.FC = () => {
             <div className={styles.productPageContainer}>
                 <div className={styles.productPageMainDark}>
                     <div className={getMode ? styles.productPageImages : styles.productPageImagesLight}>
-                        <CarouselProduct photos={getPhotosOfProduct} productName={getTargetProduct.productName} />
+                        {windowWidth < 567 ? (
+                            <CarouselItem photos={getPhotosOfProduct} productName={getTargetProduct.productName} />
+                        ) : (
+                            <CarouselProduct photos={getPhotosOfProduct} productName={getTargetProduct.productName} />
+                        )}
                     </div>
                     <div className={styles.productPageInfo}>
                         <div className={styles.upperInfo}>
@@ -56,6 +70,13 @@ export const ProductPage: React.FC = () => {
                                 <span>{getTargetProduct.price}$</span>
                             </div>
                             <BuyBtn product={getTargetProduct} />
+                            <div className={styles.productBtnFavorite}>
+                                <FavoriteBtn
+                                    productName={getTargetProduct.productName}
+                                    productIsFavorite={getTargetProduct.isFavorite}
+                                    productId={getTargetProduct.id}
+                                />
+                            </div>
                         </div>
 
                         <div className={styles.bottomInfo}>

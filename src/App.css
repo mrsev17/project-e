@@ -55,6 +55,47 @@ a {
 .MuiAccordionSummary-content {
     margin: 4px 0 !important;
 }
+.carousel-indicators {
+    gap: 10px;
+}
+.carousel-indicators .active {
+    background-color: black;
+}
+.carousel-indicators [data-bs-target] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #385170;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+.carousel {
+    /* margin: 0 auto; */
+    width: 100%;
+    /* height: 540px; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+}
+.carousel-item {
+    height: 600px;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+}
+.carousel-item > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px;
+}
 
 @media (max-width: 567px) {
     .Toastify__toast-body > div {
@@ -71,5 +112,11 @@ a {
     .content-\[\'\'\] {
         width: 20px;
         height: 20px;
+    }
+    .carousel-item {
+        height: 460px;
+        /* display: flex;
+        justify-content: center;
+        flex-direction: column; */
     }
 }

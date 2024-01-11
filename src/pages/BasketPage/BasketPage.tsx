@@ -12,7 +12,6 @@ export const BasketPage: React.FC = () => {
     const calculateItems = getBasket.reduce((acc: number, item: OrderSlice) => {
         return acc + item.quantInOrder;
     }, 0);
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

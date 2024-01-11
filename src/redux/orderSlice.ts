@@ -36,15 +36,16 @@ const orderSlice = createSlice({
         setProductMinusOne(state, action: PayloadAction<string>) {
             const updatedOrderList = state.orderList.map((item) => (item.id === action.payload ? { ...item, quantInOrder: item.quantInOrder - 1 } : item));
             const getItem = state.orderList.filter((item: OrderSlice) => item.id === action.payload)[0];
-            return { ...state, orderList: updatedOrderList, finalPrice: state.finalPrice - getItem.price };
+            return { ...state, orderList: updatedOrderList, finalPrice: updatedOrderList.length ? state.finalPrice - getItem.price : 0 };
         },
         setRemoveItemFromOrder(state, action: PayloadAction<string>) {
             const getItem = state.orderList.filter((item: OrderSlice) => item.id === action.payload)[0];
             const getAmount = getItem.price * getItem.quantInOrder;
+            const updatedOrderList = state.orderList.filter((product: Product) => product.id !== action.payload);
             return {
                 ...state,
-                orderList: state.orderList.filter((product: Product) => product.id !== action.payload),
-                finalPrice: state.finalPrice - getAmount,
+                orderList: updatedOrderList,
+                finalPrice: updatedOrderList.length ? state.finalPrice - getAmount : 0,
             };
         },
         setIsFavoriteProductBasket(state, action: PayloadAction<string>) {

@@ -29,3 +29,4 @@ export * from './BasketSelectQuantity';
 export * from './OrderNamePrice';
 export * from './RemoveFromOrder';
 export * from './PriceFilter';
+export * from './CarouselItem';

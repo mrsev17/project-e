@@ -105,7 +105,7 @@ export const CategoryPage = () => {
         }
     };
     const productsAfterFilters: Product[] = dataAfterDependencies();
-    console.log(productsAfterFilters);
+
     const sortByName: Product[] = productsAfterFilters.sort((productA, productB) => {
         if (productA.productName < productB.productName) return -1;
         if (productA.productName > productB.productName) return 1;

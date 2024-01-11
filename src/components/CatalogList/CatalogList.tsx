@@ -3,6 +3,7 @@ import { ProductTile } from '../ProductTile';
 import { setTitleFilter } from '../../redux/filterSlice';
 import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import styles from './CatalogList.module.css';
+import { PriceFilter } from '../PriceFilter';
 
 interface CatalogListProps {
     currentProducts: Product[];
