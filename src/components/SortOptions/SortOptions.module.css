@@ -1,0 +1,65 @@
+.sortOptions {
+    margin: 0 10px 10px;
+}
+.sortOptionsTitleLight,
+.sortOptionsTitleDark {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.sortOptionsTitleDark {
+    color: white;
+}
+.sortOptionsTitleLight {
+    color: #e91e63;
+}
+.sortOptionsControlLight,
+.sortOptionsControlDark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.sortOptionsControlLight > button,
+.sortOptionsControlDark > button {
+    width: 100%;
+    border-radius: 12px;
+    transition: ease-in-out 0.5s;
+}
+.sortOptionsControlDarkBtn {
+    background-color: white;
+    border: 1px solid white;
+}
+.sortOptionsControlLightBtn {
+    background-color: white;
+    border: 1px solid #e91e63;
+    color: #e91e63;
+}
+
+.sortOptionsControlDark > button:hover {
+    background-color: #5dacbd;
+    color: white;
+    border: 1px solid #5dacbd;
+}
+
+.sortOptionsControlLight > button:hover {
+    background-color: #e91e63;
+    color: white;
+    border: 1px solid #e91e63;
+}
+.activeSortDark {
+    background-color: #5dacbd;
+    color: white;
+    border: 1px solid #5dacbd;
+}
+.activeSortLight {
+    background-color: #e91e63;
+    color: white;
+    border: 1px solid #e91e63;
+}
+@media (max-width: 567px) {
+    .sortOptions {
+        width: 92%;
+        margin: 0 auto 10px;
+    }
+}

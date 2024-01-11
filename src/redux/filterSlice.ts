@@ -6,6 +6,7 @@ interface FilterState {
         from: number | null;
         to: number | null;
     };
+    sortByHighLow: null | 'toLow' | 'toHigh';
     dependencies: {
         [key: string]: (number | string)[];
     };
@@ -18,6 +19,7 @@ const initialState: FilterState = {
         from: null,
         to: null,
     },
+    sortByHighLow: null,
     dependencies: {},
     notTrackedDataFilters: ['productName', 'category', 'price', 'inStock', 'isFavorite', 'photos', 'description', 'id'],
 };
@@ -44,6 +46,11 @@ const filtersSlice = createSlice({
             const priceTo: number = action.payload.to;
             return { ...state, filterByPrice: { from: priceFrom, to: priceTo } };
         },
+        //
+        setSortByHighLow(state, action: PayloadAction<'toLow' | 'toHigh'>) {
+            return { ...state, sortByHighLow: action.payload };
+        },
+        //
         setDependencies(state, action: PayloadAction<setDependenciesParameters>) {
             const category: string = action.payload.category;
             const value: string | number = action.payload.option;
@@ -70,5 +77,5 @@ const filtersSlice = createSlice({
     },
 });
 
-export const { setTitleFilter, setFilterByPrice, setDependencies, resetFilters } = filtersSlice.actions;
+export const { setTitleFilter, setFilterByPrice, setSortByHighLow, setDependencies, resetFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;

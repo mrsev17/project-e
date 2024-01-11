@@ -3,7 +3,7 @@ import { useAppSelector, useAppDispatch } from '../../hooks/hook';
 import { useLocation } from 'react-router-dom';
 import { Product } from '../../redux/productsSlice';
 import { resetFilters } from '../../redux/filterSlice';
-import { CategoryList, Pagination, AccordionMUI, PriceFilter } from '../../components';
+import { CategoryList, Pagination, AccordionMUI, PriceFilter, SortOptions } from '../../components';
 import styles from './CategoryPage.module.css';
 
 interface GetFilterByPrice {
@@ -13,6 +13,8 @@ interface GetFilterByPrice {
 
 export const CategoryPage = () => {
     const [openFilters, setOpenFilters] = useState<boolean>(true);
+    //
+    const getSortState: null | 'toLow' | 'toHigh' = useAppSelector((state) => state.filter.sortByHighLow);
     //
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(9);
@@ -104,14 +106,41 @@ export const CategoryPage = () => {
             return result;
         }
     };
+
     const productsAfterFilters: Product[] = dataAfterDependencies();
+
+    const checkSortOptions = (sortProducts: Product[]) => {
+        const newData: Product[] = [...sortProducts];
+        if (getSortState === 'toLow') {
+            const toLow: Product[] = newData.sort((productA: Product, productB: Product) => {
+                return productB.price - productA.price;
+            });
+            return toLow;
+        }
+        if (getSortState === 'toHigh') {
+            const toHigh: Product[] = newData.sort((productA: Product, productB: Product) => {
+                return productA.price - productB.price;
+            });
+            return toHigh;
+        }
+        return productsAfterFilters;
+    };
+
+    const testSorts = checkSortOptions(productsAfterFilters);
 
     const sortByName: Product[] = productsAfterFilters.sort((productA, productB) => {
         if (productA.productName < productB.productName) return -1;
         if (productA.productName > productB.productName) return 1;
         return 0;
     });
-    const currentProducts: Product[] = sortByName.slice(firstProductIndex, lastProductIndex);
+    // const currentProducts: Product[] = sortByName.slice(firstProductIndex, lastProductIndex);
+    const currentProductsCheck = () => {
+        if (getSortState) {
+            return testSorts.slice(firstProductIndex, lastProductIndex);
+        }
+        return sortByName.slice(firstProductIndex, lastProductIndex);
+    };
+    const currentProducts = currentProductsCheck();
 
     const clearFiltersHandle = useCallback(() => {
         dispatch(resetFilters());
@@ -144,6 +173,7 @@ export const CategoryPage = () => {
                         <button className={getMode ? styles.removeFiltersBtnDark : styles.removeFiltersBtnLight} onClick={clearFiltersHandle}>
                             Remove all filters
                         </button>
+                        <SortOptions />
                         <PriceFilter />
                         {getEntriesFilters.map(([category, options]) => (
                             <AccordionMUI key={category} category={category} options={options} setCurrentPage={setCurrentPage} />

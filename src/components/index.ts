@@ -30,3 +30,4 @@ export * from './OrderNamePrice';
 export * from './RemoveFromOrder';
 export * from './PriceFilter';
 export * from './CarouselItem';
+export * from './SortOptions';
