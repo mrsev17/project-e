@@ -9,7 +9,6 @@
     justify-content: end;
     width: 100%;
 }
-
 .wrapperQuantityControl > button,
 .wrapperQuantityControl > span {
     color: aliceblue;
@@ -26,12 +25,10 @@
 }
 .quantityControlPlusLight,
 .quantityControlPlus {
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-radius: 10px 0 0 10px !important;
 }
 .quantityControlMinusLight,
 .quantityControlMinus {
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-radius: 0 10px 10px 0 !important;
 }
 .quantityControlMinusLight,
@@ -64,7 +61,6 @@
     align-items: center;
     width: 40px;
 }
-
 @media (max-width: 768px) {
     .wrapperQuantityControlLight {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -80,7 +76,18 @@
     .wrapperQuantityControl > span,
     .wrapperQuantityControl > button {
         width: 120px;
-        height: 50px;
+        height: 40px;
         font-size: 38px;
+    }
+}
+@media (max-width: 567px) {
+    .wrapperQuantityControl svg,
+    .wrapperQuantityControlLight svg {
+        width: 30px;
+        height: 30px;
+    }
+    .wrapperQuantityControl > span,
+    .wrapperQuantityControlLight > span {
+        font-size: 24px;
     }
 }

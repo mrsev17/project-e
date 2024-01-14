@@ -3,7 +3,7 @@
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: ease-in-out 0.5s;
-    height: 450px;
+    height: 380px;
     border: 1px solid transparent;
 }
 .productTile {
@@ -19,9 +19,9 @@
 }
 .productName,
 .productNameDark {
-    height: 40px;
+    height: 20px;
     max-width: 80%;
-    line-height: 20px;
+    font-size: 20px;
 }
 .productTileContainer {
     display: flex;
@@ -33,7 +33,7 @@
 }
 .productTilePictureWrapper {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     border-radius: 8px;
     background-color: white;
     width: 240px;
@@ -53,13 +53,15 @@
     max-width: 90%;
     text-align: center;
 }
-.productPriceDark > span,
+.productPriceDark > span {
+    color: white;
+}
 .productNameDark > a {
-    color: #e91e63;
+    color: #5dacbd;
 }
 .productPrice > span,
 .productName > a {
-    color: #e7eaf6;
+    color: #e91e63;
 }
 .productPriceDark > span,
 .productPrice > span {
@@ -142,6 +144,12 @@
     }
 }
 @media (max-width: 567px) {
+    .productName,
+    .productNameDark {
+        height: 44px;
+        max-width: 80%;
+        font-size: 20px;
+    }
     .productTile,
     .productTileDark {
         height: 384px;

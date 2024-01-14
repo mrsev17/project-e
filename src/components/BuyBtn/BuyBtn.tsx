@@ -18,7 +18,8 @@ export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
     const checkBasketForProduct = () => {
         return getBasket.some((productInBasket) => productInBasket.id === product.id);
     };
-    const productBasketHandle = (product: Product) => {
+    const productBasketHandle = (product: Product, e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
         if (!checkBasketForProduct()) {
             dispatch(setProductInBasket(product));
         } else {
@@ -28,7 +29,7 @@ export const BuyBtn: React.FC<BuyBtnProps> = ({ product }) => {
     return (
         <div className={getMode ? styles.buyButtonDark : styles.buyButtonLight}>
             {product.inStock ? (
-                <button onClick={() => productBasketHandle(product)} className={getMode ? styles.buyDark : styles.buyLight}>
+                <button onClick={(e) => productBasketHandle(product, e)} className={getMode ? styles.buyDark : styles.buyLight}>
                     <span>Buy</span>
                     <span>{checkBasketForProduct() ? <ImCheckmark /> : <SlBasket />}</span>
                 </button>

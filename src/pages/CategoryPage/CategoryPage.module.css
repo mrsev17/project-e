@@ -87,13 +87,7 @@
     width: 92%;
     border-radius: 12px;
 }
-.openFilters {
-    /* background-color: plum; */
-}
-/* .closeFilters {
-    display: none;
-} */
-/* Assuming your parent element has a class named "parent" */
+
 .closeFilters > *:not(:first-child) {
     display: none;
 }

@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { setProductPlusOne, setProductMinusOne, setRemoveItemFromOrder } from '../../redux/orderSlice';
+import { PiPlusBold, PiMinus } from 'react-icons/pi';
 import styles from './BasketSelectQuantity.module.css';
 
 interface BasketSelectQuantityProps {
@@ -24,14 +25,14 @@ export const BasketSelectQuantity: React.FC<BasketSelectQuantityProps> = ({ prod
         <div className={getMode ? styles.selectQuantityDark : styles.selectQuantityLight}>
             <div className={getMode ? styles.wrapperQuantityControl : styles.wrapperQuantityControlLight}>
                 <button onClick={() => plusItemToOrder(productId)} className={getMode ? styles.quantityControlPlus : styles.quantityControlPlusLight}>
-                    +
+                    <PiPlusBold />
                 </button>
                 <span>{quantInOrder}</span>
                 <button
                     onClick={() => minusItemFromOrder(productId, quantInOrder)}
                     className={getMode ? styles.quantityControlMinus : styles.quantityControlMinusLight}
                 >
-                    -
+                    <PiMinus />
                 </button>
             </div>
         </div>

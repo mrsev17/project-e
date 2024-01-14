@@ -57,6 +57,12 @@
     color: white;
     border: 1px solid #e91e63;
 }
+@media (max-width: 992px) {
+    .sortOptions {
+        margin: 0 auto 10px;
+        width: 94%;
+    }
+}
 @media (max-width: 567px) {
     .sortOptions {
         width: 92%;

@@ -13,7 +13,6 @@
 .orderItemWrapperLight {
     background-color: white;
 }
-
 .orderItemImageLight {
     border: 1px solid white;
 }
@@ -45,7 +44,6 @@
     justify-content: space-between;
     height: 80%;
 }
-
 .orderBuyRemoveQuantityDark {
     display: flex;
     margin-right: 20px;
@@ -56,13 +54,11 @@
     align-items: center;
     gap: 20px;
 }
-
 .favoritesBasketSubDark {
     font-size: 20px;
     color: aliceblue;
     display: none;
 }
-
 @media (max-width: 1200px) {
     .basketPageDarkOrderContent {
         width: 70%;
@@ -96,11 +92,9 @@
     .basketPageDarkSubmitOrderInfo > h4:first-child {
         font-size: 20px;
     }
-
     .basketPageDarkSubmitOrderInfo > h4:last-child {
         font-size: 28px;
     }
-
     .basketPageDarkSubmitOrderInfo {
         margin-bottom: 10px;
     }
@@ -136,7 +130,6 @@
         width: 340px;
         height: 180px;
     }
-
     .orderBuyRemoveQuantityDark {
         margin-right: 0;
         flex-direction: column;
@@ -152,5 +145,32 @@
         justify-content: center;
         width: 100%;
         font-size: 32px;
+    }
+}
+@media (max-width: 567px) {
+    .orderItemImage {
+        height: 240px;
+        margin: 0;
+    }
+    .orderItemImage > img,
+    .orderItemImageLight > img {
+        max-height: 75%;
+    }
+    .orderItemWrapperLight,
+    .orderItemWrapper {
+        flex-direction: row;
+    }
+    .orderItemActionsDark {
+        padding: 10px;
+        width: 45%;
+        gap: 10px;
+    }
+    .orderNameAndPriceDark > span,
+    .orderNameAndPriceLight > span {
+        font-size: 20px;
+    }
+    .orderBuyRemoveQuantityDark {
+        gap: 10px;
+        margin-bottom: 0;
     }
 }
