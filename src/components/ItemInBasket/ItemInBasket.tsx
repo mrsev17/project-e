@@ -22,7 +22,6 @@ export const ItemInBasket: React.FC<ItemInBasketProps> = ({
     quantInOrder,
 }) => {
     const getMode = useAppSelector((state) => state.mode.modeState);
-
     return (
         <li className={getMode ? styles.orderItemWrapper : styles.orderItemWrapperLight}>
             <div className={getMode ? styles.orderItemImage : styles.orderItemImageLight}>

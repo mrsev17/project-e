@@ -14,3 +14,10 @@ code {
 h1 {
     font-size: 28px;
 }
+/* #root {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */

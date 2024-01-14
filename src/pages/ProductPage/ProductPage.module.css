@@ -267,3 +267,12 @@
         margin: 0 auto;
     }
 }
+@media (max-width: 567px) {
+    .upperInfo {
+        margin-bottom: 0;
+    }
+    .accentLineDark,
+    .accentLineLight {
+        margin: 0 auto;
+    }
+}

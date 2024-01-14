@@ -1,30 +1,43 @@
 import { HomePage, NotFoundPage, FavoritesPage, BasketPage, CatalogPage, ProductPage, CategoryPage, LoginPage, RegisterPage } from './pages';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AdaptiveLogo } from './components';
 import MainLayout from './layouts/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/hook';
 import { setInitialData } from './redux/productsSlice';
 import { ToastContainer } from 'react-toastify';
+import { Preloader } from './components';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch();
     const getMode = useAppSelector((state) => state.mode.modeState);
+    const [dataLoaded, setDataLoaded] = useState<boolean>(false);
+    const checkWidth: boolean = window.innerWidth < 567;
     useEffect(() => {
         const storedData = localStorage.getItem('persist:e-app-test-january');
         if (storedData) {
-            return;
+            setTimeout(() => {
+                setDataLoaded(true);
+            }, 2000);
         } else {
             dispatch(setInitialData());
+            setTimeout(() => {
+                setDataLoaded(true);
+            }, 2000);
         }
     }, [dispatch]);
+
+    if (!dataLoaded) {
+        return <Preloader />;
+    }
     return (
         <BrowserRouter>
             <div className={getMode ? 'appDark' : 'appLight'}>
                 <div className='app-container'>
                     <AdaptiveLogo />
+
                     <Routes>
                         <Route path='/' element={<MainLayout />}>
                             <Route index element={<HomePage />} />
@@ -39,8 +52,8 @@ const App: React.FC = () => {
                         </Route>
                     </Routes>
                     <ToastContainer
-                        position='bottom-left'
-                        autoClose={2000}
+                        position={checkWidth ? 'top-right' : 'bottom-left'}
+                        autoClose={1500}
                         hideProgressBar={true}
                         newestOnTop={false}
                         closeOnClick={false}
